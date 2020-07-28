@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import FireStore from "./firebase/fireStore";
 
 function App() {
   return (
@@ -38,3 +39,14 @@ function repeatStr(text, count) {
 
 export default App;
 export {repeatStr}; 
+
+/**
+ * TODO(@ksr89): Remove this. Use the code this anywhere to access data.
+ * Output like map of:
+ * Covid Care Centres CCC: {…}, Government Hospitals Covid Beds: {…},..
+ */
+(() => setTimeout(() => {
+  console.log("calling function");
+  FireStore.firebaseInit();
+  FireStore.fetchCityData('bangalore', console.log);
+}, 4000))();
