@@ -1,6 +1,7 @@
 # mycovidconnect
 
-Technical Setup:
+Technical Setup
+===============
 
 Cookie-cutter skeletal setup uses typescript to compile project.
 Babel does the transpiling from target to es5 browser compatible code, tsc does the type-checking.
@@ -9,6 +10,20 @@ Babel does the transpiling from target to es5 browser compatible code, tsc does 
 
 ### Always follow Guidelines!!
 -------------------------------
+
 In general follow this [Javascript Styleguide](https://google.github.io/styleguide/jsguide.html)
-=======
+==============================================
 Automated 911 for Patients
+
+
+For Watching build run compiler: `./node_modules/.bin/tsc -p tsconfig.json --watch`
+
+### `npm start`
+
+Runs the app in development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will automatically reload if you make changes to the code.<br>
+You will see the build errors and lint warnings in the console.
+
+Check package.json for scripts on how to build and run.
