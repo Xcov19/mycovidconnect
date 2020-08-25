@@ -1,5 +1,12 @@
 # mycovidconnect
 
+START HERE: Project Setup Guidelines
+===============
+
+- We use React;
+- Know how to run tsc with babel: https://babeljs.io/blog/2018/08/27/7.0.0
+- Lets agree on JS Guideline
+
 Technical Setup
 ===============
 
