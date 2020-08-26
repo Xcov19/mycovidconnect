@@ -1,38 +1,505 @@
-.App {
+body {
+  background-color: #ffffff;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/**************/
+/*** HEADER ***/
+/**************/
+
+header {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 15px 0px;
+  box-shadow: 1px 0px 10px -5px #000;
+}
+
+header .headerin {
+  width: 98%;
+  max-width: 1600px;
+  height: 80px;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+header .headerin .logo {
+  width: 215px;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  float: left;
+  background-image: url("/logo.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+header .headerin .account {
+  width: auto;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  float: right;
+  display: flex;
+}
+
+header .headerin .account .get-started {
+  width: auto;
+  height: 100%;
+  margin: 0px 20px 0px 0px;
+  padding: 0px;
+}
+
+header .headerin .account .get-started a {
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #0356be;
+  display: block;
+  text-align: center;
+  letter-spacing: 1px;
+  text-decoration: none;
+  height: auto;
+  margin: 11px auto;
+  padding: 20px;
+  font-weight: bold;
+}
+
+header .headerin .account .get-started a.active,
+header .headerin .account .get-started a:hover {
+  background-color: #2f97f2;
+}
+
+header .headerin .account .account-area {
+  width: auto;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+}
+
+header .headerin .account .account-area .account-area-link {
+  width: auto;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  color: #1e2248;
+}
+
+header .headerin .account .account-area .account-area-link .account-area-title {
+  font-size: 16px;
+  margin: 0px;
+  padding: 0px 20px;
+  line-height: 80px;
+  width: auto;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+header .headerin .account .account-area .account-area-link .account-area-icon {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #2f97f2;
+  text-align: center;
+  box-shadow: 0px 0px 10px -5px #000;
+  border-radius: 100%;
+  position: relative;
+  margin: 14px 15px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+header
+  .headerin
+  .account
+  .account-area
+  .account-area-link
+  .account-area-icon
+  i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+}
+
+header .headerin .account .account-area .account-area-list {
+  width: 250px;
+  height: auto;
+  background-color: #ffffff;
+  margin: 0px;
+  padding: 0px;
+  border: 1px solid #2f97f2;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px -5px #000;
+  position: absolute;
+  left: -13%;
+  display: none;
+  top: 74px;
+}
+
+header .headerin .account .account-area .account-area-list.show {
+  display: block;
+}
+
+header .headerin .account .account-area .account-area-list::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;
+  left: 75%;
+  margin-left: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-top: 1px solid #0096fe;
+  border-color: transparent transparent #2f97f2 transparent;
+}
+
+header .headerin .account .account-area .account-area-list ul {
+  list-style: none;
+  margin: 0px;
+  padding: 15px 0px;
+}
+
+header .headerin .account .account-area .account-area-list ul li {
+  display: block;
+  margin: 0px;
+  padding: 15px 20px;
+}
+
+header .headerin .account .account-area .account-area-list ul li a {
+  font-size: 16px;
+  font-weight: normal;
+  color: #1e2248;
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+header .headerin .account .account-area .account-area-list ul li button {
+  font-size: 16px;
+  font-weight: normal;
+  color: #1e2248;
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  border: 0px;
+  background-color: transparent;
+  border-top: 1px solid #dddddd;
+  display: block;
+  width: 100%;
+  padding-top: 25px;
+  text-align: left;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+header .headerin .account .account-area .account-area-list ul li a.active,
+header .headerin .account .account-area .account-area-list ul li a:hover,
+header .headerin .account .account-area .account-area-list ul li button:hover {
+  color: #2f97f2;
+}
+
+/******************/
+/*** NAVIGATION ***/
+/******************/
+
+nav {
+  width: auto;
+  height: 100%;
+  margin: 0px 0px 0px 40px;
+  padding: 0px;
+  float: left;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0px 15px;
+  padding: 0px;
+  line-height: 80px;
+}
+
+nav ul li a {
+  font-size: 16px;
+  color: #1e2248;
+  margin: 0px;
+  padding: 0px 3px 10px 3px;
+  text-decoration: none;
+  cursor: pointer;
+  outline: 0px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  color: #2f97f2;
+  border-bottom: 3px solid #2f97f2;
+}
+
+/**************/
+/*** FOOTER ***/
+/**************/
+
+footer {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 30px 0px;
+  background-color: #2f97f2;
+}
+
+footer .footerin {
+  width: 98%;
+  max-width: 1400px;
+  height: auto;
+  margin: 0 auto;
+  padding: 0px;
+  display: flex;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+footer .footerin h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0px 0px 10px 0px;
+  padding: 0px;
+  color: #ffffff;
+}
+
+footer .footerin p {
+  font-size: 16px;
+  margin: 10px 0px 20px 0px;
+  padding: 0px;
+}
+
+footer .footerin input {
+  font-size: 16px;
+  color: #ffffff;
+  background-color: transparent;
+  border: 1px solid #fff;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 20px 20px 20px 0px;
+  outline: 0px;
+  width: 40%;
+}
+
+footer .footerin input::placeholder {
+  color: #fff;
+}
+
+footer .footerin button {
+  color: #ffffff;
+  background-color: #0557bd;
+  border: 0px;
+  font-size: 18px;
+  padding: 15px;
+  margin: 0px;
+  width: 150px;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  box-shadow: 0px 0px 10px -5px #000;
+  cursor: pointer;
+}
+
+footer .footerin button:hover {
+  background-color: #003474;
+}
+
+footer .footerin ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+footer .footerin ul li {
+  list-style: none;
+  margin: 0px;
+  padding: 10px 0px;
+}
+
+footer .footerin ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+footer .footerin ul li a:hover {
+  text-decoration: underline;
+}
+
+footer .footerin div {
+  height: auto;
+  margin: 0px;
+  padding: 0px;
+}
+
+footer .footerin .w40 {
+  width: 40%;
+}
+
+footer .footerin .w20 {
+  width: 20%;
+}
+
+/******************/
+/*** COPYRIGHTS ***/
+/******************/
+
+#copyrights {
+  background-color: #1e2248;
+}
+
+#copyrights .copyrights-in {
+  width: 98%;
+  max-width: 1600px;
+  height: auto;
+  margin: 0 auto;
+  padding: 20px 0px;
+  display: flex;
+}
+
+#copyrights .copyrights-in .copyrights-text {
+  width: auto;
+  height: auto;
+  margin: 0px;
+  padding: 0px;
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+
+#copyrights .copyrights-in .copyrights-text p {
+  font-size: 14px;
+  color: #ffffff;
+  margin: 0px;
+  padding: 0px;
+  letter-spacing: 1px;
+}
+
+#copyrights .copyrights-in .social-icons {
+  width: auto;
+  height: auto;
+  margin: 0px;
+  padding: 0px;
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+
+#copyrights .copyrights-in .social-icons ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+#copyrights .copyrights-in .social-icons ul li {
+  display: inline;
+  padding: 0px;
+  margin: 0px 15px;
+}
+
+#copyrights .copyrights-in .social-icons ul li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+#copyrights .copyrights-in .social-icons ul li a:hover {
+  color: #2f97f2;
+}
+
+/*******************/
+/*** HOME BANNER ***/
+/*******************/
+
+#banner {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  /*background-image: url('');*/
+}
+
+#banner .banner-in {
+  width: 98%;
+  max-width: 1200px;
+  height: auto;
+  margin: 80px auto;
+  padding: 0px;
+  border: 1px solid #000;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#banner .banner-in h1 {
+  font-size: 53px;
+  font-weight: normal;
+  color: #222222;
+  margin: 0px;
+  padding: 0px 0px 0px 0px;
+  font-family: fangsong;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#banner .banner-in p {
+  font-size: 16px;
+  font-weight: normal;
+  color: #222222;
+  margin: 0px;
+  padding: 20px 0px 50px 0px;
+  letter-spacing: 1px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#banner .banner-in button {
+  background-color: #f15c08;
+  margin: 20px 0px 100px 0px;
+  padding: 30px;
+  border-radius: 100%;
+  border: 0px;
+  width: 220px;
+  height: 220px;
+  box-shadow: 0px 10px 20px -5px #000;
+  outline: 0px;
+  cursor: pointer;
+  text-shadow: 0px 0px 10px -5px #000;
 }
 
-.App-link {
-  color: #61dafb;
+#banner .banner-in button:hover {
+  background-color: #bf4600;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#banner .banner-in button h2 {
+  font-size: 50px;
+  margin: 0px;
+  padding: 0px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+#banner .banner-in button p {
+  font-size: 16px;
+  margin: 20px 0px 0px 0px;
+  padding: 0px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  color: #ffffff;
+  line-height: 30px;
 }
