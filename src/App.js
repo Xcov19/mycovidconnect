@@ -1,52 +1,20 @@
 import React from "react";
-import logo from "./logo.svg";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import FireStore from "./firebase/fireStore";
+import Home from "./containers/Home";
+import Search from "./containers/Search";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          {" "}
-          Edit <code> src / App.js </code> and save to reload.{" "}
-        </p>{" "}
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {" "}
-          Learn React{" "}
-        </a>{" "}
-      </header>{" "}
-    </div>
+    <>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/search/:city?" component={Search} />
+        </Switch>
+      </Router>
+    </>
   );
 }
 
-/**
- * Repeats a given string a certain number of times.
- *
- * @param {string} text - Text to repeat
- * @param {number} count - Number of times
- * @returns {Array.<number|string>} - Returns a repeated string
- */
-function repeatStr(text, count) {
-  return Array(count + 1).join(text);
-}
-
 export default App;
-export {repeatStr}; 
-
-/**
- * TODO(@ksr89): Remove this. Use the code this anywhere to access data.
- * Output like map of:
- * Covid Care Centres CCC: {…}, Government Hospitals Covid Beds: {…},..
- */
-(() => setTimeout(() => {
-  console.log("calling function");
-  FireStore.firebaseInit();
-  FireStore.fetchCityData('bangalore', console.log);
-}, 4000))();

@@ -1,38 +1,275 @@
-.App {
+body {
+  background-color: #ffffff;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/**************/
+/*** HEADER ***/
+/**************/
+
+header {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 15px 0px;
+  box-shadow: 1px 0px 10px -5px #000;
+}
+
+header .headerin {
+  width: 98%;
+  max-width: 1600px;
+  height: 80px;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+header .headerin .logo {
+  width: 215px;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  float: left;
+  background-image: url("/logo.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/**************/
+/*** FOOTER ***/
+/**************/
+
+footer {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 30px 0px;
+  background-color: #2f97f2;
+}
+
+footer .footerin {
+  width: 98%;
+  max-width: 1400px;
+  height: auto;
+  margin: 0 auto;
+  padding: 0px;
+  display: flex;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+footer .footerin h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0px 0px 10px 0px;
+  padding: 0px;
+  color: #ffffff;
+}
+
+footer .footerin div:first-child a {
+  color: #ffffff;
+  background-color: #0557bd;
+  border: 0px;
+  font-size: 18px;
+  padding: 15px;
+  margin: 30px 0px;
+  width: 150px;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  box-shadow: 0px 0px 10px -5px #000;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+footer .footerin div:first-child a:hover {
+  background-color: #003474;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+footer .footerin ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+footer .footerin ul li {
+  list-style: none;
+  margin: 0px;
+  padding: 10px 0px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+footer .footerin ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+footer .footerin ul li a:hover {
+  text-decoration: underline;
+}
+
+footer .footerin div {
+  height: auto;
+  margin: 0px;
+  padding: 0px;
+}
+
+footer .footerin .w40 {
+  width: 40%;
+}
+
+footer .footerin .w30 {
+  width: 30%;
+}
+
+/******************/
+/*** COPYRIGHTS ***/
+/******************/
+
+#copyrights {
+  background-color: #1e2248;
+}
+
+#copyrights .copyrights-in {
+  width: 98%;
+  max-width: 1600px;
+  height: auto;
+  margin: 0 auto;
+  padding: 20px 0px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#copyrights .copyrights-in .copyrights-text {
+  width: auto;
+  height: auto;
+  margin: 0px;
+  padding: 0px;
+  float: left;
+  width: 50%;
+  text-align: left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#copyrights .copyrights-in .copyrights-text p {
+  font-size: 14px;
+  color: #ffffff;
+  margin: 0px;
+  padding: 0px;
+  letter-spacing: 1px;
+}
+
+#copyrights .copyrights-in .social-icons {
+  width: auto;
+  height: auto;
+  margin: 0px;
+  padding: 0px;
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+
+#copyrights .copyrights-in .social-icons ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+#copyrights .copyrights-in .social-icons ul li {
+  display: inline;
+  padding: 0px;
+  margin: 0px 15px;
+}
+
+#copyrights .copyrights-in .social-icons ul li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+#copyrights .copyrights-in .social-icons ul li a:hover {
+  color: #2f97f2;
+}
+
+/*******************/
+/*** HOME BANNER ***/
+/*******************/
+
+#banner {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  /*background-image: url('');*/
+}
+
+#banner .banner-in {
+  width: 98%;
+  max-width: 1200px;
+  height: auto;
+  margin: 80px auto;
+  padding: 0px;
+  border: 1px solid #000;
+  text-align: center;
+}
+
+#banner .banner-in h1 {
+  font-size: 53px;
+  font-weight: normal;
+  color: #222222;
+  margin: 0px;
+  padding: 0px 0px 0px 0px;
+  font-family: fangsong;
+}
+
+#banner .banner-in p {
+  font-size: 16px;
+  font-weight: normal;
+  color: #222222;
+  margin: 0px;
+  padding: 20px 0px 50px 0px;
+  letter-spacing: 1px;
+}
+
+#banner .banner-in button {
+  background-color: #f15c08;
+  margin: 20px 0px 100px 0px;
+  padding: 30px;
+  border-radius: 100%;
+  border: 0px;
+  width: 220px;
+  height: 220px;
+  box-shadow: 0px 10px 20px -5px #000;
+  outline: 0px;
+  cursor: pointer;
+  text-shadow: 0px 0px 10px -5px #000;
+}
+
+#banner .banner-in button:hover {
+  background-color: #bf4600;
+}
+
+#banner .banner-in button h2 {
+  font-size: 50px;
+  margin: 0px;
+  padding: 0px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+#banner .banner-in button p {
+  font-size: 16px;
+  margin: 20px 0px 0px 0px;
+  padding: 0px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  color: #ffffff;
+  line-height: 30px;
 }
