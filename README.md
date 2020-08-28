@@ -1,5 +1,7 @@
 # mycovidconnect
 
+[![Open Source Helpers](https://www.codetriage.com/xcov19/mycovidconnect/badges/users.svg)](https://www.codetriage.com/xcov19/mycovidconnect)
+
 START HERE: Project Setup Guidelines
 ===============
 
