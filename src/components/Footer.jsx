@@ -8,57 +8,45 @@ const Footer = () => {
       <footer>
         <div className="footerin">
           <div className="w40">
-            <h3>Join Our Community via Email</h3>
-            <p>some demo text which can be replaced</p>
-            <form>
-              <input type="" placeholder="Email Address" />
-              <button>Join</button>
-            </form>
+            <h3>Join Our Community</h3>
+            <a href="https://www.google.com" title="Join Now">
+              Join Now
+            </a>
           </div>
-          <div className="w20">
+          <div className="w30">
             <ul>
               <li>
-                <a href="tel:+919131167787">+91 9131167787</a>
+                <Link to="/">Contact Us</Link>
               </li>
               <li>
-                <a href="mailto:info@xcov.com">info@xcov.com</a>
+                <Link to="/">FAQ</Link>
               </li>
             </ul>
           </div>
-          <div className="w20">
+          <div className="w30">
             <ul>
               <li>
-                <Link to="/contact">Contact Us</Link>
-              </li>
-              <li>
-                <Link to="/faq">FAQ</Link>
-              </li>
-            </ul>
-          </div>
-          <div className="w20">
-            <ul>
-              <li>
-                <Link to="/about" title="About XCOV19">
+                <Link to="/" title="About XCOV19">
                   About XCOV19
                 </Link>
               </li>
               <li>
-                <Link to="/career" title="Work with Us">
+                <Link to="/" title="Work with Us">
                   Work with Us
                 </Link>
               </li>
               <li>
-                <Link to="/privacy-policy" title="Privacy Policy">
+                <Link to="/" title="Privacy Policy">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link to="/terms-and-conditions" title="Terms &amp; Conditions">
+                <Link to="/" title="Terms &amp; Conditions">
                   Terms &amp; Conditions
                 </Link>
               </li>
               <li>
-                <Link to="/press-enquiries" title="Press Enquiries">
+                <Link to="/" title="Press Enquiries">
                   Press Enquiries
                 </Link>
               </li>

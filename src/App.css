@@ -40,217 +40,6 @@ header .headerin .logo {
   background-position: center;
 }
 
-header .headerin .account {
-  width: auto;
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
-  float: right;
-  display: flex;
-}
-
-header .headerin .account .get-started {
-  width: auto;
-  height: 100%;
-  margin: 0px 20px 0px 0px;
-  padding: 0px;
-}
-
-header .headerin .account .get-started a {
-  font-size: 16px;
-  color: #ffffff;
-  background-color: #0356be;
-  display: block;
-  text-align: center;
-  letter-spacing: 1px;
-  text-decoration: none;
-  height: auto;
-  margin: 11px auto;
-  padding: 20px;
-  font-weight: bold;
-}
-
-header .headerin .account .get-started a.active,
-header .headerin .account .get-started a:hover {
-  background-color: #2f97f2;
-}
-
-header .headerin .account .account-area {
-  width: auto;
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
-  position: relative;
-}
-
-header .headerin .account .account-area .account-area-link {
-  width: auto;
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
-  display: flex;
-  color: #1e2248;
-}
-
-header .headerin .account .account-area .account-area-link .account-area-title {
-  font-size: 16px;
-  margin: 0px;
-  padding: 0px 20px;
-  line-height: 80px;
-  width: auto;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-header .headerin .account .account-area .account-area-link .account-area-icon {
-  width: 40px;
-  height: 40px;
-  border: 1px solid #2f97f2;
-  text-align: center;
-  box-shadow: 0px 0px 10px -5px #000;
-  border-radius: 100%;
-  position: relative;
-  margin: 14px 15px;
-  padding: 5px;
-  cursor: pointer;
-}
-
-header
-  .headerin
-  .account
-  .account-area
-  .account-area-link
-  .account-area-icon
-  i {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 20px;
-}
-
-header .headerin .account .account-area .account-area-list {
-  width: 250px;
-  height: auto;
-  background-color: #ffffff;
-  margin: 0px;
-  padding: 0px;
-  border: 1px solid #2f97f2;
-  border-radius: 10px;
-  box-shadow: 0px 3px 10px -5px #000;
-  position: absolute;
-  left: -13%;
-  display: none;
-  top: 74px;
-}
-
-header .headerin .account .account-area .account-area-list.show {
-  display: block;
-}
-
-header .headerin .account .account-area .account-area-list::after {
-  content: " ";
-  position: absolute;
-  bottom: 100%;
-  left: 75%;
-  margin-left: -5px;
-  border-width: 10px;
-  border-style: solid;
-  border-top: 1px solid #0096fe;
-  border-color: transparent transparent #2f97f2 transparent;
-}
-
-header .headerin .account .account-area .account-area-list ul {
-  list-style: none;
-  margin: 0px;
-  padding: 15px 0px;
-}
-
-header .headerin .account .account-area .account-area-list ul li {
-  display: block;
-  margin: 0px;
-  padding: 15px 20px;
-}
-
-header .headerin .account .account-area .account-area-list ul li a {
-  font-size: 16px;
-  font-weight: normal;
-  color: #1e2248;
-  margin: 0px;
-  padding: 0px;
-  text-decoration: none;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-header .headerin .account .account-area .account-area-list ul li button {
-  font-size: 16px;
-  font-weight: normal;
-  color: #1e2248;
-  margin: 0px;
-  padding: 0px;
-  text-decoration: none;
-  border: 0px;
-  background-color: transparent;
-  border-top: 1px solid #dddddd;
-  display: block;
-  width: 100%;
-  padding-top: 25px;
-  text-align: left;
-  font-weight: bold;
-  cursor: pointer;
-  letter-spacing: 1px;
-}
-
-header .headerin .account .account-area .account-area-list ul li a.active,
-header .headerin .account .account-area .account-area-list ul li a:hover,
-header .headerin .account .account-area .account-area-list ul li button:hover {
-  color: #2f97f2;
-}
-
-/******************/
-/*** NAVIGATION ***/
-/******************/
-
-nav {
-  width: auto;
-  height: 100%;
-  margin: 0px 0px 0px 40px;
-  padding: 0px;
-  float: left;
-}
-
-nav ul {
-  list-style: none;
-  margin: 0px;
-  padding: 0px;
-}
-
-nav ul li {
-  display: inline;
-  margin: 0px 15px;
-  padding: 0px;
-  line-height: 80px;
-}
-
-nav ul li a {
-  font-size: 16px;
-  color: #1e2248;
-  margin: 0px;
-  padding: 0px 3px 10px 3px;
-  text-decoration: none;
-  cursor: pointer;
-  outline: 0px;
-  letter-spacing: 1px;
-  font-weight: bold;
-}
-
-nav ul li a.active,
-nav ul li a:hover {
-  color: #2f97f2;
-  border-bottom: 3px solid #2f97f2;
-}
-
 /**************/
 /*** FOOTER ***/
 /**************/
@@ -282,43 +71,24 @@ footer .footerin h3 {
   color: #ffffff;
 }
 
-footer .footerin p {
-  font-size: 16px;
-  margin: 10px 0px 20px 0px;
-  padding: 0px;
-}
-
-footer .footerin input {
-  font-size: 16px;
-  color: #ffffff;
-  background-color: transparent;
-  border: 1px solid #fff;
-  padding: 15px;
-  border-radius: 5px;
-  margin: 20px 20px 20px 0px;
-  outline: 0px;
-  width: 40%;
-}
-
-footer .footerin input::placeholder {
-  color: #fff;
-}
-
-footer .footerin button {
+footer .footerin div:first-child a {
   color: #ffffff;
   background-color: #0557bd;
   border: 0px;
   font-size: 18px;
   padding: 15px;
-  margin: 0px;
+  margin: 30px 0px;
   width: 150px;
   border-radius: 5px;
   letter-spacing: 2px;
   box-shadow: 0px 0px 10px -5px #000;
   cursor: pointer;
+  text-decoration: none;
+  display: block;
+  text-align: center;
 }
 
-footer .footerin button:hover {
+footer .footerin div:first-child a:hover {
   background-color: #003474;
 }
 
@@ -354,8 +124,8 @@ footer .footerin .w40 {
   width: 40%;
 }
 
-footer .footerin .w20 {
-  width: 20%;
+footer .footerin .w30 {
+  width: 30%;
 }
 
 /******************/
