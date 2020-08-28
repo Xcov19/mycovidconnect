@@ -11,8 +11,11 @@ class Search extends Component {
     this.state = {
       lat: this.props.match.params.lat || 0,
       lng: this.props.match.params.lng || 0,
+      selectedLat: 0,
+      selectedLng: 0,
+      selectedName: "",
       city: "",
-      results: {},
+      results: [],
       isLoading: true,
     };
   }
@@ -42,9 +45,12 @@ class Search extends Component {
   };
 
   setResults = (results) => {
+    console.log(results);
     this.setState({
       results,
-      selected: 0,
+      selectedLat: results[0].lat,
+      selectedLng: results[0].lng,
+      selectedName: results[0].name,
       isLoading: false,
     });
   };
@@ -52,7 +58,15 @@ class Search extends Component {
   getLocationResults = () => {
     const { city } = this.state;
     FireStore.firebaseInit();
-    FireStore.fetchCityData(city, this.setResults);
+    FireStore.fetchCityData("bangalore", this.setResults);
+  };
+
+  setNewLocation = (lat, lng, name) => {
+    this.setState({
+      selectedLat: lat,
+      selectedLng: lng,
+      selectedName: name,
+    });
   };
 
   componentDidMount() {
@@ -61,6 +75,28 @@ class Search extends Component {
 
   render() {
     const { lat, lng, city, results, isLoading } = this.state;
+    const result_list =
+      results && results.length !== 0
+        ? results.map(({ name, address, phone, lat, lng }, index) => {
+            return (
+              <div
+                className="location"
+                key={index}
+                onClick={() => this.setNewLocation(lat, lng)}
+              >
+                <h2>{name}</h2>
+                <address>
+                  <i className="fas fa-map-marker-alt"></i>
+                  {address}
+                </address>
+                <p>
+                  <i className="fas fa-phone"></i>
+                  {phone}
+                </p>
+              </div>
+            );
+          })
+        : [];
     return (
       <>
         <MetaTags>
@@ -87,57 +123,7 @@ class Search extends Component {
                 <div className="header">
                   <h2>Search Results for {city}</h2>
                 </div>
-                <div className="content">
-                  <div className="location">
-                    <h2>Hospital Name</h2>
-                    <address>
-                      <i className="fas fa-map-marker-alt"></i>hospital address
-                    </address>
-                    <p>
-                      <i className="fas fa-phone"></i>hospital address
-                    </p>
-                  </div>
-
-                  <div className="location">
-                    <h2>Hospital Name</h2>
-                    <address>
-                      <i className="fas fa-map-marker-alt"></i>hospital address
-                    </address>
-                    <p>
-                      <i className="fas fa-phone"></i>hospital address
-                    </p>
-                  </div>
-
-                  <div className="location">
-                    <h2>Hospital Name</h2>
-                    <address>
-                      <i className="fas fa-map-marker-alt"></i>hospital address
-                    </address>
-                    <p>
-                      <i className="fas fa-phone"></i>hospital address
-                    </p>
-                  </div>
-
-                  <div className="location">
-                    <h2>Hospital Name</h2>
-                    <address>
-                      <i className="fas fa-map-marker-alt"></i>hospital address
-                    </address>
-                    <p>
-                      <i className="fas fa-phone"></i>hospital address
-                    </p>
-                  </div>
-
-                  <div className="location">
-                    <h2>Hospital Name</h2>
-                    <address>
-                      <i className="fas fa-map-marker-alt"></i>hospital address
-                    </address>
-                    <p>
-                      <i className="fas fa-phone"></i>hospital address
-                    </p>
-                  </div>
-                </div>
+                <div className="content">{result_list}</div>
               </div>
               <div className="maparea">
                 <MyMapComponent
@@ -147,7 +133,10 @@ class Search extends Component {
                   }}
                   myPlaces={[
                     { id: "1", pos: { lat, lng } },
-                    { id: "2", pos: { lat: 39.10366509575983, lng: -94.48751660204751 } },
+                    {
+                      id: "2",
+                      pos: { lat: 39.10366509575983, lng: -94.48751660204751 },
+                    },
                   ]}
                 />
               </div>

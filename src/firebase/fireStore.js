@@ -1,6 +1,7 @@
 /* jshint esversion: 9 */
 
 import firebaseConfig from "./firebase-core";
+import { GOOGLE_MAPS_API_KEY } from "../constants";
 import CONSTANTS from "./constants";
 
 class FireStore {
@@ -36,38 +37,30 @@ class FireStore {
    */
   static fetchCityData(cityName, mapCallback) {
     const cityNameCollectionPath = CONSTANTS.collectionCityPathFn(cityName);
-    const results = {};
+    const results = [];
     FireStore.#DB
       .collection(cityNameCollectionPath)
       .get()
-      .then((/** @type {Object.<T>} */ querySnapshot) => {
-        querySnapshot.forEach((/** @type {Object<T>} */ docRef) => {
+      .then((querySnapshot) => {
+        querySnapshot.forEach((docRef, index) => {
           const docData = docRef.data();
-          ["columns", "records"].forEach((key) => {
-            if (key in docData) {
-              docData[key] = JSON.parse(docData[key]);
-            }
-          });
-          // fetch(
-          //   `https://maps.googleapis.com/maps/api/geocode/json?address=${lat},${lng}&sensor=true&key=${GOOGLE_MAPS_API_KEY}`
-          // )
-          //   .then((response) => response.json())
-          //   .then((data) => {
-          //     const main_pint = data.results[0];
-          //     const position =
-          //       main_pint.geometry &&
-          //       main_pint.geometry.location &&
-          //       main_pint.geometry.location !== {}
-          //         ? main_pint.geometry.location
-          //         : {};
-          //   });
-          // docData.location = position;
-          results[docRef.id] = docData;
+          const hos = JSON.parse(docData.records);
+          hos &&
+            hos.length &&
+            hos.forEach((item) => {
+              const name = item.facility_type;
+              fetch(
+                `https://maps.googleapis.com/maps/api/geocode/json?address=${name}&sensor=true&key=${GOOGLE_MAPS_API_KEY}`
+              )
+                .then((response) => response.json())
+                .then((data) => {
+                  results.push(data.results[0]);
+                  console.log(results);
+                });
+            });
         });
-        console.info("results is", results);
-        return results;
       })
-      .then(mapCallback)
+      .then(mapCallback(result))
       .catch((error) => console.error(error));
   }
 }
