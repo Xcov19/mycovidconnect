@@ -48,9 +48,9 @@ class Search extends Component {
     console.log(results);
     this.setState({
       results,
-      selectedLat: results[0].lat,
-      selectedLng: results[0].lng,
-      selectedName: results[0].name,
+      selectedLat: results.geometry.location.lat,
+      selectedLng: results.geometry.location.lng,
+      selectedName: results.facility_type,
       isLoading: false,
     });
   };
