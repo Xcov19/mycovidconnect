@@ -69,8 +69,6 @@ class FireStore {
           results.forEach((data) => {
             /** @type {Array<Object<String, String>, Promise>} */
             const [item, promise] = data;
-            // /** @constant {Promise} */
-            // const promise = data[1];
             promise.then((result) => {
               if (!!result && result.results.length && !result.error_message) {
                 // Called for each hospital result.

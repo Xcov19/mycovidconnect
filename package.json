@@ -37,9 +37,6 @@
         "eject": "react-scripts eject",
         "watch": "./node_modules/.bin/tsc --watch"
     },
-    "jshintConfig": {
-        "esversion": 6
-    },
     "eslintConfig": {
         "extends": "react-app"
     },
