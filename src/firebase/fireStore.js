@@ -1,4 +1,5 @@
 /* jshint esversion: 9 */
+/* jshint esversion: 6 */
 
 import firebaseConfig from "./firebase-core";
 import { GOOGLE_MAPS_API_KEY } from "../constants";
