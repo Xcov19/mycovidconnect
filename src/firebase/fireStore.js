@@ -37,8 +37,14 @@ class FireStore {
      */
     static fetchCityData(cityName, mapCallback) {
         const cityNameCollectionPath = CONSTANTS.collectionCityPathFn(cityName);
+        /** @constant {Array<Object<String, String>, Promise>} */
         const results = [];
         const querySnapshotResults = [];
+        /** 
+         * Final hospital mapped data that is consumed by mapCallback. 
+         * @constant {Array<Object<string, Array|string|Object<T>>>} 
+         */
+        const hospitalArrMapData = [];
         // IIFE with synchronouse flow of async/awaits
         (async () => {
           // Get database records for the collection name.
@@ -66,16 +72,18 @@ class FireStore {
           });
           // Merge each hospital records data with its geolocation meta and invoke callback.
           await Promise.all(promiseData);
-          results.forEach((data) => {
+          const mappedData = results.map((data) => {
             /** @type {Array<Object<String, String>, Promise>} */
             const [item, promise] = data;
             promise.then((result) => {
               if (!!result && result.results.length && !result.error_message) {
                 // Called for each hospital result.
-                mapCallback({...result.results[0], ...item});
+                hospitalArrMapData.push({...result.results[0], ...item});
               }
             });
           });
+          await Promise.all(mappedData);
+          mapCallback(hospitalArrMapData);
         })();
     }
 }
