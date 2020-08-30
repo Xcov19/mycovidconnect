@@ -4,7 +4,7 @@ import { GOOGLE_MAPS_API_KEY } from "../constants";
 
 export class MapContainer extends Component {
   render() {
-    const { myPlaces, initialCenter } = this.props;
+    const { myPlaces } = this.props;
     return (
       <Map
         google={this.props.google}
@@ -13,7 +13,7 @@ export class MapContainer extends Component {
           height: "100%",
           position: "relative",
         }}
-        initialCenter={initialCenter}
+        initialCenter={myPlaces[0].pos}
         className={"map"}
         zoom={14}
       >

@@ -9,11 +9,10 @@ class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lat: this.props.match.params.lat || 0,
-      lng: this.props.match.params.lng || 0,
+      lat: parseFloat(this.props.match.params.lat) || 0,
+      lng: parseFloat(this.props.match.params.lng) || 0,
       selectedLat: 0,
       selectedLng: 0,
-      selectedName: "",
       city: "",
       results: [],
       isLoading: true,
@@ -45,12 +44,18 @@ class Search extends Component {
   };
 
   setResults = (results) => {
-    console.log(results);
     this.setState({
       results,
-      selectedLat: results.geometry.location.lat,
-      selectedLng: results.geometry.location.lng,
-      selectedName: results.facility_type,
+      selectedLat:
+        results[0] &&
+        results[0].geometry &&
+        results[0].geometry.location &&
+        results[0].geometry.location.lat,
+      selectedLng:
+        results[0] &&
+        results[0].geometry &&
+        results[0].geometry.location &&
+        results[0].geometry.location.lng,
       isLoading: false,
     });
   };
@@ -61,11 +66,10 @@ class Search extends Component {
     FireStore.fetchCityData("bangalore", this.setResults);
   };
 
-  setNewLocation = (lat, lng, name) => {
+  setNewLocation = (lat, lng) => {
     this.setState({
       selectedLat: lat,
       selectedLng: lng,
-      selectedName: name,
     });
   };
 
@@ -74,28 +78,40 @@ class Search extends Component {
   }
 
   render() {
-    const { lat, lng, city, results, isLoading } = this.state;
+    const {
+      lat,
+      lng,
+      city,
+      results,
+      isLoading,
+      selectedLat,
+      selectedLng,
+    } = this.state;
     const result_list =
       results && results.length !== 0
-        ? results.map(({ name, address, phone, lat, lng }, index) => {
-            return (
-              <div
-                className="location"
-                key={index}
-                onClick={() => this.setNewLocation(lat, lng)}
-              >
-                <h2>{name}</h2>
-                <address>
-                  <i className="fas fa-map-marker-alt"></i>
-                  {address}
-                </address>
-                <p>
-                  <i className="fas fa-phone"></i>
-                  {phone}
-                </p>
-              </div>
-            );
-          })
+        ? results.map(
+            (
+              { facility_type, formatted_address, geometry: { location } },
+              index
+            ) => {
+              return (
+                <div
+                  className="location"
+                  key={index}
+                  onClick={() =>
+                    this.setNewLocation(location.lat, location.lng)
+                  }
+                >
+                  <h2>{facility_type}</h2>
+                  <address>
+                    <i className="fas fa-map-marker-alt"></i>
+                    {formatted_address}
+                  </address>
+                  {/* TODO(@codecakes): add phone number */}
+                </div>
+              );
+            }
+          )
         : [];
     return (
       <>
@@ -127,15 +143,11 @@ class Search extends Component {
               </div>
               <div className="maparea">
                 <MyMapComponent
-                  initialCenter={{
-                    lat,
-                    lng,
-                  }}
                   myPlaces={[
                     { id: "1", pos: { lat, lng } },
                     {
                       id: "2",
-                      pos: { lat: 39.10366509575983, lng: -94.48751660204751 },
+                      pos: { lat: selectedLat, lng: selectedLng },
                     },
                   ]}
                 />
