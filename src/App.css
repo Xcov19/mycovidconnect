@@ -381,6 +381,16 @@ footer .footerin .w30 {
   margin: 0px;
   padding: 20px;
   color: #2f97f2;
+  position: relative;
+}
+
+#search .search-in .results .content .location h2 span {
+  position: absolute;
+  right: 18px;
+  top: 24px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #151515;
 }
 
 #search .search-in .results .content .location address,
@@ -389,8 +399,10 @@ footer .footerin .w30 {
   font-weight: normal;
   font-style: normal;
   color: #222222;
-  padding: 15px 20px;
+  padding: 0px 15px 15px 50px;
   margin: 0px;
+  line-height: 30px;
+  position: relative;
 }
 
 #search .search-in .results .content .location p {
@@ -406,6 +418,9 @@ footer .footerin .w30 {
 
 #search .search-in .results .content .location address i {
   margin-right: 15px;
+  position: absolute;
+  left: 20px;
+  top: 4px;
 }
 
 #search .maparea {

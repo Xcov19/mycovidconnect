@@ -20,22 +20,22 @@ export class MapContainer extends Component {
         <Marker
           name={"Your Here"}
           position={myPlaces[0].pos}
-          icon={{
-            url:
-              "https://developers.google.com/maps/documentation/javascript/examples/full/images/parking_lot_maps.png",
-            anchor: new window.google.maps.Point(50, 50),
-            scaledSize: new window.google.maps.Size(50, 50),
-          }}
+          // icon={{
+          //   url:
+          //     "https://developers.google.com/maps/documentation/javascript/examples/full/images/parking_lot_maps.png",
+          //   anchor: new window.google.maps.Point(50, 50),
+          //   scaledSize: new window.google.maps.Size(50, 50),
+          // }}
         />
         <Marker
           name={"Hospital"}
           position={myPlaces[1].pos}
-          icon={{
-            url:
-              "https://developers.google.com/maps/documentation/javascript/examples/full/images/parking_lot_maps.png",
-            anchor: new window.google.maps.Point(50, 50),
-            scaledSize: new window.google.maps.Size(50, 50),
-          }}
+          // icon={{
+          //   url:
+          //     "https://developers.google.com/maps/documentation/javascript/examples/full/images/parking_lot_maps.png",
+          //   anchor: new window.google.maps.Point(50, 50),
+          //   scaledSize: new window.google.maps.Size(50, 50),
+          // }}
         />
       </Map>
     );
