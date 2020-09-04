@@ -3,7 +3,7 @@ import MetaTags from "react-meta-tags";
 import MaindHOC from "../components/MainHOC";
 import FireStore from "../firebase/fireStore";
 import Map from "../components/Map";
-import { GOOGLE_MAPS_API_KEY } from "../constants";
+import { GOOGLE_MAPS_API_KEY, alternativeCityNamesLookup } from "../constants";
 
 class Search extends Component {
   constructor(props) {
@@ -61,7 +61,8 @@ class Search extends Component {
   };
 
   getLocationResults = () => {
-    const { city } = this.state;
+    let { city } = this.state;
+    city = alternativeCityNamesLookup[city] || city;
     FireStore.firebaseInit();
     FireStore.fetchCityData(city, this.setResults);
   };
