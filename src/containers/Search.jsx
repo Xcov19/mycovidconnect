@@ -36,7 +36,7 @@ class Search extends Component {
             : "";
         this.setState(
           {
-            city,
+            city: city.toLowerCase(),
           },
           () => this.getLocationResults()
         );
@@ -62,14 +62,8 @@ class Search extends Component {
 
   getLocationResults = () => {
     const { city } = this.state;
-    let processedCity = "";
-    if (city === "Bengaluru") {
-      processedCity = "bangalore";
-    } else {
-      processedCity = city.toLowerCase();
-    }
     FireStore.firebaseInit();
-    FireStore.fetchCityData(processedCity, this.setResults);
+    FireStore.fetchCityData(city, this.setResults);
   };
 
   setNewLocation = (lat, lng) => {
