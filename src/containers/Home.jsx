@@ -19,14 +19,11 @@ class Home extends Component {
         (position) => {
           let lat = position.coords.latitude;
           let lng = position.coords.longitude;
-          this.setState(
-            {
-              lat: lat,
-              lng: lng,
-              redirect: true,
-            },
-            () => console.log(this.state)
-          );
+          this.setState({
+            lat: lat,
+            lng: lng,
+            redirect: true,
+          });
         },
         (error) => {
           alert("Error dectecting your location");
