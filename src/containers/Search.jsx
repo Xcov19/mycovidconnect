@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import MetaTags from "react-meta-tags";
 import MaindHOC from "../components/MainHOC";
 import FireStore from "../firebase/fireStore";
-import MyMapComponent from "../components/MyMapComponent";
-import { GOOGLE_MAPS_API_KEY } from "../constants";
+import Map from "../components/Map";
+import { GOOGLE_MAPS_API_KEY, alternativeCityNamesLookup } from "../constants";
 
 class Search extends Component {
   constructor(props) {
@@ -29,14 +29,14 @@ class Search extends Component {
         const main_pint = data.results[0];
         const city =
           main_pint.address_components &&
-          main_pint.address_components[1] &&
-          main_pint.address_components[1].long_name &&
-          main_pint.address_components[1].long_name !== ""
-            ? main_pint.address_components[1].long_name
+          main_pint.address_components[4] &&
+          main_pint.address_components[4].long_name &&
+          main_pint.address_components[4].long_name !== ""
+            ? main_pint.address_components[4].long_name
             : "";
         this.setState(
           {
-            city,
+            city: city.toLowerCase(),
           },
           () => this.getLocationResults()
         );
@@ -61,9 +61,10 @@ class Search extends Component {
   };
 
   getLocationResults = () => {
-    const { city } = this.state;
+    let { city } = this.state;
+    city = alternativeCityNamesLookup[city] || city;
     FireStore.firebaseInit();
-    FireStore.fetchCityData("bangalore", this.setResults);
+    FireStore.fetchCityData(city, this.setResults);
   };
 
   setNewLocation = (lat, lng) => {
@@ -164,15 +165,15 @@ class Search extends Component {
         </MetaTags>
         <div id="search">
           {isLoading && <div id="cover"></div>}
-          {results === {} && !isLoading && (
+          {results && results.length === 0 && !isLoading && (
             <div className="noresults">
               <div className="icon"></div>
               <div className="text">
-                <h2>No results found</h2>
+                <h2>No results found for {city}</h2>
               </div>
             </div>
           )}
-          {results !== {} && !isLoading && (
+          {results && results.length !== 0 && !isLoading && (
             <div className="search-in">
               <div className="results">
                 <div className="header">
@@ -181,7 +182,11 @@ class Search extends Component {
                 <div className="content">{result_list}</div>
               </div>
               <div className="maparea">
-                <MyMapComponent
+                <Map
+                  googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnFXxIHR1zyWllYyic90Fl8rkX-ACs6rI"
+                  loadingElement={
+                    <div style={{ width: `100%`, height: `100%` }} />
+                  }
                   myPlaces={[
                     { id: "1", pos: { lat, lng } },
                     {
