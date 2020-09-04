@@ -12,8 +12,6 @@ class Map extends Component {
     this.state = {
       isLoading: true,
       directions: null,
-      origin: this.props.myPlaces[0].pos || {},
-      destination: this.props.myPlaces[1].pos || {},
     };
   }
 
