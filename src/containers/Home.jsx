@@ -63,7 +63,7 @@ class Home extends Component {
             <button onClick={this.getLocation}>
               <h2>SOS</h2>
               <p>
-                Find Hospitak <br /> Near Me
+                Find Hospitals <br /> Near Me
               </p>
             </button>
           </div>
