@@ -22,7 +22,10 @@ jobs:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
+      env:
+        GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
       with:
         node-version: ${{ matrix.node-version }}
+    - run: echo $"REACT_APP_GOOGLE_MAPS_API_KEY=$GOOGLE_MAPS_API_KEY" > .env
     - run: CI=false NODE_ENV=production npm ci
     - run: CI=false npm run build --if-present
