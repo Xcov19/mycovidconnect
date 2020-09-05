@@ -1,4 +1,6 @@
-const GOOGLE_MAPS_API_KEY = "AIzaSyCnFXxIHR1zyWllYyic90Fl8rkX-ACs6rI";
+import "dotenv";
+
+const GOOGLE_MAPS_API_KEY = process.env.GOOGLE_MAPS_API_KEY;
 
 const alternativeCityNamesLookup = {
   "bangalore urban": "bangalore",
