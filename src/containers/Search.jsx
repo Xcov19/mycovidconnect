@@ -5,6 +5,9 @@ import FireStore from "../firebase/fireStore";
 import Map from "../components/Map";
 import { GOOGLE_MAPS_API_KEY, alternativeCityNamesLookup } from "../constants";
 
+const MAP_API = `${GOOGLE_MAPS_API_KEY}`.match(/[A-Za-z0-9_]+/i)[0];
+const googleMapURL=`https://maps.googleapis.com/maps/api/js?key=${MAP_API}`;
+
 class Search extends Component {
   constructor(props) {
     super(props);
@@ -21,17 +24,15 @@ class Search extends Component {
 
   getAddressFromLocation = () => {
     const { lat, lng } = this.state;
-    fetch(
-      `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&sensor=true&key=${GOOGLE_MAPS_API_KEY}`
-    )
+    fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&sensor=true&key=${MAP_API}`)
       .then((response) => response.json())
       .then((data) => {
         const main_pint = data.results[0];
         const city =
           main_pint.address_components &&
-          main_pint.address_components[4] &&
-          main_pint.address_components[4].long_name &&
-          main_pint.address_components[4].long_name !== ""
+            main_pint.address_components[4] &&
+            main_pint.address_components[4].long_name &&
+            main_pint.address_components[4].long_name !== ""
             ? main_pint.address_components[4].long_name
             : "";
         this.setState(
@@ -118,40 +119,40 @@ class Search extends Component {
     const result_list =
       results && results.length !== 0
         ? results.map(
-            (
-              { facility_type, formatted_address, geometry: { location } },
-              index
-            ) => {
-              return (
-                <div
-                  className="location"
-                  key={index}
-                  onClick={() =>
-                    this.setNewLocation(location.lat, location.lng)
-                  }
-                >
-                  <h2>
-                    {facility_type}{" "}
-                    <span>
-                      {this.generateDistance(
-                        lat,
-                        lng,
-                        location.lat,
-                        location.lng,
-                        "K"
-                      )}{" "}
+          (
+            { facility_type, formatted_address, geometry: { location } },
+            index
+          ) => {
+            return (
+              <div
+                className="location"
+                key={index}
+                onClick={() =>
+                  this.setNewLocation(location.lat, location.lng)
+                }
+              >
+                <h2>
+                  {facility_type}{" "}
+                  <span>
+                    {this.generateDistance(
+                      lat,
+                      lng,
+                      location.lat,
+                      location.lng,
+                      "K"
+                    )}{" "}
                       Km
-                    </span>
-                  </h2>
-                  <address>
-                    <i className="fas fa-map-marker-alt"></i>
-                    {formatted_address}
-                  </address>
-                  {/* TODO(@codecakes): add phone number */}
-                </div>
-              );
-            }
-          )
+                  </span>
+                </h2>
+                <address>
+                  <i className="fas fa-map-marker-alt"></i>
+                  {formatted_address}
+                </address>
+                {/* TODO(@codecakes): add phone number */}
+              </div>
+            );
+          }
+        )
         : [];
     return (
       <>
@@ -183,7 +184,7 @@ class Search extends Component {
               </div>
               <div className="maparea">
                 <Map
-                  googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnFXxIHR1zyWllYyic90Fl8rkX-ACs6rI"
+                  googleMapURL={ googleMapURL }
                   loadingElement={
                     <div style={{ width: `100%`, height: `100%` }} />
                   }
