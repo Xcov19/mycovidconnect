@@ -31,13 +31,14 @@
     },
     "scripts": {
         "serve": "serve -s build",
-        "build-and-serve": "npm run build && npm run serve",
+        "build-dev-and-serve": "npm run build && npm run serve",
         "start": "react-scripts start",
         "build": "npm run set-env && react-scripts build",
+        "build-dev": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "watch": "./node_modules/.bin/tsc --watch",
-        "set-env": "echo REACT_APP_GOOGLE_MAPS_API_KEY=$GOOGLE_MAPS_API_KEY > .env"
+        "set-env": "./startup.sh"
     },
     "eslintConfig": {
         "extends": "react-app"
