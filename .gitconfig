@@ -1,0 +1,4 @@
+git config --local merge.tool vcode
+git config --local mergetool.vcode.cmd 'code --wait $MERGED'
+git config --local diff.tool vcode
+git config --local difftool.vcode.cmd 'code --wait --diff $LOCAL $REMOTE'

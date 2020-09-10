@@ -24,8 +24,16 @@ jobs:
       uses: actions/setup-node@v1
       env:
         GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
+        FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+        FIREBASE_AUTH_DOMAIN: ${{ secrets.FIREBASE_AUTH_DOMAIN }}
+        FIREBASE_DB_URL: ${{ secrets.FIREBASE_DB_URL }}
+        FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+        FIREBASE_STORAGE_BUCKET: ${{ secrets.FIREBASE_STORAGE_BUCKET }}
+        FIREBASE_MSG_SENDER_ID: ${{ secrets.FIREBASE_MSG_SENDER_ID }}
+        FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
+        FIREBASE_MEASUREMENT_ID: ${{ secrets.FIREBASE_MEASUREMENT_ID }}
       with:
         node-version: ${{ matrix.node-version }}
-    - run: echo $"REACT_APP_GOOGLE_MAPS_API_KEY=$GOOGLE_MAPS_API_KEY" > .env
+    - run: ./startup.sh
     - run: CI=false NODE_ENV=production npm ci
     - run: CI=false npm run build --if-present
