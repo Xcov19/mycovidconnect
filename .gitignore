@@ -105,4 +105,4 @@ dist
 .tern-port
 
 #VS code snippets
-.vscode
+.vscode/
