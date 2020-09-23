@@ -34,7 +34,7 @@
         "serve": "serve -s build",
         "build-dev-and-serve": "npm run build && npm run serve",
         "start": "react-scripts start",
-        "build": "npm run set-env && react-scripts build",
+        "build": "react-scripts build",
         "build-dev": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
