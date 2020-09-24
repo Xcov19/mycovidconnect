@@ -2,11 +2,12 @@ body {
   background-color: #ffffff;
   margin: 0 auto;
   padding: 0px;
+  font-family: 'Montserrat Semi-Bold', sans-serif;
 }
 
-* {
+/* * {
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
 
 /**************/
 /*** HEADER ***/
@@ -40,6 +41,10 @@ header .headerin .logo {
   background-position: center;
 }
 
+.nav a {
+  color: #252759;
+  text-decoration: none;
+}
 /**************/
 /*** FOOTER ***/
 /**************/
@@ -207,6 +212,8 @@ footer .footerin .w30 {
   background-position: center;
   background-size: 100%;
   background-image: url("/banner.png");
+  background-color: rgba(0, 0, 0, .53);
+  background-blend-mode: darken;
   background-attachment: fixed;
 }
 

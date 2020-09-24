@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: local('Helvetica Neue'), url(./fonts/helveticaneue/HelveticaNeue.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato Regular';
+  src: local('Lato Regular'), url(./fonts/lato/Lato-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato Bold';
+  src: local('Lato Bold'), url(./fonts/lato/Lato-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat Semi-Bold';
+  src: local('Montserrat Semi-Bold'), url(./fonts/montserrat/Montserrat-SemiBold.otf) format('truetype');
+}

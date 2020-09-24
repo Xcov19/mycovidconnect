@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Copyrights from "./Copyrights";
+// import Copyrights from "./Copyrights";
 
 const Footer = () => {
   return (
@@ -9,21 +9,24 @@ const Footer = () => {
         <div className="footerin">
           <div className="w40">
             <h3>Join Our Community</h3>
-            <a href="https://www.google.com" title="Join Now">
+            <a href="https://forum.mycovidconnect.com/" title="Join Now">
               Join Now
             </a>
           </div>
           <div className="w30">
             <ul>
               <li>
-                <Link to="/">Contact Us</Link>
+                <Link to="/">About XCOV19</Link>
               </li>
               <li>
-                <Link to="/">FAQ</Link>
+                <Link to="/">Contact Us</Link>
               </li>
+              {/* <li>
+                <Link to="/">FAQ</Link>
+              </li> */}
             </ul>
           </div>
-          <div className="w30">
+          {/* <div className="w30">
             <ul>
               <li>
                 <Link to="/" title="About XCOV19">
@@ -50,11 +53,11 @@ const Footer = () => {
                   Press Enquiries
                 </Link>
               </li>
-            </ul>
-          </div>
+            </ul> */}
+          {/* </div> */}
         </div>
       </footer>
-      <Copyrights />
+      {/* <Copyrights /> */}
     </>
   );
 };
