@@ -14,7 +14,7 @@ COPY .env ./
 COPY package.json ./
 
 # install packages
-RUN npm install
+RUN npm cache verify && npm i --force --no-package-lock && npm audit fix
 
 # add app
 COPY . ./
