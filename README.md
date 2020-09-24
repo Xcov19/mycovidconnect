@@ -1,5 +1,7 @@
 # mycovidconnect
 
+[![DepShield Badge](https://depshield.sonatype.org/badges/owner/repository/depshield.svg)](https://depshield.github.io)
+
 [![Open Source Helpers](https://www.codetriage.com/xcov19/mycovidconnect/badges/users.svg)](https://www.codetriage.com/xcov19/mycovidconnect)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/38c2a5f4-bac5-4bec-8d11-a9f08b5b6f71/deploy-status)](https://app.netlify.com/sites/dreamy-keller-b8ad36/deploys)
@@ -13,6 +15,13 @@ START HERE: Project Setup Guidelines
 
 Technical Setup
 ===============
+
+#### Run docker image to start instance.
+
+```bash
+
+docker-compose -f "docker-compose.yml" up -d --build
+```
 
 Typescript to compile project.
 Babel does the transpiling from target to es5 browser compatible code, tsc does the type-checking.
