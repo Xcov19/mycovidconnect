@@ -12,7 +12,6 @@ COPY .env ./
 
 # install app dependencies
 COPY package.json ./
-COPY package-lock.json ./
 
 # install packages
 RUN npm install
