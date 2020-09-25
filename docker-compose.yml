@@ -2,6 +2,7 @@ version: "3.8"
 
 services:
   client:
+    image: fkrull/multi-python:latest
     stdin_open: true
     build:
       context: .
