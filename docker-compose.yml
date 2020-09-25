@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   client:
-    image: fkrull/multi-python:latest
+    image: codecakes/mycovidconnect_client_1:latest
     stdin_open: true
     build:
       context: .
