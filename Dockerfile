@@ -1,5 +1,5 @@
 # pull official base image
-FROM fkrull/multi-python:latest
+FROM fkrull/multi-python:focal
 
 # set working directory
 WORKDIR /app
@@ -8,7 +8,7 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 
 # install curl
-RUN apt-get update && apt-get install -y curl && apt-get clean
+RUN apt-get update && apt-get install -y --no-install-recommends curl && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # nvm environment variables
 ENV NVM_DIR /usr/local/nvm
