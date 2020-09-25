@@ -35,5 +35,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: ./startup.sh
+    - run: npm i
     - run: CI=false NODE_ENV=production npm ci
     - run: CI=false npm run build --if-present
