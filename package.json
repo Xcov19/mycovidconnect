@@ -35,11 +35,9 @@
         "build-dev-and-serve": "npm run build && npm run serve",
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "build-dev": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "watch": "./node_modules/.bin/tsc --watch",
-        "set-env": "./startup.sh"
+        "watch": "./node_modules/.bin/tsc --watch"
     },
     "eslintConfig": {
         "extends": "react-app"

@@ -1,7 +1,8 @@
-version: "3.7"
+version: "3.8"
 
 services:
   client:
+    image: codecakes/mycovidconnect_client_1:latest
     stdin_open: true
     build:
       context: .
