@@ -7,8 +7,8 @@ const Nav = () => {
         About
       </a>
       <a href="#">Contact Us</a>
-      <button>Log In</button>
-      <button>Sign Up</button>
+      <button id="login">Log In</button>
+      <button id="signup">Sign Up</button>
     </div>
   );
 };

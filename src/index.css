@@ -13,6 +13,11 @@
   src: local('Lato Bold'), url(./fonts/lato/Lato-Bold.ttf) format('truetype');
 }
 
+/* @font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'), url(./fonts/montserrat/Montserrat-Regular.otf) format('truetype');
+} */
+
 @font-face {
   font-family: 'Montserrat Semi-Bold';
   src: local('Montserrat Semi-Bold'), url(./fonts/montserrat/Montserrat-SemiBold.otf) format('truetype');

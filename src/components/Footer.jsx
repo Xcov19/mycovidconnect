@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 // import Copyrights from "./Copyrights";
 
 const Footer = () => {
@@ -14,17 +14,13 @@ const Footer = () => {
             </a>
           </div>
           <div className="w30">
-            <ul>
-              <li>
-                <Link to="/">About XCOV19</Link>
-              </li>
-              <li>
-                <Link to="/">Contact Us</Link>
-              </li>
-              {/* <li>
+            <a href="https://forum.mycovidconnect.com/d/2-about-xcov19-rapid-action-patient-dispatch-solution">
+              About XCOV19
+            </a>
+            <a href="#">Contact Us</a>
+            {/* <li>
                 <Link to="/">FAQ</Link>
               </li> */}
-            </ul>
           </div>
           {/* <div className="w30">
             <ul>
