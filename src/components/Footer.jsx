@@ -1,6 +1,10 @@
 import React from "react";
 // import { Link } from "react-router-dom";
 // import Copyrights from "./Copyrights";
+import FaceBookIcon from "../img/facebook.svg";
+import TwitterIcon from "../img/twitter.svg";
+import LinkedinIcon from '../img/linkedin.svg';
+import MailIcon from '../img/mail.svg';
 
 const Footer = () => {
   return (
@@ -18,42 +22,23 @@ const Footer = () => {
               About XCOV19
             </a>
             <a href="#">Contact Us</a>
-            {/* <li>
-                <Link to="/">FAQ</Link>
-              </li> */}
+            <div className="social-media">
+              <a href="#">
+                <img src={FaceBookIcon} className="filter-blue" />
+              </a>
+              <a href="#">
+                <img src={TwitterIcon} className="filter-blue" />
+              </a>
+              <a href="#">
+                <img src={LinkedinIcon} className="filter-blue" />
+              </a>
+              <a href="#">
+                <img src={MailIcon} className="filter-blue" />
+              </a>
+            </div>
           </div>
-          {/* <div className="w30">
-            <ul>
-              <li>
-                <Link to="/" title="About XCOV19">
-                  About XCOV19
-                </Link>
-              </li>
-              <li>
-                <Link to="/" title="Work with Us">
-                  Work with Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/" title="Privacy Policy">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link to="/" title="Terms &amp; Conditions">
-                  Terms &amp; Conditions
-                </Link>
-              </li>
-              <li>
-                <Link to="/" title="Press Enquiries">
-                  Press Enquiries
-                </Link>
-              </li>
-            </ul> */}
-          {/* </div> */}
         </div>
       </footer>
-      {/* <Copyrights /> */}
     </>
   );
 };

@@ -91,8 +91,7 @@ footer .footerin {
 
 footer .footerin h3 {
   font-size: 20px;
-  font-weight: bold;
-  margin: 0px 0px 10px 0px;
+  margin: 0px 0px 15px 0px;
   padding: 0px;
   color: #252759;
   font-family: 'Montserrat Semi-Bold', sans-serif;
@@ -119,17 +118,28 @@ footer .footerin div:first-child a:hover {
   background-color: #003474;
 }
 
+footer .footerin .w30 {
+  display: flex;
+  flex-direction: column;
+}
+
 footer .footerin .w30 a {
-  display: block;
   text-decoration: none;
   text-transform: uppercase;
   font-family: 'Montserrat Semi-Bold', sans-serif;
   font-size: 16px;
   letter-spacing: 1px;
   color: #252759;
-  margin: 10px;
+  margin-bottom: 10px;
 }
 
+footer .footerin .w30 .social-media .filter-blue {
+  filter: invert(22%) sepia(79%) saturate(1913%) hue-rotate(199deg) brightness(102%) contrast(111%);
+}
+
+footer .footerin .w30 .social-media a {
+  margin-right: 5px;
+}
 /* footer .footerin ul {
   list-style: none;
   margin: 0px;
