@@ -40,12 +40,17 @@
         "watch": "./node_modules/.bin/tsc --watch"
     },
     "eslintConfig": {
-        "env": { 
+        "env": {
             "es6": true,
             "browser": true
         },
-        "extends": ["react-app", "plugin:react/recommended", "eslint:recommended", "google"],
-        "parserOptions": { 
+        "extends": [
+            "react-app",
+            "plugin:react/recommended",
+            "eslint:recommended",
+            "google"
+        ],
+        "parserOptions": {
             "ecmaVersion": 9,
             "ecmaFeatures": {
                 "jsx": true
@@ -63,5 +68,9 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "devDependencies": {
+        "eslint": "^7.10.0",
+        "eslint-config-google": "^0.14.0"
     }
 }
