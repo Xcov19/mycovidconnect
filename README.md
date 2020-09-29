@@ -12,7 +12,9 @@
 2. [ Guidlelines ](#guide)
 3. [ Installation ](#ins)
 4. [ Running ](#run)
-5. [ Contributing ](#cont)
+5. [ Frameworks and servivices used ](#fra)
+6. [ Contributing ](#cont)
+7. [ Credits ](#cre)
 
 <a name="desc"></a>
 
@@ -87,6 +89,33 @@ Check package.json for scripts on how to build and run.
 
 ---
 
-## 5. Contributing
+<a name="fra"></a>
+
+## 5. Frameworks and services-
+
+### Frameworks-
+
+1. [React](https://reactjs.org/)
+
+### Services-
+
+1. [ Firebase ](https://firebase.google.com/)
+2. [ Docker ](https://www.docker.com/)
+
+<a name="cont"></a>
+
+## 6. Contributing
 
 Please read [CONTRIBUTING.md](#CONTRIBUTING.md) before you help us!
+
+<a name="cre"></a>
+
+## 7. Credits
+
+(IN NO ORDER)
+
+### [ codecakes ](https://github.com/codecakes)
+
+### [ GeekySankar ](https://github.com/GeekySankar)
+
+### [ akshayparmar90 ](https://github.com/akshayparmar90)
