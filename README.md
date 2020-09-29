@@ -12,6 +12,7 @@
 2. [ Guidlelines ](#guide)
 3. [ Installation ](#ins)
 4. [ Running ](#run)
+5. [ Contributing ](#cont)
 
 <a name="desc"></a>
 
@@ -83,3 +84,9 @@ The page will automatically reload if you make changes to the code.<br>
 You will see the build errors and lint warnings in the console.
 
 Check package.json for scripts on how to build and run.
+
+---
+
+## 5. Contributing
+
+Please read [CONTRIBUTING.md](#CONTRIBUTING.md) before you help us!
