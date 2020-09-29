@@ -6,23 +6,40 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/38c2a5f4-bac5-4bec-8d11-a9f08b5b6f71/deploy-status)](https://app.netlify.com/sites/dreamy-keller-b8ad36/deploys)
 
+# TABLE OF CONTENTS
+
 1. [ Description. ](#desc)
-
-## 1. Description
-
-This is a part of project XCoV19 which aims to to build a software that guides patients to the nearest hospital, while modeling the spread of the virus in order to better anticipate hospital needs. <a href="https://www.covidsos.net/website/home.html">Here</a> is the official page.
+2. [ Guidlelines ](#guide)
+3. [ Installation ](#inst)
+4. [ Running ](#run)
 
 <a name="desc"></a>
 
-# START HERE: Project Setup Guidelines
+## 1. Description
+
+This is a part of project XCoV19 which aims to to build a software that guides patients to the nearest hospital, while modeling the spread of the virus in order to better anticipate hospital needs. [Here](https://www.covidsos.net/website/home.html) is the official page.
+
+<a name="guide"></a>
+
+## 2. Project Setup Guidelines
+
+<hr>
 
 -   We use React;
 -   Know how to run tsc with babel: https://babeljs.io/blog/2018/08/27/7.0.0
--   Lets agree on JS Guideline
+-   Lets agree on JS Guideline<br>
 
-# Technical Setup
+---
 
-#### Run docker image to start instance.
+In general follow this [Javascript Styleguide](https://google.github.io/styleguide/jsguide.html)
+
+### Always follow Guidelines!! Helps everyone who are trying to contribute.
+
+<a href="inst"></a>
+
+## 3. Installation
+
+#### Run docker image to start instance-
 
 ```bash
 docker-compose -f "docker-compose.yml" up -d --build
@@ -32,19 +49,34 @@ Typescript to compile project.
 Babel does the transpiling from target to es5 browser compatible code, tsc does the type-checking.
 [See this](https://babeljs.io/blog/2018/08/27/7.0.0) for more info on how to run babel projects using tsc.
 
-### Always follow Guidelines!!
+<a href="https://docs.npmjs.com/"></a>
+
+## 4. Running
+
+In order to run the app in development mode-
+
+```bash
+npm start
+```
 
 ---
 
-# In general follow this [Javascript Styleguide](https://google.github.io/styleguide/jsguide.html)
+If you want to watch the build run compiler-
 
-Automated 911 for Patients
+```bash
+./node_modules/.bin/tsc -p tsconfig.json --watch
+```
 
-For Watching build run compiler: `./node_modules/.bin/tsc -p tsconfig.json --watch`
+If you want more help on running the app using npm then type-
 
-### `npm start`
+```bash
+npm --help
+```
 
-Runs the app in development mode.<br>
+or visit [here](https://docs.npmjs.com/)
+
+---
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will automatically reload if you make changes to the code.<br>
