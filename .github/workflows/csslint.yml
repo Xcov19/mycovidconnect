@@ -1,3 +1,3 @@
 name: Stylesheet Lint
-on: [push, pull_request] 
+on: [push, pull_request]
 uses: actions-hub/stylelint@master
