@@ -112,7 +112,7 @@ Please read [CONTRIBUTING.md](#CONTRIBUTING.md) before you help us!
 
 ## 7. Credits
 
-(IN NO ORDER)
+(IN NO SPECIFIC ORDER)
 
 ### [ codecakes ](https://github.com/codecakes)
 
