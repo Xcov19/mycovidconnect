@@ -23,7 +23,7 @@ This is a part of project XCoV19 which aims to to build a software that guides p
 
 ## 2. Project Setup Guidelines
 
-<hr>
+---
 
 -   We use React;
 -   Know how to run tsc with babel: https://babeljs.io/blog/2018/08/27/7.0.0
