@@ -10,7 +10,7 @@
 
 1. [ Description. ](#desc)
 2. [ Guidlelines ](#guide)
-3. [ Installation ](#inst)
+3. [ Installation ](#ins)
 4. [ Running ](#run)
 
 <a name="desc"></a>
@@ -35,7 +35,7 @@ In general follow this [Javascript Styleguide](https://google.github.io/stylegui
 
 ### Always follow Guidelines!! Helps everyone who are trying to contribute.
 
-<a href="inst"></a>
+<a name="ins"></a>
 
 ## 3. Installation
 
