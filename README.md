@@ -20,7 +20,7 @@
 
 ## 1. Description
 
-This is a part of project XCoV19 which aims to to build a software that guides patients to the nearest hospital, while modeling the spread of the virus in order to better anticipate hospital needs. [Here](https://www.covidsos.net/website/home.html) is the official page.
+This is a part of project XCoV19 which aims to build a software that guides patients to the nearest hospital, while modeling the spread of the virus in order to better anticipate hospital needs. [Here](https://www.covidsos.net) is the official page.
 
 <a name="guide"></a>
 
@@ -119,3 +119,5 @@ Please read [CONTRIBUTING.md](#CONTRIBUTING.md) before you help us!
 ### [ GeekySankar ](https://github.com/GeekySankar)
 
 ### [ akshayparmar90 ](https://github.com/akshayparmar90)
+
+### [ MEME-MAN234 ](https://github.com/MEME-MAN234)
