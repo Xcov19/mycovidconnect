@@ -5,9 +5,8 @@ jobs:
   linters:
     name: stylelint
     runs-on: ubuntu-latest
-      
     steps:
         - uses: actions/checkout@v2
         - uses: actions-hub/stylelint@master
-    env: 
+    env:
         PATTERN: "**/*.css"
