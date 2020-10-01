@@ -34,10 +34,11 @@ header .headerin .logo {
   margin: 0px;
   padding: 0px;
   float: left;
-  background-image: url("/logo.png");
+  background-image: url("/logo1.png");
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
 }
 
 /**************/
