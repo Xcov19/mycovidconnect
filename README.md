@@ -1,6 +1,6 @@
 # mycovidconnect
 
-[![DepShield Badge](https://depshield.sonatype.org/badges/owner/repository/depshield.svg)](https://depshield.github.io)
+[![DepShield Badge](https://depshield.sonatype.org/badges/Xcov19/mycovidconnect/depshield.svg)](https://depshield.github.io)
 
 [![Open Source Helpers](https://www.codetriage.com/xcov19/mycovidconnect/badges/users.svg)](https://www.codetriage.com/xcov19/mycovidconnect)
 
