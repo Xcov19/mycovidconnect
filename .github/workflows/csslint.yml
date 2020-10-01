@@ -2,12 +2,12 @@ name: Stylesheet Lint
 on: [push, pull_request]
 
 jobs:
-    linters:
-        name: stylelint
-        runs-on: ubuntu-latest
+  linters:
+    name: stylelint
+    runs-on: ubuntu-latest
       
-        steps:
-            - uses: actions/checkout@v2
-            - uses: actions-hub/stylelint@master
-        env: 
-            PATTERN: "**/*.css" 
+    steps:
+        - uses: actions/checkout@v2
+        - uses: actions-hub/stylelint@master
+    env: 
+        PATTERN: "**/*.css" 
