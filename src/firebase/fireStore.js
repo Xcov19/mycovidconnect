@@ -52,6 +52,7 @@ class FireStore {
       const querySnapshot = await FireStore.#DB
         .collection(cityNameCollectionPath)
         .get();
+        
       // Get list of records objects.
       querySnapshot.forEach((docRef, index) => {
         const docData = docRef.data();

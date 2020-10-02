@@ -118,7 +118,9 @@ class Search extends Component {
     } = this.state;
     const result_list =
       results && results.length !== 0
-        ? results.map(
+        ? results
+        .sort((a,b) => this.generateDistance(lat,lng,a.geometry.location.lat,a.geometry.location.lng) - this.generateDistance(lat,lng,b.geometry.location.lat,b.geometry.location.lng))
+        .map(
           (
             { facility_type, formatted_address, geometry: { location } },
             index
@@ -154,6 +156,7 @@ class Search extends Component {
           }
         )
         : [];
+
     return (
       <>
         <MetaTags>
