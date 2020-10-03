@@ -1,11 +1,13 @@
-body {
-  background-color: #ffffff;
-  margin: 0 auto;
-  padding: 0px;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-* {
-  font-family: Arial, Helvetica, sans-serif;
+body {
+  background-color: #ffffff;
+  padding: 0px;
+  font-family: 'Lato', sans-serif;
+  font-size: 24px;
 }
 
 /**************/
@@ -16,28 +18,14 @@ header {
   width: 100%;
   height: auto;
   margin: 0 auto;
-  padding: 15px 0px;
+  padding: 25px 0px;
   box-shadow: 1px 0px 10px -5px #000;
 }
 
-header .headerin {
-  width: 98%;
-  max-width: 1600px;
-  height: 80px;
-  margin: 0 auto;
-  padding: 0px;
-}
-
 header .headerin .logo {
-  width: 215px;
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
-  float: left;
-  background-image: url("/logo.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
+  width: 180px;
+  height: auto;
+  padding-left: 120px;
 }
 
 /**************/
@@ -46,152 +34,101 @@ header .headerin .logo {
 
 footer {
   width: 100%;
-  height: auto;
   margin: 0 auto;
-  padding: 30px 0px;
-  background-color: #2f97f2;
+  padding: 24px 0px;
 }
 
 footer .footerin {
-  width: 98%;
-  max-width: 1400px;
-  height: auto;
-  margin: 0 auto;
-  padding: 0px;
   display: flex;
-  color: #ffffff;
-  letter-spacing: 1px;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+
+footer .footerin .w40 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 footer .footerin h3 {
   font-size: 20px;
-  font-weight: bold;
-  margin: 0px 0px 10px 0px;
+  margin: 0px 0px 15px 0px;
   padding: 0px;
-  color: #ffffff;
+  color: #252759;
+  font-family: 'Montserrat', sans-serif;
 }
 
-footer .footerin div:first-child a {
+footer .footerin button {
+  padding: 10px 20px;
+  border: 1px solid #0455bf;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
   color: #ffffff;
-  background-color: #0557bd;
-  border: 0px;
-  font-size: 18px;
-  padding: 15px;
-  margin: 30px 0px;
-  width: 150px;
-  border-radius: 5px;
-  letter-spacing: 2px;
-  box-shadow: 0px 0px 10px -5px #000;
+  background-color: #0455bf;
   cursor: pointer;
-  text-decoration: none;
-  display: block;
-  text-align: center;
 }
 
-footer .footerin div:first-child a:hover {
+footer .footerin button:hover {
   background-color: #003474;
+  outline: none;
 }
 
-footer .footerin ul {
-  list-style: none;
-  margin: 0px;
-  padding: 0px;
-}
-footer .footerin ul li {
-  list-style: none;
-  margin: 0px;
-  padding: 10px 0px;
-}
-
-footer .footerin ul li a {
+footer .footerin a {
   text-decoration: none;
-  color: #ffffff;
-  font-size: 14px;
-  text-transform: uppercase;
-}
-
-footer .footerin ul li a:hover {
-  text-decoration: underline;
-}
-
-footer .footerin div {
-  height: auto;
-  margin: 0px;
-  padding: 0px;
-}
-
-footer .footerin .w40 {
-  width: 40%;
 }
 
 footer .footerin .w30 {
-  width: 30%;
-}
-
-/******************/
-/*** COPYRIGHTS ***/
-/******************/
-
-#copyrights {
-  background-color: #1e2248;
-}
-
-#copyrights .copyrights-in {
-  width: 98%;
-  max-width: 1600px;
-  height: auto;
-  margin: 0 auto;
-  padding: 20px 0px;
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-#copyrights .copyrights-in .copyrights-text {
-  width: auto;
+footer .footerin .w30 .links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer .footerin .w30 .links a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #252759;
+  margin-bottom: 10px;
+}
+
+footer .footerin .w30 .media-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+footer .footerin .media-links img {
+  width: 80px;
   height: auto;
-  margin: 0px;
-  padding: 0px;
-  float: left;
-  width: 50%;
-  text-align: left;
+  /* display: inline-block; */
 }
 
-#copyrights .copyrights-in .copyrights-text p {
+/*******************/
+/*** COPYRIGHT ***/
+/*******************/
+
+.copyright {
+  background-color: #1e2248;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.copyright p {
   font-size: 14px;
   color: #ffffff;
-  margin: 0px;
-  padding: 0px;
-  letter-spacing: 1px;
-}
-
-#copyrights .copyrights-in .social-icons {
-  width: auto;
-  height: auto;
-  margin: 0px;
-  padding: 0px;
-  float: right;
-  width: 50%;
-  text-align: right;
-}
-
-#copyrights .copyrights-in .social-icons ul {
-  list-style: none;
-  margin: 0px;
-  padding: 0px;
-}
-
-#copyrights .copyrights-in .social-icons ul li {
-  display: inline;
-  padding: 0px;
-  margin: 0px 15px;
-}
-
-#copyrights .copyrights-in .social-icons ul li a {
-  text-decoration: none;
-  color: #ffffff;
-}
-
-#copyrights .copyrights-in .social-icons ul li a:hover {
-  color: #2f97f2;
+  padding: 20px;
 }
 
 /*******************/
@@ -207,7 +144,10 @@ footer .footerin .w30 {
   background-position: center;
   background-size: 100%;
   background-image: url("/banner.png");
+  background-color: rgba(0, 0, 0, .53);
+  background-blend-mode: darken;
   background-attachment: fixed;
+  box-shadow: 1px 0px 10px -5px #000;
 }
 
 #banner .banner-in {
@@ -220,23 +160,23 @@ footer .footerin .w30 {
 }
 
 #banner .banner-in h1 {
-  font-size: 53px;
+  font-family: 'Lato', sans-serif;
+  font-size: 76px;
   font-weight: normal;
   color: #ffffff;
   margin: 0px;
   padding: 0px 0px 0px 0px;
-  font-family: fangsong;
-  text-shadow: 0px 0px 15px #000;
 }
 
 #banner .banner-in p {
-  font-size: 16px;
+  font-size: 24px;
   font-weight: normal;
   color: #ffffff;
-  margin: 0px;
-  padding: 20px 0px 50px 0px;
-  letter-spacing: 1px;
-  text-shadow: 0px 0px 15px #000;
+  margin: 0px auto;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  max-width: 560px;
+  line-height: 45px;
 }
 
 #banner .banner-in button {
@@ -258,6 +198,7 @@ footer .footerin .w30 {
 }
 
 #banner .banner-in button h2 {
+  font-family: 'Montserrat', sans-serif;
   font-size: 50px;
   margin: 0px;
   padding: 0px;
@@ -268,6 +209,7 @@ footer .footerin .w30 {
 
 #banner .banner-in button p {
   font-size: 16px;
+  font-weight: 700;
   margin: 20px 0px 0px 0px;
   padding: 0px;
   font-weight: normal;
@@ -286,6 +228,7 @@ footer .footerin .w30 {
   margin: 0 auto;
   padding: 0px;
   position: relative;
+  box-shadow: 1px 0px 10px -5px #000;
 }
 
 #search .noresults {
