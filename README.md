@@ -114,12 +114,12 @@ Please read [CONTRIBUTING.md](#CONTRIBUTING.md) before you help us!
 
 (IN NO SPECIFIC ORDER)
 
-### [ codecakes ](https://github.com/codecakes)
+[ codecakes ](https://github.com/codecakes)
 
-### [ GeekySankar ](https://github.com/GeekySankar)
+[ GeekySankar ](https://github.com/GeekySankar)
 
-### [ akshayparmar90 ](https://github.com/akshayparmar90)
+[ akshayparmar90 ](https://github.com/akshayparmar90)
 
-### [ MEME-MAN234 ](https://github.com/MEME-MAN234)
+[ MEME-MAN234 ](https://github.com/MEME-MAN234)
 
-### [ jmakhack ](https://github.com/jmakhack)
+[ jmakhack ](https://github.com/jmakhack)
