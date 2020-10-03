@@ -1,6 +1,4 @@
 import React from 'react';
-import Helpful from '../img/Helpful_logo.png';
-import Jogl from '../img/JOGL-12_logo.png';
 
 const Footer = () => {
   return (
@@ -35,8 +33,34 @@ const Footer = () => {
               <a href="#">Privacy Policy</a>
             </div>
             <div className="media-links">
-              <img src={Helpful} alt="helpful-logo" />
-              <img src={Jogl} alt="jogl-logo" />
+              <div className="first-row">
+                <img
+                  src={
+                    'https://d2vgampz89jm7o.cloudfront.net/_Sponsors+Light+Boxed+2.svg'
+                  }
+                  alt="hacktoberfest-sponsors-logo"
+                />
+                <img
+                  src={
+                    'https://d2vgampz89jm7o.cloudfront.net/mattermore_logo.jpeg'
+                  }
+                  alt="mattermore-logo"
+                  id="square"
+                />
+              </div>
+              <div className="second-row">
+                <img
+                  src={
+                    'https://d2vgampz89jm7o.cloudfront.net/helpful-engineering-logo-1.png'
+                  }
+                  alt="helpful-logo"
+                />
+                <img
+                  src={'https://d2vgampz89jm7o.cloudfront.net/JOGL_logo.png'}
+                  alt="jogl-logo"
+                  id="square"
+                />
+              </div>
             </div>
           </div>
         </div>

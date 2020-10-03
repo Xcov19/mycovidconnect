@@ -18,7 +18,6 @@ header {
   width: 100%;
   height: auto;
   margin: 0 auto;
-  padding: 25px 0px;
   box-shadow: 1px 0px 10px -5px #000;
 }
 
@@ -103,16 +102,31 @@ footer .footerin .w30 .links a {
 
 footer .footerin .w30 .media-links {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
   padding: 0;
   margin: 0;
 }
 
-footer .footerin .media-links img {
-  width: 80px;
+footer .footerin .w30 .media-links .first-row {
+  display: flex;
+  align-items: center;
+}
+
+footer .footerin .w30 .media-links .second-row {
+  display: flex;
+  align-items: center;
+}
+
+footer .footerin .w30 .media-links img {
+  width: 100px;
   height: auto;
-  /* display: inline-block; */
+  margin: 10px 10px 10px 0px;
+}
+
+footer .footerin .w30 .media-links #square {
+  height: 30px;
+  width: auto;
 }
 
 /*******************/
@@ -143,7 +157,7 @@ footer .footerin .media-links img {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
-  background-image: url("/banner.png");
+  background-image: url("https://d2vgampz89jm7o.cloudfront.net/Hero+Image-Half+Blur.png");
   background-color: rgba(0, 0, 0, .53);
   background-blend-mode: darken;
   background-attachment: fixed;
