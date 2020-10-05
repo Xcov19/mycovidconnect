@@ -8,9 +8,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/**************/
-/*** HEADER ***/
-/**************/
+ /**************/
+
+ /*** HEADER ***/
+
+ /**************/
 
 header {
   width: 100%;
@@ -40,9 +42,11 @@ header .headerin .logo {
   background-position: center;
 }
 
-/**************/
-/*** FOOTER ***/
-/**************/
+ /**************/
+
+ /*** FOOTER ***/
+
+ /**************/
 
 footer {
   width: 100%;
@@ -128,9 +132,11 @@ footer .footerin .w30 {
   width: 30%;
 }
 
-/******************/
-/*** COPYRIGHTS ***/
-/******************/
+ /******************/
+
+ /*** COPYRIGHTS ***/
+
+ /******************/
 
 #copyrights {
   background-color: #1e2248;
@@ -194,9 +200,11 @@ footer .footerin .w30 {
   color: #2f97f2;
 }
 
-/*******************/
-/*** HOME BANNER ***/
-/*******************/
+ /*******************/
+
+ /*** HOME BANNER ***/
+
+ /*******************/
 
 #banner {
   width: 100%;
@@ -276,9 +284,11 @@ footer .footerin .w30 {
   line-height: 30px;
 }
 
-/**************/
-/*** SEARCH ***/
-/**************/
+ /**************/
+
+ /*** SEARCH ***/
+
+ /**************/
 
 #search {
   width: 100%;
