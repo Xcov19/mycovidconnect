@@ -1,5 +1,5 @@
 body {
-  background-color: #ffffff;
+  background-color: #fff;
   margin: 0 auto;
   padding: 0px;
 }
@@ -59,7 +59,7 @@ footer .footerin {
   margin: 0 auto;
   padding: 0px;
   display: flex;
-  color: #ffffff;
+  color: #fff;
   letter-spacing: 1px;
 }
 
@@ -68,11 +68,11 @@ footer .footerin h3 {
   font-weight: bold;
   margin: 0px 0px 10px 0px;
   padding: 0px;
-  color: #ffffff;
+  color: #fff;
 }
 
 footer .footerin div:first-child a {
-  color: #ffffff;
+  color: #fff;
   background-color: #0557bd;
   border: 0px;
   font-size: 18px;
@@ -105,7 +105,7 @@ footer .footerin ul li {
 
 footer .footerin ul li a {
   text-decoration: none;
-  color: #ffffff;
+  color: #fff;
   font-size: 14px;
   text-transform: uppercase;
 }
@@ -157,7 +157,7 @@ footer .footerin .w30 {
 
 #copyrights .copyrights-in .copyrights-text p {
   font-size: 14px;
-  color: #ffffff;
+  color: #fff;
   margin: 0px;
   padding: 0px;
   letter-spacing: 1px;
@@ -187,7 +187,7 @@ footer .footerin .w30 {
 
 #copyrights .copyrights-in .social-icons ul li a {
   text-decoration: none;
-  color: #ffffff;
+  color: #fff;
 }
 
 #copyrights .copyrights-in .social-icons ul li a:hover {
@@ -222,7 +222,7 @@ footer .footerin .w30 {
 #banner .banner-in h1 {
   font-size: 53px;
   font-weight: normal;
-  color: #ffffff;
+  color: #fff;
   margin: 0px;
   padding: 0px 0px 0px 0px;
   font-family: fangsong;
@@ -232,7 +232,7 @@ footer .footerin .w30 {
 #banner .banner-in p {
   font-size: 16px;
   font-weight: normal;
-  color: #ffffff;
+  color: #fff;
   margin: 0px;
   padding: 20px 0px 50px 0px;
   letter-spacing: 1px;
@@ -263,7 +263,7 @@ footer .footerin .w30 {
   padding: 0px;
   font-weight: normal;
   letter-spacing: 2px;
-  color: #ffffff;
+  color: #fff;
 }
 
 #banner .banner-in button p {
@@ -272,7 +272,7 @@ footer .footerin .w30 {
   padding: 0px;
   font-weight: normal;
   letter-spacing: 2px;
-  color: #ffffff;
+  color: #fff;
   line-height: 30px;
 }
 
