@@ -3,7 +3,7 @@ import React, {useState, useEffect} from "react";
 const SessionExpiry = () => {
   const [timeLeft, setTimeLeft] = useState(600);
   const [isReset, setIsReset] = useState(false)
-  const [isLoggedIn, setIsLogggedIn] = useState(true)
+  const [isLoggedIn, setIsLoggedIn] = useState(true)
 
   const countDown = () => {
     if(isReset){
@@ -28,7 +28,7 @@ const SessionExpiry = () => {
         countDown();
       },100)
     } else if(isLoggedIn && timeLeft <= 0){
-      setIsLogggedIn(false)
+      setIsLoggedIn(false)
       setTimeLeft(0)
     }
   });
