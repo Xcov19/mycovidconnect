@@ -5,15 +5,6 @@ const SessionExpiry = () => {
   const [isReset, setIsReset] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(true)
 
-  const countDown = () => {
-    if(isReset){
-      setTimeLeft(600)
-      setIsReset(!isReset)
-    } else {
-      setTimeLeft(timeLeft-.1)
-    }
-  }
-
   const resetTime = e => {
     setIsReset(!isReset)
   }
@@ -23,6 +14,14 @@ const SessionExpiry = () => {
   }
 
   useEffect(() => {
+    const countDown = () => {
+      if(isReset){
+        setTimeLeft(600)
+        setIsReset(!isReset)
+      } else {
+        setTimeLeft(timeLeft-.1)
+      }
+    }
     if(isLoggedIn && timeLeft > 0){
       setTimeout(() => {
         countDown();
@@ -31,7 +30,7 @@ const SessionExpiry = () => {
       setIsLoggedIn(false)
       setTimeLeft(0)
     }
-  });
+  }, [isLoggedIn, timeLeft, isReset]);
 
   if(timeLeft < 60 && isLoggedIn){
     return (
