@@ -10,7 +10,11 @@ const SessionExpiry = () => {
   }
 
   const displayTime = (timeLeft) => {
-    return Math.floor(timeLeft/60) + ":" + Math.floor(timeLeft % 60)
+    if(Math.floor(timeLeft % 60) < 10){
+      return Math.floor(timeLeft/60) + ":" + "0" + Math.floor(timeLeft % 60)
+    } else {
+      return Math.floor(timeLeft/60) + ":" +  Math.floor(timeLeft % 60)
+    }
   }
 
   useEffect(() => {
