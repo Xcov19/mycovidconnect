@@ -11,7 +11,7 @@ const SessionExpiry = () => {
 
   const displayTime = (timeLeft) => {
     if(Math.floor(timeLeft % 60) < 10){
-      return Math.floor(timeLeft/60) + ":" + "0" + Math.floor(timeLeft % 60)
+      return Math.floor(timeLeft/60) + ":0" + Math.floor(timeLeft % 60)
     } else {
       return Math.floor(timeLeft/60) + ":" +  Math.floor(timeLeft % 60)
     }
