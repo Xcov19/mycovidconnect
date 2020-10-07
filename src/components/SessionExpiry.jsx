@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 
 const SessionExpiry = () => {
-  const [timeLeft, setTimeLeft] = useState(600);
+  const [timeLeft, setTimeLeft] = useState(60);
   const [isReset, setIsReset] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(true)
 
@@ -17,7 +17,7 @@ const SessionExpiry = () => {
     }
   }
 
-  useEffect(() => {
+  const autoLogOut = () => {
     const countDown = () => {
       if(isReset){
         setTimeLeft(600)
@@ -34,7 +34,9 @@ const SessionExpiry = () => {
       setIsLoggedIn(false)
       setTimeLeft(0)
     }
-  }, [isLoggedIn, timeLeft, isReset]);
+  }
+
+  useEffect(autoLogOut);
 
   if(timeLeft < 60 && isLoggedIn){
     return (
