@@ -1,7 +1,9 @@
 import React from "react";
 
 const Logo = () => {
-  return <div className="logo"></div>;
+  return <React.Fragment>
+            <a href="/"><div className="logo"></div></a>
+        </React.Fragment>;
 };
 
 export default Logo;

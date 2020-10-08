@@ -36,10 +36,11 @@ header .headerin .logo {
   margin: 0;
   padding: 0;
   float: left;
-  background-image: url("/logo.png");
+  background-image: url("/main-nav-logo.png");
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
 }
 
 /* ************ */
