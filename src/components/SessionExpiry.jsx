@@ -21,7 +21,6 @@ const SessionExpiry = () => {
   }
 
   const autoLogOut = () => {
-    console.log(timeLeft)
     const countDown = () => {
       if(isReset){
         setTimeLeft(600)
