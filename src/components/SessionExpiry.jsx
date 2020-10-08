@@ -6,10 +6,6 @@ const SessionExpiry = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true)
   const [isDismissed, setIsDismissed] = useState(false)
 
-  const resetTime = e => {
-    setIsReset(!isReset)
-  }
-
   const dismiss = () => {
     setIsDismissed(true)
   }
