@@ -4,21 +4,23 @@
 }
 
 body {
-  background-color: #ffffff;
-  padding: 0px;
+  background-color: #fff;
+  padding: 0;
   font-family: 'Lato', sans-serif;
   font-size: 24px;
 }
 
-/**************/
-/*** HEADER ***/
-/**************/
+/* ************ */
+
+/* ** HEADER ** */
+
+/* ************ */
 
 header {
   width: 100%;
   height: auto;
   margin: 0 auto;
-  box-shadow: 1px 0px 10px -5px #000;
+  box-shadow: 1px 0 10px -5px #000;
 }
 
 header .headerin .logo {
@@ -27,14 +29,16 @@ header .headerin .logo {
   padding-left: 120px;
 }
 
-/**************/
-/*** FOOTER ***/
-/**************/
+/* ************ */
+
+/* ** FOOTER ** */
+
+/* ************ */
 
 footer {
   width: 100%;
   margin: 0 auto;
-  padding: 24px 0px;
+  padding: 24px 0;
 }
 
 footer .footerin {
@@ -52,8 +56,8 @@ footer .footerin .w40 {
 
 footer .footerin h3 {
   font-size: 20px;
-  margin: 0px 0px 15px 0px;
-  padding: 0px;
+  margin: 0 0 15px 0;
+  padding: 0;
   color: #252759;
   font-family: 'Montserrat', sans-serif;
 }
@@ -64,7 +68,7 @@ footer .footerin button {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   letter-spacing: 1px;
-  color: #ffffff;
+  color: #fff;
   background-color: #0455bf;
   cursor: pointer;
 }
@@ -121,7 +125,7 @@ footer .footerin .w30 .media-links .second-row {
 footer .footerin .w30 .media-links img {
   width: 100px;
   height: auto;
-  margin: 10px 10px 10px 0px;
+  margin: 10px 10px 10px 0;
 }
 
 footer .footerin .w30 .media-links #square {
@@ -129,9 +133,11 @@ footer .footerin .w30 .media-links #square {
   width: auto;
 }
 
-/*******************/
-/*** COPYRIGHT ***/
-/*******************/
+/* ***************** */
+
+/* ** COPYRIGHT ** */
+
+/* ***************** */
 
 .copyright {
   background-color: #1e2248;
@@ -141,27 +147,29 @@ footer .footerin .w30 .media-links #square {
 
 .copyright p {
   font-size: 14px;
-  color: #ffffff;
+  color: #fff;
   padding: 20px;
 }
 
-/*******************/
-/*** HOME BANNER ***/
-/*******************/
+/* ***************** */
+
+/* ** HOME BANNER ** */
+
+/* ***************** */
 
 #banner {
   width: 100%;
   height: auto;
   margin: 0 auto;
-  padding: 80px 0px;
+  padding: 80px 0;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
   background-image: url("https://d2vgampz89jm7o.cloudfront.net/Hero+Image-Half+Blur.png");
-  background-color: rgba(0, 0, 0, .53);
+  background-color: rgba(0, 0, 0, 0.53);
   background-blend-mode: darken;
   background-attachment: fixed;
-  box-shadow: 1px 0px 10px -5px #000;
+  box-shadow: 1px 0 10px -5px #000;
 }
 
 #banner .banner-in {
@@ -169,7 +177,7 @@ footer .footerin .w30 .media-links #square {
   max-width: 1200px;
   height: auto;
   margin: 0 auto;
-  padding: 0px;
+  padding: 0;
   text-align: center;
 }
 
@@ -177,16 +185,16 @@ footer .footerin .w30 .media-links #square {
   font-family: 'Lato', sans-serif;
   font-size: 76px;
   font-weight: normal;
-  color: #ffffff;
-  margin: 0px;
-  padding: 0px 0px 0px 0px;
+  color: #fff;
+  margin: 0;
+  padding: 0;
 }
 
 #banner .banner-in p {
   font-size: 24px;
   font-weight: normal;
-  color: #ffffff;
-  margin: 0px auto;
+  color: #fff;
+  margin: 0 auto;
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   max-width: 560px;
@@ -195,16 +203,16 @@ footer .footerin .w30 .media-links #square {
 
 #banner .banner-in button {
   background-color: #f15c08;
-  margin: 20px 0px 100px 0px;
+  margin: 20px 0 100px 0;
   padding: 30px;
   border-radius: 100%;
-  border: 0px;
+  border: 0;
   width: 220px;
   height: 220px;
-  box-shadow: 0px 10px 20px -5px #000;
-  outline: 0px;
+  box-shadow: 0 10px 20px -5px #000;
+  outline: 0;
   cursor: pointer;
-  text-shadow: 0px 0px 10px -5px #000;
+  text-shadow: 0 0 10px -5px #000;
 }
 
 #banner .banner-in button:hover {
@@ -214,35 +222,36 @@ footer .footerin .w30 .media-links #square {
 #banner .banner-in button h2 {
   font-family: 'Montserrat', sans-serif;
   font-size: 50px;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   font-weight: normal;
   letter-spacing: 2px;
-  color: #ffffff;
+  color: #fff;
 }
 
 #banner .banner-in button p {
   font-size: 16px;
   font-weight: 700;
-  margin: 20px 0px 0px 0px;
-  padding: 0px;
-  font-weight: normal;
+  margin: 20px 0 0 0;
+  padding: 0;
   letter-spacing: 2px;
-  color: #ffffff;
+  color: #fff;
   line-height: 30px;
 }
 
-/**************/
-/*** SEARCH ***/
-/**************/
+/* ************ */
+
+/* ** SEARCH ** */
+
+/* ************ */
 
 #search {
   width: 100%;
   height: 600px;
   margin: 0 auto;
-  padding: 0px;
+  padding: 0;
   position: relative;
-  box-shadow: 1px 0px 10px -5px #000;
+  box-shadow: 1px 0 10px -5px #000;
 }
 
 #search .noresults {
@@ -269,14 +278,14 @@ footer .footerin .w30 .media-links #square {
   width: auto;
   height: auto;
   margin: 0 auto;
-  padding: 50px 0px 0px 0px;
+  padding: 50px 0 0 0;
 }
 
 #search .noresults .text h2 {
   font-size: 30px;
   font-weight: normal;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   color: #2f97f2;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -286,21 +295,21 @@ footer .footerin .w30 .media-links #square {
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  padding: 0px;
+  padding: 0;
   display: flex;
 }
 
 #search .search-in .results {
   width: 40%;
   height: 100%;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 #search .search-in .results .header {
   width: 100%;
   height: 62px;
   margin: 0 auto;
-  padding: 0px;
+  padding: 0;
   display: block;
   background-color: #f0f9fe;
   box-shadow: inset 0 0 10px -5px #f0f9fe;
@@ -309,7 +318,7 @@ footer .footerin .w30 .media-links #square {
 #search .search-in .results .header h2 {
   font-size: 18px;
   font-weight: bold;
-  margin: 0px;
+  margin: 0;
   padding: 20px;
   color: #2f97f2;
 }
@@ -324,7 +333,7 @@ footer .footerin .w30 .media-links #square {
   width: calc(100% - 40px);
   height: auto;
   margin: 20px auto;
-  padding: 0px;
+  padding: 0;
   background-color: #f0f9fe;
   cursor: pointer;
   border-radius: 3px;
@@ -335,7 +344,7 @@ footer .footerin .w30 .media-links #square {
   font-size: 20px;
   font-weight: bold;
   display: block;
-  margin: 0px;
+  margin: 0;
   padding: 20px;
   color: #2f97f2;
   position: relative;
@@ -355,9 +364,9 @@ footer .footerin .w30 .media-links #square {
   font-size: 16px;
   font-weight: normal;
   font-style: normal;
-  color: #222222;
-  padding: 0px 15px 15px 50px;
-  margin: 0px;
+  color: #222;
+  padding: 0 15px 15px 50px;
+  margin: 0;
   line-height: 30px;
   position: relative;
 }
@@ -383,8 +392,8 @@ footer .footerin .w30 .media-links #square {
 #search .maparea {
   width: 60%;
   height: 100%;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   position: relative;
 }
 
