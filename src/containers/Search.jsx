@@ -44,9 +44,24 @@ class Search extends Component {
       });
   };
 
+  insertionsort = (inputArr) => {
+    let length = inputArr.length;
+    for (let i = 1; i < length; i++) {
+        let key = inputArr[i]
+        let dist = this.generateDistance(key.geometry.location,this.state.lat,this.state.lng,"K");
+        let j = i - 1;
+        while (j >= 0 && this.generateDistance(inputArr[j].geometry.location,this.state.lat,this.state.lng,"K") > dist) {
+            inputArr[j + 1] = inputArr[j];
+            j = j - 1;
+        }
+        inputArr[j + 1] = key;
+    }
+    return inputArr;
+};
+
   setResults = (results) => {
     this.setState({
-      results,
+      results: this.insertionsort(results),
       selectedLat:
         results[0] &&
         results[0].geometry &&
@@ -59,6 +74,7 @@ class Search extends Component {
         results[0].geometry.location.lng,
       isLoading: false,
     });
+    // console.log(this.state.results)
   };
 
   getLocationResults = () => {
@@ -75,13 +91,13 @@ class Search extends Component {
     });
   };
 
-  generateDistance = (lat1, lon1, lat2, lon2, unit) => {
-    if (lat1 === lat2 && lon1 === lon2) {
+  generateDistance = (location, lat2, lon2, unit) => {
+    if (location.lat === lat2 && location.lng === lon2) {
       return 0;
     } else {
-      var radlat1 = (Math.PI * lat1) / 180;
+      var radlat1 = (Math.PI * location.lat) / 180;
       var radlat2 = (Math.PI * lat2) / 180;
-      var theta = lon1 - lon2;
+      var theta = location.lng - lon2;
       var radtheta = (Math.PI * theta) / 180;
       var dist =
         Math.sin(radlat1) * Math.sin(radlat2) +
@@ -119,7 +135,6 @@ class Search extends Component {
     const result_list =
       results && results.length !== 0
         ? results
-        .sort((a,b) => this.generateDistance(lat,lng,a.geometry.location.lat,a.geometry.location.lng) - this.generateDistance(lat,lng,b.geometry.location.lat,b.geometry.location.lng))
         .map(
           (
             { facility_type, formatted_address, geometry: { location } },
@@ -137,10 +152,9 @@ class Search extends Component {
                   {facility_type}{" "}
                   <span>
                     {this.generateDistance(
+                      location,
                       lat,
                       lng,
-                      location.lat,
-                      location.lng,
                       "K"
                     )}{" "}
                       Km
