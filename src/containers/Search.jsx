@@ -48,13 +48,7 @@ class Search extends Component {
 			.then((response) => response.json())
 			.then((data) => {
 				const main_pint = data.results[0];
-				const city =
-					main_pint.address_components &&
-					main_pint.address_components[4] &&
-					main_pint.address_components[4].long_name &&
-					main_pint.address_components[4].long_name !== ''
-						? main_pint.address_components[4].long_name
-						: '';
+				const city = (main_pint?.address_components[4] || {}).long_name || '';
 				/**
 				 *  Callback function passed
 				 * @callback CallBack
@@ -92,16 +86,8 @@ class Search extends Component {
 
 		this.setState({
 			results,
-			selectedLat:
-				results[0] &&
-				results[0].geometry &&
-				results[0].geometry.location &&
-				results[0].geometry.location.lat,
-			selectedLng:
-				results[0] &&
-				results[0].geometry &&
-				results[0].geometry.location &&
-				results[0].geometry.location.lng,
+			selectedLat: (results[0]?.geometry?.location || {}).lat,
+			selectedLng: (results[0]?.geometry?.location || {}).lng,
 			isLoading: false,
 		});
 	};
