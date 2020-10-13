@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import MetaTags from 'react-meta-tags';
-import { Link } from 'react-router-dom';
 import MaindHOC from '../components/MainHOC';
 import FireStore from '../firebase/fireStore';
 import Map from '../components/Map';
@@ -198,7 +197,6 @@ class Search extends Component {
 			selectedLat,
 			selectedLng,
 			isMobile,
-			fromAddress,
 		} = this.state;
 		const result_list =
 			results && results.length !== 0

@@ -451,7 +451,7 @@ footer .footerin .w30 {
 	padding: 8px;
 	border: none;
 	float: right;
-	margin: 0px 15px 15px;
+	margin: 0 15px 15px;
 }
 
 #search .tooltipText {
@@ -479,7 +479,7 @@ footer .footerin .w30 {
 	margin-left: -5px;
 	border-width: 5px;
 	border-style: solid;
-	border-color: #555 transparent transparent transparent;
+	border-color: #555 transparent;
 }
 
 #search .uberBtn:hover .tooltipText {
