@@ -1,8 +1,20 @@
-import React from "react";
+import React,{useState} from "react";
 import { Link } from "react-router-dom";
 import Copyrights from "./Copyrights";
 
-const Footer = () => {
+
+const Footer = (props) => {
+  const [show,setShow] = useState(false);
+  const showModal = () => {
+    setShow(true);
+    props.sendData(!show);
+  }
+
+  
+  // const hideModal = () =>{
+  //   setShow(false);
+  // };
+
   return (
     <>
       <footer>
@@ -36,7 +48,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/" title="Privacy Policy">
+                <Link to="/" title="Privacy Policy" onClick = {showModal}>
                   Privacy Policy
                 </Link>
               </li>
