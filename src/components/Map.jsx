@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   withGoogleMap,
   withScriptjs,
   GoogleMap,
   DirectionsRenderer,
-} from "react-google-maps";
+} from 'react-google-maps';
 
 class Map extends Component {
   constructor(props) {
@@ -76,7 +76,7 @@ class Map extends Component {
         {!isLoading && (
           <GoogleMapExample
             containerElement={
-              <div style={{ height: `600px`, width: "100%" }} />
+              <div style={{ height: `600px`, width: '100%' }} />
             }
             mapElement={<div style={{ height: `600px` }} />}
           />
