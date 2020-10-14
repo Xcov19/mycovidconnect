@@ -18,14 +18,9 @@ const SessionExpiry = () => {
 
   const autoLogOut = () => {
     const countDown = () => {
-      if(isReset){
-        setTimeLeft(600)
-        setIsReset(!isReset)
-      } else {
-        setTimeLeft(timeLeft-.1)
-      }
-    }
-    if(isLoggedIn && timeLeft > 0){
+      isReset ? setTimeLeft(600) && setIsReset(!isReset) : setTimeLeft(timeLeft-.1)
+    }    
+    if(isLoggedIn && (timeLeft > 0)){
       setTimeout(() => {
         countDown();
       },100)
@@ -33,6 +28,7 @@ const SessionExpiry = () => {
       setIsDismissed(false)
       setIsLoggedIn(false)
       setTimeLeft(0)
+      window.localStorage.clear()
     }
   }
 
