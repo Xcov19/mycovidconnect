@@ -1,6 +1,7 @@
-import React, { Component } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
+import React, { Component } from 'react';
+import Header from './Header';
+import Footer from './Footer';
+import Copyrights from './Copyrights';
 
 const MaindHOC = (WrappedComponent) => {
   return class extends Component {
@@ -10,6 +11,7 @@ const MaindHOC = (WrappedComponent) => {
           <Header />
           <WrappedComponent {...this.props} />
           <Footer />
+          <Copyrights />
         </>
       );
     }
