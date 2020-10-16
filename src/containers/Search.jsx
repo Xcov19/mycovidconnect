@@ -47,7 +47,10 @@ class Search extends Component {
 			.then((response) => response.json())
 			.then((data) => {
 				const main_pint = data.results[0];
-				const city = (main_pint?.address_components[4] || {}).long_name || '';
+				const locality = (main_pint?.address_components || [])?.filter((x) =>
+					x.types?.includes('locality'),
+				);
+				const city = locality[0]?.long_name || '';
 				/**
 				 *  Callback function passed
 				 * @callback CallBack
