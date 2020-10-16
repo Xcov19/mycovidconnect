@@ -41,6 +41,7 @@ const SessionExpiry = () => {
         countDown();
       },100)
     } else if(!isLoggedIn && timeLeft <= 0){
+      // %%%%%%%%%%%%%INSERT DELETE CACHE HERE%%%%%%%%%%%%%%%%%%%%%%%%%
       setTimeLeft(600)
     }
   }
