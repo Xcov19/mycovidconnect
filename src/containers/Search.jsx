@@ -27,11 +27,11 @@ class Search extends Component {
 			selectedLat: 0,
 			selectedLng: 0,
 			city: '',
+			pickupAddress: '',
 			results: [],
 			isLoading: true,
-			isMobile: /Android|webOS|iPhone|iPad|iPod|Opera Mini/i.test(
-				navigator.userAgent,
-			),
+			isAndroid: /Android/i.test(navigator.userAgent),
+			isIos: /iPhone|iPod|iPad/.test(navigator.platform),
 		};
 	}
 
@@ -64,6 +64,7 @@ class Search extends Component {
 				this.setState(
 					{
 						city: city.toLowerCase(),
+						pickupAddress: main_pint?.formatted_address || '',
 					},
 					() => this.getLocationResults(),
 				);
@@ -170,12 +171,27 @@ class Search extends Component {
 	 * @param {number} lat - Latitude of the selected location.
 	 * @param {number} lng - Longitude of the selected location.
 	 */
-	redirectToUber = (address, lat, lng) => {
-		const { isMobile } = this.state;
-		if (isMobile) {
-			window.location = `https://m.uber.com/ul/?action=setPickup&client_id=${UBER_CLIENT_ID}&pickup=my_location&dropoff[formatted_address]=${encodeURI(
-				address,
-			)}&dropoff[latitude]=${lat}&dropoff[longitude]=${lng}`;
+	redirectToUber = (dropOffAddress, dropoffLat, dropOffLng) => {
+		const { isAndroid, isIos, pickupAddress, lat, lng } = this.state;
+
+		if (isAndroid) {
+			window.location = `https://m.uber.com/ul/?action=setPickup&pickup[latitude]=${lat}&pickup[longitude]=${lng}&pickup[formatted_address]=${encodeURI(
+				pickupAddress,
+			)}&client_id=${UBER_CLIENT_ID}&dropoff[formatted_address]=${encodeURI(
+				dropOffAddress,
+			)}&dropoff[latitude]=${dropoffLat}&dropoff[longitude]=${dropOffLng}`;
+		} else if (isIos) {
+			window.location = `uber://?action=setPickup&pickup[latitude]=${lat}&pickup[longitude]=${lng}&pickup[formatted_address]=${encodeURI(
+				pickupAddress,
+			)}&client_id=${UBER_CLIENT_ID}&dropoff[formatted_address]=${encodeURI(
+				dropOffAddress,
+			)}&dropoff[latitude]=${dropoffLat}&dropoff[longitude]=${dropOffLng}`;
+		} else {
+			window.location = `https://m.uber.com/looking?action=setPickup&pickup[latitude]=${lat}&pickup[longitude]=${lng}&pickup[formatted_address]=${encodeURI(
+				pickupAddress,
+			)}&client_id=${UBER_CLIENT_ID}&dropoff[formatted_address]=${encodeURI(
+				dropOffAddress,
+			)}&dropoff[latitude]=${dropoffLat}&dropoff[longitude]=${dropOffLng}`;
 		}
 	};
 
@@ -199,7 +215,8 @@ class Search extends Component {
 			isLoading,
 			selectedLat,
 			selectedLng,
-			isMobile,
+			isAndroid,
+			isIos,
 		} = this.state;
 		const result_list =
 			results && results.length !== 0
@@ -236,7 +253,6 @@ class Search extends Component {
 
 									<button
 										type="button"
-										style={{ cursor: isMobile ? 'pointer' : 'default' }}
 										onClick={() =>
 											this.redirectToUber(
 												formatted_address,
@@ -246,7 +262,7 @@ class Search extends Component {
 										}
 										className="uberBtn"
 									>
-										{!isMobile && (
+										{!(isAndroid || isIos) && (
 											<span className="tooltipText">
 												This feature is available in Android and iOS devices
 											</span>
