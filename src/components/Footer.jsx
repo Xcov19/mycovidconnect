@@ -1,6 +1,11 @@
-import React from 'react';
+import React,{useState} from "react";
 
-const Footer = () => {
+const Footer = (props) => {
+  const [show,setShow] = useState(false);
+  const showModal = () => {
+    setShow(true);
+    props.sendData(!show);
+  }
   return (
     <>
       <footer>
@@ -30,7 +35,7 @@ const Footer = () => {
               >
                 Contact Us
               </a>
-              <a href="#">Privacy Policy</a>
+              <a href="#" onClick = {showModal}>Privacy Policy</a>
             </div>
             <div className="media-links">
               <div className="first-row">
