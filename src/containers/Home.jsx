@@ -17,10 +17,8 @@ class Home extends Component {
 		if (window.navigator && window.navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(
 				(position) => {
-					// let lat = position.coords.latitude;
-					// let lng = position.coords.longitude;
-					let lat = 12.972442;
-					let lng = 77.580643;
+					let lat = position.coords.latitude;
+					let lng = position.coords.longitude;
 					this.setState({
 						lat: lat,
 						lng: lng,
