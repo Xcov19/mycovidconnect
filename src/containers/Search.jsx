@@ -181,6 +181,11 @@ class Search extends Component {
 				dropOffAddress,
 			)}&dropoff[latitude]=${dropoffLat}&dropoff[longitude]=${dropOffLng}`;
 		} else if (isIos) {
+			//redirect to app store is uber not installed
+			setTimeout(function () {
+				window.location.href = 'https://apps.apple.com/in/app/uber/id368677368';
+			}, 2000);
+
 			window.location = `uber://?action=setPickup&pickup[latitude]=${lat}&pickup[longitude]=${lng}&pickup[formatted_address]=${encodeURI(
 				pickupAddress,
 			)}&client_id=${UBER_CLIENT_ID}&dropoff[formatted_address]=${encodeURI(
