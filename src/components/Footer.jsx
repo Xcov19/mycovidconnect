@@ -14,6 +14,7 @@ const Footer = (props) => {
             <h3>Join Our Community</h3>
             <a
               target="_blank"
+              rel='noreferrer noopener'
               href="https://forum.mycovidconnect.com/"
               title="Join Now"
             >
@@ -24,6 +25,7 @@ const Footer = (props) => {
             <div className="links">
               <a
                 target="_blank"
+                rel='noreferrer noopener'
                 href="https://forum.mycovidconnect.com/d/2-about-xcov19-rapid-action-patient-dispatch-solution"
               >
                 About XCOV19
