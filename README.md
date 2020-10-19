@@ -121,3 +121,5 @@ Please read [CONTRIBUTING.md](#CONTRIBUTING.md) before you help us!
 ### [ akshayparmar90 ](https://github.com/akshayparmar90)
 
 ### [ MEME-MAN234 ](https://github.com/MEME-MAN234)
+
+### [ Kairb ] (https://github.com/kairb)
