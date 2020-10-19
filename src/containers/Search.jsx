@@ -192,11 +192,16 @@ class Search extends Component {
 				dropOffAddress,
 			)}&dropoff[latitude]=${dropoffLat}&dropoff[longitude]=${dropOffLng}`;
 		} else {
-			window.location = `https://m.uber.com/looking?action=setPickup&pickup[latitude]=${lat}&pickup[longitude]=${lng}&pickup[formatted_address]=${encodeURI(
-				pickupAddress,
-			)}&client_id=${UBER_CLIENT_ID}&dropoff[formatted_address]=${encodeURI(
-				dropOffAddress,
-			)}&dropoff[latitude]=${dropoffLat}&dropoff[longitude]=${dropOffLng}`;
+			window.open(
+				encodeURI(
+					`https://m.uber.com/looking?action=setPickup&pickup[latitude]=${lat}&pickup[longitude]=${lng}&pickup[formatted_address]=${encodeURI(
+						pickupAddress,
+					)}&client_id=${UBER_CLIENT_ID}&dropoff[formatted_address]=${encodeURI(
+						dropOffAddress,
+					)}&dropoff[latitude]=${dropoffLat}&dropoff[longitude]=${dropOffLng}`,
+				),
+				'_blank',
+			);
 		}
 	};
 
