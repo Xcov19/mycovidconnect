@@ -42,7 +42,14 @@ In general follow this [Javascript Styleguide](https://google.github.io/stylegui
 
 ## 3. Installation
 
-#### Run docker image to start instance-
+#### Install Docker Compose on Mac
+
+- Click https://docs.docker.com/compose/install/, to start to install Docker Compose
+- Click Get Docker Desktop for Mac under Install Compose on macOS
+- Click Download from Docker Hub
+- Click Get Docker to download docker and run Docker.dmg
+- Install docker compose using PIP in command line: pip install -U docker-compose
+- Run docker-image to start instance:
 
 ```bash
 docker-compose -f "docker-compose.yml" up -d --build
