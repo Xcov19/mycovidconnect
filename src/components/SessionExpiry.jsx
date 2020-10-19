@@ -33,7 +33,7 @@ const SessionExpiry = () => {
       setIsDismissed(false)
       setIsLoggedIn(false)
       setTimeLeft(0)
-      window.localStorage.clear()
+      window.localStorage.removeItem('authToken')
     }
 
     if(!isLoggedIn && timeLeft > 0){
@@ -41,12 +41,14 @@ const SessionExpiry = () => {
         countDown();
       },100)
     } else if(!isLoggedIn && timeLeft <= 0){
-      // %%%%%%%%%%%%%INSERT DELETE CACHE HERE%%%%%%%%%%%%%%%%%%%%%%%%%
+      window.localStorage.removeItem('location')
       setTimeLeft(600)
     }
   }
 
   useEffect(autoLogOut);
+  
+
 
   useEffect(() => {
     window.addEventListener("mousemove", ()=>{setIsReset(true)})
