@@ -22,15 +22,16 @@ const cookieDeclaration = ({ show }) => {
 
   return (
     <div style={{
-      width: "500px",
-      height: "500px",
+      width: show ? "500px" : "0",
+      height: show ? "500px" : "0",
       left: "0",
       top: "0",
       bottom: "0",
       right: "0",
       margin: "auto",
       position: "absolute",
-      backgroundColor: "white"
+      backgroundColor: "white",
+      overflow: "auto"
     }} id="cookieData"></div>
   )
 };
