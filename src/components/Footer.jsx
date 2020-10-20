@@ -6,6 +6,7 @@ const Footer = (props) => {
     e.preventDefault();
     setShow(true);
     props.sendData(!show);
+    return false;
   }
   return (
     <>
