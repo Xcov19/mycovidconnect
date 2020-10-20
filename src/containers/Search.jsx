@@ -134,9 +134,9 @@ class Search extends Component {
 	 * @param {number} lng1 - Longitude of the source location.  
 	 * @param {number} lat2 - Latitude of the destination location.
 	 * @param {number} lng2 - Longitude of the destination location.  
-   * @param {string} unit - required unit of distance in kilometers('K') or nautical miles('N').
-   * @return {number} The distance between two co-ordinates
-	 */
+   	 * @param {string} unit - required unit of distance in kilometers('K') or nautical miles('N').
+     * @return {number} The distance between two co-ordinates
+	*/
 	generateDistance = (lat1, lon1, lat2, lon2, unit) => {
 		if (lat1 === lat2 && lon1 === lon2) {
 			return 0;
@@ -170,7 +170,7 @@ class Search extends Component {
 	 * @param {string} address - address of the selected location.
 	 * @param {number} lat - Latitude of the selected location.
 	 * @param {number} lng - Longitude of the selected location.
-	 */
+	*/
 	redirectToUber = (dropOffAddress, dropoffLat, dropOffLng) => {
 		const { isAndroid, isIos, pickupAddress, lat, lng } = this.state;
 
@@ -181,7 +181,7 @@ class Search extends Component {
 				dropOffAddress,
 			)}&dropoff[latitude]=${dropoffLat}&dropoff[longitude]=${dropOffLng}`;
 		} else if (isIos) {
-			//redirect to app store is uber not installed
+			//redirect to app store if uber not installed
 			setTimeout(function () {
 				window.location.href = 'https://apps.apple.com/in/app/uber/id368677368';
 			}, 2000);

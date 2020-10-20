@@ -11,12 +11,13 @@ import {
  *
  * @class Map
  * @extends React.Component
- * @param {Array<Object>} myPlaces
+ * @param {Array<{string,Object}>} myPlaces
  */
 const Map = ({ myPlaces }) => {
-	/** @constant {boolean} */
+	/** @type {[boolean,Function]} loading*/
 	const [isLoading, setIsLoading] = useState(true);
-	/** @constant {Object} */
+
+	/** @type {[Object,Function]} direction*/
 	const [directions, setDirections] = useState(null);
 
 	/**
