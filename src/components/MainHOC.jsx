@@ -6,20 +6,28 @@ import CookieDeclaration from "../components/CookieDeclaration";
 
 
 const MaindHOC = (WrappedComponent) => {
- 
-  let show = false;
-
-  const getData = (val)=>{
-    show = val;
-  }
+  
   return class extends Component {
+    constructor(props){
+      super(props);
+      this.state = {
+        show: false
+      }
+    }
+
+    getData = (val) =>{
+      this.setState({
+        show: val
+      })
+    }
+
     render() {
       return (
         <>
           <Header />
-          <CookieDeclaration show={show}/>
+          <CookieDeclaration show={this.state.show}/>
           <WrappedComponent {...this.props} />
-          <Footer sendData ={getData}/>
+          <Footer sendData ={this.getData}/>
           <Copyrights />
         </>
       );

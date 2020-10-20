@@ -2,7 +2,8 @@ import React,{useState} from "react";
 
 const Footer = (props) => {
   const [show,setShow] = useState(false);
-  const showModal = () => {
+  const showModal = (e) => {
+    e.preventDefault();
     setShow(true);
     props.sendData(!show);
   }
@@ -37,7 +38,10 @@ const Footer = (props) => {
               >
                 Contact Us
               </a>
-              <a href="#" onClick = {showModal}>Privacy Policy</a>
+              <a
+                target="_blank"
+                rel='noreferrer' 
+                href="/" onClick = {showModal}>Privacy Policy</a>
             </div>
             <div className="media-links">
               <div className="first-row">
