@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Copyrights from './Copyrights';
-import CookieDeclaration from "../components/CookieDeclaration";
+import CookieDeclaration from "./CookieDeclaration";
 
 
 const MaindHOC = (WrappedComponent) => {
