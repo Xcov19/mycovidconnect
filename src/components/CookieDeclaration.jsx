@@ -15,7 +15,8 @@ const CookieDeclaration = ({ show }) => {
           bottom: "0",
           right: "0",
           margin: "auto",
-          backgroundColor: "red"
+          backgroundColor: "red",
+          position: "absolute"
         }}
         >
           CookieDeclaration Popup
