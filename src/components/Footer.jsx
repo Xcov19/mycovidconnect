@@ -1,6 +1,13 @@
-import React from 'react';
+import React,{useState} from "react";
 
-const Footer = () => {
+const Footer = (props) => {
+  const [show,setShow] = useState(false);
+  const showModal = (e) => {
+    e.preventDefault();
+    setShow(true);
+    props.sendData(!show);
+    return false;
+  }
   return (
     <>
       <footer>
@@ -9,6 +16,7 @@ const Footer = () => {
             <h3>Join Our Community</h3>
             <a
               target="_blank"
+              rel='noreferrer noopener'
               href="https://forum.mycovidconnect.com/"
               title="Join Now"
             >
@@ -19,6 +27,7 @@ const Footer = () => {
             <div className="links">
               <a
                 target="_blank"
+                rel='noreferrer noopener'
                 href="https://forum.mycovidconnect.com/d/2-about-xcov19-rapid-action-patient-dispatch-solution"
               >
                 About XCOV19
@@ -30,7 +39,10 @@ const Footer = () => {
               >
                 Contact Us
               </a>
-              <a href="#">Privacy Policy</a>
+              <a
+                target="_blank"
+                rel='noreferrer' 
+                href="/" onClick = {showModal}>Privacy Policy</a>
             </div>
             <div className="media-links">
               <div className="first-row">
