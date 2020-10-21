@@ -46,32 +46,40 @@ const Footer = (props) => {
             </div>
             <div className="media-links">
               <div className="first-row">
-                <img
-                  src={
-                    'https://d2vgampz89jm7o.cloudfront.net/_Sponsors+Light+Boxed+2.svg'
-                  }
-                  alt="hacktoberfest-sponsors-logo"
-                />
-                <img
-                  src={
-                    'https://d2vgampz89jm7o.cloudfront.net/mattermore_logo.jpeg'
-                  }
-                  alt="mattermore-logo"
-                  id="square"
-                />
+                <a href="https://organize.mlh.io/participants/events/4616-project-xcov19">
+                  <img
+                    src={
+                      'https://d2vgampz89jm7o.cloudfront.net/_Sponsors+Light+Boxed+2.svg'
+                    }
+                    alt="hacktoberfest-sponsors-logo"
+                  />
+                </a>
+                <a href="https://app.mattermore.io/matters/TWF0dGVyOjky/xcov19-rapid-action-patient-dispatch-solution-for-covid-19">
+                  <img
+                    src={
+                      'https://d2vgampz89jm7o.cloudfront.net/mattermore_logo.jpeg'
+                    }
+                    alt="mattermore-logo"
+                    id="square"
+                  />
+                </a>
               </div>
               <div className="second-row">
-                <img
-                  src={
-                    'https://d2vgampz89jm7o.cloudfront.net/helpful-engineering-logo-1.png'
-                  }
-                  alt="helpful-logo"
-                />
-                <img
-                  src={'https://d2vgampz89jm7o.cloudfront.net/JOGL_logo.png'}
-                  alt="jogl-logo"
-                  id="square"
-                />
+                <a href="https://helpful.directory/projects/HE-1594886592000">
+                  <img
+                    src={
+                      'https://d2vgampz89jm7o.cloudfront.net/helpful-engineering-logo-1.png'
+                    }
+                    alt="helpful-logo"
+                  />
+                </a>
+                <a href="https://app.jogl.io/project/251/about">
+                  <img
+                    src={'https://d2vgampz89jm7o.cloudfront.net/JOGL_logo.png'}
+                    alt="jogl-logo"
+                    id="square"
+                  />
+                </a>
               </div>
             </div>
           </div>
