@@ -46,7 +46,7 @@ const Footer = (props) => {
             </div>
             <div className="media-links">
               <div className="first-row">
-                <a href="https://organize.mlh.io/participants/events/4616-project-xcov19">
+                <a href="https://hacktoberfest.cloud.mattermost.com/main/channels/mlh-4616">
                   <img
                     src={
                       'https://d2vgampz89jm7o.cloudfront.net/_Sponsors+Light+Boxed+2.svg'
