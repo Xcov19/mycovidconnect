@@ -1,11 +1,21 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
+import CookieDeclaration from "../components/CookieDeclaration";
 
 const Footer = (props) => {
   const [show,setShow] = useState(false);
+
+  useEffect(() => {
+    var src= "https://consent.cookiebot.com/54349014-3934-489b-a905-584bc83272b2/cd.js"
+    var cd = document.querySelector('script[src="' + src + '"]');
+    if(cd != null){
+    }else{
+      setShow(false);
+    }
+  },[show]);
+
   const showModal = (e) => {
     e.preventDefault();
     setShow(true);
-    props.sendData(!show);
     return false;
   }
   return (
@@ -73,6 +83,7 @@ const Footer = (props) => {
                   id="square"
                 />
               </div>
+              <CookieDeclaration show={show}/>
             </div>
           </div>
         </div>

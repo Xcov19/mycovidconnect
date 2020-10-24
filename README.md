@@ -126,9 +126,11 @@ Please read [CONTRIBUTING.md](#CONTRIBUTING.md) before you help us!
 [ GeekySankar ](https://github.com/GeekySankar)
 
 [ akshayparmar90 ](https://github.com/akshayparmar90)
-
+s
 [ MEME-MAN234 ](https://github.com/MEME-MAN234)
 
 [ jmakhack ](https://github.com/jmakhack)
 
 [ odysseaspapadimas ](https://github.com/odysseaspapadimas)
+
+[ jasonwei1106 ](https://github.com/Jasonwei1106)
