@@ -1,6 +1,6 @@
 import React from "react";
 
-const cookieDeclaration = ({ show }) => {
+const cookieDeclaration = ({ show,handleclose }) => {
   if (show) {
 
     const script = document.createElement('script');
@@ -10,7 +10,7 @@ const cookieDeclaration = ({ show }) => {
 
     document.getElementById("cookieData").appendChild(script);
 
-
+    
 
     // return <React.Fragment>
     //   <script id="CookieDeclaration" src="https://consent.cookiebot.com/54349014-3934-489b-a905-584bc83272b2/cd.js" type="text/javascript" async></script>
@@ -21,6 +21,7 @@ const cookieDeclaration = ({ show }) => {
   }
 
   return (
+    
     <div style={{
       width: show ? "500px" : "0",
       height: show ? "500px" : "0",
@@ -32,7 +33,11 @@ const cookieDeclaration = ({ show }) => {
       position: "absolute",
       backgroundColor: "white",
       overflow: "auto"
-    }} id="cookieData"></div>
+    }} id="cookieData">
+
+      <button className = "closebtn" onClick={handleclose}>X</button>
+    </div>
+  
   )
 };
 

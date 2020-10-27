@@ -133,6 +133,10 @@ footer .footerin .w30 .media-links #square {
   width: auto;
 }
 
+footer #cookieData .closebtn{
+	float: right;
+}
+
 /* ***************** */
 
 /* ** COPYRIGHT ** */
