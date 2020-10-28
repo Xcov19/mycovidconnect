@@ -1,10 +1,14 @@
 import React, {useState, useEffect} from "react";
 
 const SessionExpiry = () => {
-  const [timeLeft, setTimeLeft] = useState(600);
+
+  const defaultTime = 600
+
+  const [timeLeft, setTimeLeft] = useState(defaultTime);
   const [isReset, setIsReset] = useState(false)
   const [isDismissed, setIsDismissed] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(null)
+  const [isPopUp, setIsPopUp] = useState(false)
 
   const dismiss = () => {
     setIsDismissed(true)
@@ -19,16 +23,12 @@ const SessionExpiry = () => {
   const autoLogOut = () => {
     const countDown = () => {
       if (isReset) {
-        setTimeLeft(600)
-        setIsReset(!isReset)
-      } else {
-        setTimeLeft(timeLeft-.1)
-      }
+        setTimeLeft(defaultTime)
+        setIsReset(false)
+      } 
     }    
     if(isLoggedIn && (timeLeft > 0)){
-      setTimeout(() => {
-        countDown();
-      },100)
+      countDown()
     } else if(isLoggedIn && timeLeft <= 0){
       setIsDismissed(false)
       setIsLoggedIn(false)
@@ -37,23 +37,45 @@ const SessionExpiry = () => {
     }
 
     if(!isLoggedIn && timeLeft > 0){
-      setTimeout(() => {
-        countDown();
-      },100)
+      countDown()
     } else if(!isLoggedIn && timeLeft <= 0){
       window.localStorage.removeItem('location')
-      setTimeLeft(600)
+      setTimeLeft(defaultTime)
     }
   }
 
-  useEffect(autoLogOut);
-  
+  const resetEvent = () => {
+    setIsReset(true)
+  }
 
+  useEffect(autoLogOut);
 
   useEffect(() => {
-    window.addEventListener("mousemove", ()=>{setIsReset(true)})
-    window.addEventListener("scroll", () => {setIsReset(true)})
-  },[])
+    if(timeLeft < 60){
+      setIsPopUp(true)
+    }
+    const timer = setTimeout(() => {
+      setTimeLeft(timeLeft-1)
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, [timeLeft]);
+  
+  useEffect(() => {
+    if(timeLeft > 60){
+      window.addEventListener("mousemove", resetEvent)
+      window.addEventListener("scroll", resetEvent)
+    }
+    return () => {
+      window.removeEventListener('mousemove', resetEvent);
+      window.removeEventListener('scroll', resetEvent);
+    };
+  }, [isPopUp, timeLeft])
+
+  useEffect(() => {
+    console.log("remove event", timeLeft)
+    window.removeEventListener("mousemove", resetEvent)
+    window.removeEventListener("scroll", resetEvent)
+  }, [isPopUp])
 
   if(!isDismissed){
     if(timeLeft < 60 && isLoggedIn){
@@ -61,7 +83,7 @@ const SessionExpiry = () => {
         <div className="sessionExpiry">
           <div className="topBar"><span className="topBarButton" onClick={dismiss}>&times;</span></div>
           <div className="warning">Please note that you will be logged off in {displayTime(timeLeft)}</div>
-          <button className="sessionExpiryButton  " onClick={() => setIsReset(!isReset)}>Continue session</button>
+          <button className="sessionExpiryButton  " onClick={() => setIsReset(true)}>Continue session</button>
         </div>
     );
 
@@ -77,7 +99,7 @@ const SessionExpiry = () => {
         <div className="sessionExpiry">
           <div className="topBar"><span className="topBarButton" onClick={dismiss}>&times;</span></div>
           <div className="warning">Please note that your session is about to expire in {displayTime(timeLeft)}</div>
-          <button className="sessionExpiryButton  " onClick={() => setIsReset(!isReset)}>Continue session</button>
+          <button className="sessionExpiryButton  " onClick={() => setIsReset(true)}>Continue session</button>
         </div>
     );
     } else {
