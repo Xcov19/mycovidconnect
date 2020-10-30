@@ -1,18 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import CookieDeclaration from '../components/CookieDeclaration';
-import { COOKIEBOT_SRC } from '../constants';
 
 const Footer = (props) => {
 	const [show, setShow] = useState(false);
-
-	useEffect(() => {
-		var src = COOKIEBOT_SRC;
-		var cd = document.querySelector('script[src="' + src + '"]');
-		// if (cd != null) {
-		// } else {
-		// 	setShow(false);
-		// }
-	}, [show]);
 
 	const showModal = (e) => {
 		setShow(true);
@@ -52,7 +42,7 @@ const Footer = (props) => {
 							>
 								Contact Us
 							</a>
-							<a rel="noreferrer" href="#" onClick={showModal}>
+							<a rel="noreferrer" href="# " onClick={showModal}>
 								Privacy Policy
 							</a>
 						</div>
@@ -91,7 +81,7 @@ const Footer = (props) => {
 									/>
 								</a>
 							</div>
-							{show && <CookieDeclaration show={show} handleclose={hidemodal} />}
+							<CookieDeclaration show={show} handleclose={hidemodal} />
 						</div>
 					</div>
 				</div>
