@@ -19,6 +19,8 @@ class Home extends Component {
 				(position) => {
 					let lat = position.coords.latitude;
 					let lng = position.coords.longitude;
+
+					localStorage.setItem('location', JSON.stringify([lat, lng]));
 					this.setState({
 						lat: lat,
 						lng: lng,
