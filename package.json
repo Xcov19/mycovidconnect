@@ -36,7 +36,7 @@
         "esversion": 6
     },
     "scripts": {
-        "eslint:github-action": "eslint src/**.{js}",
+        "eslint:github-action": "eslint --fix src/",
         "fmt": "prettier --write src/**.{json,js,ts,yml,md}",
         "fmt:check": "prettier --check src/**.{json,js,ts,yml,md}",
         "serve": "serve -s build",
