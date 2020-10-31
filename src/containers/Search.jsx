@@ -86,6 +86,7 @@ class Search extends Component {
 		 *  @property {selectedLng} state.selectedLng
 		 *  @property {isLoading} state.isLoading
 		 */
+		console.log('result');
 		localStorage.setItem('results', JSON.stringify(results));
 		this.setState({
 			results,
