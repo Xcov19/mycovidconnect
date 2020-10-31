@@ -40,6 +40,8 @@ jobs:
    - run: ./startup.sh
    - run: npm i
    - name: Run Prettier
+     run: npm run fmt
+   - name: Run Prettier Check
      run: npm run fmt:check
    - name: Run ESLint
      run: npm run eslint:github-action
