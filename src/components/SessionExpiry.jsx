@@ -28,7 +28,6 @@ const SessionExpiry = () => {
 	useEffect(autoLogOut);
 
 	useEffect(() => {
-		console.log(timeLeft, isDismissed);
 		
 		const timer = setTimeout(() => {
 			if (timeLeft > 0) setTimeLeft(timeLeft - 1);
@@ -50,7 +49,7 @@ const SessionExpiry = () => {
 			const diffHrs = Math.floor((diffMs % 86400000) / 3600000);
 			const diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000);
 
-			if (diffDays > 0 || diffHrs > 1) {
+			if (diffDays > 0 || diffHrs >= 1 || diffMins >=60) {
 				setTimeLeft(0);
 			} else {
 				setTimeLeft(defaultTime - diffMins * 60 || defaultTime);
@@ -72,9 +71,6 @@ const SessionExpiry = () => {
 						Please note that your session is about to expire in{' '}
 						{displayTime(timeLeft)}
 					</div>
-					<button className="sessionExpiryButton  " onClick={() => setIsReset(true)}>
-						Continue session
-					</button>
 				</div>
 			);
 		} else {
