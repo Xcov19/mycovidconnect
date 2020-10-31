@@ -155,6 +155,81 @@ footer #cookieData .closebtn {
 	padding: 20px;
 }
 
+/* ************ */
+
+/* ** COOKIE ** */
+
+/* ************ */
+
+#cookieData .cookie-title {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	width: 100%;
+}
+
+#cookieData .cookie-title h3 {
+	text-align: left;
+	font-size: 24px;
+	letter-spacing: 0;
+	color: #252759;
+	opacity: 1;
+}
+#cookieData .cookie-title img {
+	width: 30px;
+	height: 30px;
+	margin: 0 5px;
+}
+
+#cookieData .cookie-close {
+	background: transparent;
+	border: none;
+	color: black;
+	float: right;
+	height: 20px;
+	opacity: 1;
+	width: 20px;
+	clear: both;
+	display: block;
+	line-height: 0;
+}
+#cookieData {
+	padding: 20px;
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+#cookieData::-webkit-scrollbar {
+	display: none;
+}
+
+#cookieData p,
+#cookieData div {
+	text-align: left;
+	font-size: 14px;
+	letter-spacing: 0;
+	opacity: 1;
+	color: #707070;
+}
+#CookieDeclarationChangeConsent {
+	padding: 20px 0;
+}
+#CookieDeclarationChangeConsent a {
+	background-color: #0455bf;
+	color: #fff;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+#CookieDeclarationUserStatusLabelWithdraw a {
+	border: 1px solid #0455bf;
+	background-color: #fff;
+	color: #0455bf;
+}
+
+#cookieData .CookieDeclarationTable a {
+	text-decoration: underline;
+}
+
 /* ***************** */
 
 /* ** HOME BANNER ** */
@@ -455,73 +530,4 @@ footer #cookieData .closebtn {
 	background-repeat: no-repeat;
 	background-size: 100px 100px;
 	background-position: center;
-}
-
-#cookieData .cookie-title {
-	display: flex;
-	justify-content: center;
-	flex-direction: row;
-	width: 100%;
-}
-
-#cookieData .cookie-title h3 {
-	text-align: left;
-	font-size: 24px;
-	letter-spacing: 0px;
-	color: #252759;
-	opacity: 1;
-}
-#cookieData .cookie-title img {
-	width: 30px;
-	height: 30px;
-	margin: 0 5px;
-}
-
-#cookieData .cookie-close {
-	background: transparent;
-	border: none;
-	color: black;
-	float: right;
-	height: 20px;
-	opacity: 1;
-	width: 20px;
-	clear: both;
-	display: block;
-	line-height: 0;
-}
-#cookieData {
-	padding: 20px;
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
-}
-#cookieData::-webkit-scrollbar {
-	display: none;
-}
-
-#cookieData p,
-div {
-	text-align: left;
-	font-size: 14px;
-	letter-spacing: 0px;
-	opacity: 1;
-	color: #707070;
-}
-#CookieDeclarationChangeConsent {
-	padding: 20px 0px;
-}
-#CookieDeclarationChangeConsent a {
-	background-color: #0455bf;
-	color: #fff;
-	padding: 10px;
-	border-radius: 5px;
-}
-
-#CookieDeclarationUserStatusLabelWithdraw a {
-	border: 1px solid #0455bf;
-	background-color: #fff;
-	color: #0455bf;
-}
-
-#cookieData .CookieDeclarationTable a {
-	text-decoration: underline;
 }
