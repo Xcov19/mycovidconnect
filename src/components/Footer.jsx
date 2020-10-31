@@ -1,12 +1,29 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
+import CookieDeclaration from "../components/CookieDeclaration";
+import {COOKIEBOT_SRC} from "../constants";
+
 
 const Footer = (props) => {
   const [show,setShow] = useState(false);
+  
+  useEffect(() => {
+    var src=COOKIEBOT_SRC
+    console.log(`${src}`);
+    var cd = document.querySelector('script[src="' + src + '"]');
+    if(cd != null){
+    }else{
+      setShow(false);
+    }
+  },[show]);
+
   const showModal = (e) => {
     e.preventDefault();
     setShow(true);
-    props.sendData(!show);
     return false;
+  }
+
+  const hidemodal = () => {
+    setShow(false)
   }
   return (
     <>
@@ -81,6 +98,7 @@ const Footer = (props) => {
                   />
                 </a>
               </div>
+              <CookieDeclaration show={show} handleclose ={hidemodal}/>
             </div>
           </div>
         </div>

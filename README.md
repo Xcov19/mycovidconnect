@@ -132,3 +132,5 @@ Please read [CONTRIBUTING.md](#CONTRIBUTING.md) before you help us!
 [ jmakhack ](https://github.com/jmakhack)
 
 [ odysseaspapadimas ](https://github.com/odysseaspapadimas)
+
+[ jasonwei1106 ](https://github.com/Jasonwei1106)

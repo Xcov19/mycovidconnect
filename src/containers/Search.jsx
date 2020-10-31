@@ -86,7 +86,8 @@ class Search extends Component {
 		 *  @property {selectedLng} state.selectedLng
 		 *  @property {isLoading} state.isLoading
 		 */
-
+		console.log('result');
+		localStorage.setItem('results', JSON.stringify(results));
 		this.setState({
 			results,
 			selectedLat: (results[0]?.geometry?.location || {}).lat,
@@ -208,7 +209,19 @@ class Search extends Component {
 	 * It calls the getAddressFromLocation method right after updating.
 	 */
 	componentDidMount() {
-		this.getAddressFromLocation();
+		const location = JSON.parse(localStorage.getItem('location'));
+		const results = JSON.parse(localStorage.getItem('results'));
+		if (
+			!!location &&
+			location[0] === this.state.lat &&
+			location[1] === this.state.lng &&
+			!!results &&
+			results.length > 0
+		) {
+			this.setResults(results);
+		} else {
+			this.getAddressFromLocation();
+		}
 	}
 
 	/**
@@ -229,29 +242,17 @@ class Search extends Component {
 		const result_list =
 			results && results.length !== 0
 				? results.map(
-						(
-							{ facility_type, formatted_address, geometry: { location } },
-							index,
-						) => {
+						({ facility_type, formatted_address, geometry: { location } }, index) => {
 							return (
 								<div
 									className="location"
 									key={index}
-									onClick={() =>
-										this.setNewLocation(location.lat, location.lng)
-									}
+									onClick={() => this.setNewLocation(location.lat, location.lng)}
 								>
 									<h2>
 										{facility_type}{' '}
 										<span>
-											{this.generateDistance(
-												lat,
-												lng,
-												location.lat,
-												location.lng,
-												'K',
-											)}{' '}
-											Km
+											{this.generateDistance(lat, lng, location.lat, location.lng, 'K')} Km
 										</span>
 									</h2>
 									<address>
@@ -262,11 +263,7 @@ class Search extends Component {
 									<button
 										type="button"
 										onClick={() =>
-											this.redirectToUber(
-												formatted_address,
-												location.lat,
-												location.lng,
-											)
+											this.redirectToUber(formatted_address, location.lat, location.lng)
 										}
 										className="uberBtn"
 									>
@@ -287,10 +284,7 @@ class Search extends Component {
 			<>
 				<MetaTags>
 					<title>Healthcare facilities near {city}</title>
-					<meta
-						name="description"
-						content="Healthcare facilities near {city}"
-					/>
+					<meta name="description" content="Healthcare facilities near {city}" />
 					<meta name="keywords" content="Healthcare facilities near {city}" />
 				</MetaTags>
 				<div id="search">
@@ -314,9 +308,7 @@ class Search extends Component {
 							<div className="maparea">
 								<Map
 									googleMapURL={googleMapURL}
-									loadingElement={
-										<div style={{ width: `100%`, height: `100%` }} />
-									}
+									loadingElement={<div style={{ width: `100%`, height: `100%` }} />}
 									myPlaces={[
 										{ id: '1', pos: { lat, lng } },
 										{
