@@ -4,9 +4,7 @@ const SessionExpiry = () => {
 	const defaultTime = 3600;
 
 	const [timeLeft, setTimeLeft] = useState(defaultTime);
-	const [isReset, setIsReset] = useState(false);
 	const [isDismissed, setIsDismissed] = useState(false);
-	const [isPopUp, setIsPopUp] = useState(false);
 
 	const dismiss = () => {
 		setIsDismissed(true);
@@ -31,15 +29,13 @@ const SessionExpiry = () => {
 
 	useEffect(() => {
 		console.log(timeLeft, isDismissed);
-		if (timeLeft < 30) {
-			setIsPopUp(true);
-		}
+		
 		const timer = setTimeout(() => {
 			if (timeLeft > 0) setTimeLeft(timeLeft - 1);
 		}, 1000);
 
 		return () => clearTimeout(timer);
-	}, [timeLeft]);
+	}, [isDismissed, timeLeft]);
 
 	useEffect(() => {
 		if (!localStorage.getItem('lastActiveSession')) {
