@@ -22,6 +22,7 @@ function App() {
 			.insertBefore(fragment, document.head.firstChild);
 
 		//import tawk script
+		/*jshint esnext: true */
 		((/** @type {Object} */ Tawk_API) => {
 			Tawk_API = Tawk_API || {},
 			Tawk_LoadStart = new Date();
