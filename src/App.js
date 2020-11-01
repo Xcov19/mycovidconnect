@@ -22,18 +22,21 @@ function App() {
 			.insertBefore(fragment, document.head.firstChild);
 
 		//import tawk script
-		var Tawk_API = Tawk_API || {},
+		((/** @type {Object} */ Tawk_API) => {
+			Tawk_API = Tawk_API || {},
 			Tawk_LoadStart = new Date();
-		const fragmentTawk = document.createDocumentFragment();
-		const scriptTawk = document.createElement('script');
-		scriptTawk.async = true;
-		scriptTawk.src = TAWKTO;
-		scriptTawk.charset = 'UTF-8';
-		scriptTawk.setAttribute('crossorigin', '*');
-		fragmentTawk.appendChild(scriptTawk);
-		document
-			.querySelector('head')
-			.insertBefore(fragmentTawk, document.head.firstChild);
+			const fragmentTawk = document.createDocumentFragment();
+			const scriptTawk = document.createElement('script');
+			scriptTawk.async = true;
+			scriptTawk.src = TAWKTO;
+			scriptTawk.charset = 'UTF-8';
+			scriptTawk.setAttribute('crossorigin', '*');
+			fragmentTawk.appendChild(scriptTawk);
+			// TODO(@nivedhasamy): It cannot be document.head.firstChild. Change to prepending before first script;
+			document
+				.querySelector('head')
+				.insertBefore(fragmentTawk, document.head.firstChild);
+		})();
 	}, []);
 	return (
 		<>
