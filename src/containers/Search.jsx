@@ -88,7 +88,7 @@ class Search extends Component {
 		 */
 
 		this.setState({
-			results,
+			results: this.distancesort(results,this.generateDistance),
 			selectedLat: (results[0]?.geometry?.location || {}).lat,
 			selectedLng: (results[0]?.geometry?.location || {}).lng,
 			isLoading: false,
@@ -127,6 +127,16 @@ class Search extends Component {
 		});
 	};
 
+
+	distancesort = (inputArr,callback) => {
+		// var outputArr = {}
+		inputArr.forEach(element => {
+		element.dist = callback(element.geometry.location,this.state.lat,this.state.lng,"K");
+		});
+		console.log(inputArr);
+    return inputArr;
+};
+
 	/**
 	 * Find distance between current location and selected hospital
    
@@ -137,32 +147,35 @@ class Search extends Component {
    	 * @param {string} unit - required unit of distance in kilometers('K') or nautical miles('N').
      * @return {number} The distance between two co-ordinates
 	*/
-	generateDistance = (lat1, lon1, lat2, lon2, unit) => {
-		if (lat1 === lat2 && lon1 === lon2) {
-			return 0;
-		} else {
-			var radlat1 = (Math.PI * lat1) / 180;
-			var radlat2 = (Math.PI * lat2) / 180;
-			var theta = lon1 - lon2;
-			var radtheta = (Math.PI * theta) / 180;
-			var dist =
-				Math.sin(radlat1) * Math.sin(radlat2) +
-				Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
-			if (dist > 1) {
-				dist = 1;
-			}
-			dist = Math.acos(dist);
-			dist = (dist * 180) / Math.PI;
-			dist = dist * 60 * 1.1515;
-			if (unit === 'K') {
-				dist = dist * 1.609344;
-			}
-			if (unit === 'N') {
-				dist = dist * 0.8684;
-			}
-			return dist.toFixed(2);
-		}
-	};
+	generateDistance = (location, lat2, lon2, unit) => {
+    if (location.lat === lat2 && location.lng === lon2) {
+      return 0;
+    } else {
+      var radlat1 = (Math.PI * location.lat) / 180;
+      var radlat2 = (Math.PI * lat2) / 180;
+      var theta = location.lng - lon2;
+      var radtheta = (Math.PI * theta) / 180;
+      var dist =
+        Math.sin(radlat1) * Math.sin(radlat2) +
+        Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+      if (dist > 1) {
+        dist = 1;
+      }
+      dist = Math.acos(dist);
+      dist = (dist * 180) / Math.PI;
+      dist = dist * 60 * 1.1515;
+      if (unit === "K") {
+        dist = dist * 1.609344;
+      }
+      if (unit === "N") {
+        dist = dist * 0.8684;
+      }
+      return dist.toFixed(2);
+    }
+  };
+
+
+
 
 	/**
 	 * Deeplink to Uber app or store based on app installation status
@@ -228,7 +241,8 @@ class Search extends Component {
 		} = this.state;
 		const result_list =
 			results && results.length !== 0
-				? results.map(
+				? results.sort((a,b)=>a.dist-b.dist)
+				.map(
 						(
 							{ facility_type, formatted_address, geometry: { location } },
 							index,
@@ -244,14 +258,13 @@ class Search extends Component {
 									<h2>
 										{facility_type}{' '}
 										<span>
-											{this.generateDistance(
-												lat,
-												lng,
-												location.lat,
-												location.lng,
-												'K',
-											)}{' '}
-											Km
+										{this.generateDistance(
+                      location,
+                      lat,
+                      lng,
+                      "K"
+                    )}{" "}
+                      Km
 										</span>
 									</h2>
 									<address>
