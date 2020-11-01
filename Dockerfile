@@ -51,8 +51,6 @@ COPY .jshintrc ./
 COPY .whitesource ./
 COPY tsconfig.json ./
 
-RUN ls
-
 # build
 RUN npm run build
 
