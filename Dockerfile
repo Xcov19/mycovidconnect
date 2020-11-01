@@ -45,6 +45,12 @@ RUN npm cache verify && npm i --force && npm audit fix
 # add app
 COPY . ./
 
+# fmt:check
+RUN npm run fmt:check
+
+# run eslint
+RUN npm run eslint
+
 # build
 RUN npm run build
 

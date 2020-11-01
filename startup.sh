@@ -1,3 +1,7 @@
+# remove package-lock.json if present;
+if [ -f "package-lock.json" ]; then rm package-lock.json; fi;
+if [ -d "node_modules" ]; then rm -rf node_modules; fi;
+
 # export keys to env file
 echo "REACT_APP_GOOGLE_MAPS_API_KEY=$GOOGLE_MAPS_API_KEY" > .env;
 echo "REACT_APP_FIREBASE_API_KEY=$FIREBASE_API_KEY" >> .env;
