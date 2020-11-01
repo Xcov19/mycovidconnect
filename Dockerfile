@@ -36,20 +36,22 @@ RUN npm -v
 # export keys to env file
 COPY .env ./
 
-# install app dependencies
-COPY package.json ./
+COPY startup.sh ./
+RUN ./startup.sh
 
 # install packages
-RUN npm cache verify && npm i --force && npm audit fix
+COPY package.json ./
+RUN npm cache verify && npm i
 
 # add app
-COPY . ./
+COPY public ./public
+COPY src ./src
+COPY .babelrc ./
+COPY .jshintrc ./
+COPY .whitesource ./
+COPY tsconfig.json ./
 
-# fmt:check
-RUN npm run fmt:check
-
-# run eslint
-RUN npm run eslint
+RUN ls
 
 # build
 RUN npm run build
