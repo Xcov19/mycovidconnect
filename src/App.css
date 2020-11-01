@@ -165,7 +165,7 @@ footer .footerin .w30 .media-links #square {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
-  background-image: url("https://d2vgampz89jm7o.cloudfront.net/Hero+Image-Half+Blur.png");
+  background-image: url('https://d2vgampz89jm7o.cloudfront.net/Hero+Image-Half+Blur.png');
   background-color: rgba(0, 0, 0, 0.53);
   background-blend-mode: darken;
   background-attachment: fixed;
@@ -267,7 +267,7 @@ footer .footerin .w30 .media-links #square {
 #search .noresults .icon {
   width: 250px;
   height: 250px;
-  background-image: url("/noresults.png");
+  background-image: url('/noresults.png');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
@@ -339,6 +339,7 @@ footer .footerin .w30 .media-links #square {
   cursor: pointer;
   border-radius: 3px;
   box-shadow: -10px 10px 20px -11px #bdbdbd;
+  overflow: hidden;
 }
 
 #search .search-in .results .content .location h2 {
@@ -398,10 +399,55 @@ footer .footerin .w30 .media-links #square {
   position: relative;
 }
 
+#search .uberBtn {
+  position: relative;
+  display: block;
+  background: black;
+  color: white;
+  border-radius: 3px;
+  padding: 8px;
+  border: none;
+  float: right;
+  margin: 0 15px 15px;
+}
+
+#search .tooltipText {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#search .uberBtn .tooltipText::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent;
+}
+
+#search .uberBtn:hover .tooltipText {
+  visibility: visible;
+  opacity: 1;
+}
+
 #cover {
   width: 100%;
   height: 100%;
-  background-image: url("/loading.gif");
+  background-image: url('/loading.gif');
   background-repeat: no-repeat;
   background-size: 100px 100px;
   background-position: center;
