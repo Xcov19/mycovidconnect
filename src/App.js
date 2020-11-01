@@ -24,8 +24,8 @@ function App() {
 		//import tawk script
 		/*jshint esnext: true */
 		((/** @type {Object} */ Tawk_API) => {
-			Tawk_API = Tawk_API || {},
-			Tawk_LoadStart = new Date();
+			Tawk_API = Tawk_API || {};
+			const Tawk_LoadStart = new Date();
 			const fragmentTawk = document.createDocumentFragment();
 			const scriptTawk = document.createElement('script');
 			scriptTawk.async = true;
