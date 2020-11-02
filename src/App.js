@@ -8,6 +8,7 @@ import {
 	COOKIEBOT_CONSENT_HEAD_DATA_CBID,
 	TAWKTO,
 } from './constants/index';
+
 function App() {
 	useEffect(() => {
 		//import tawk script
