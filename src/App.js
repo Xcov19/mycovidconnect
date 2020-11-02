@@ -13,18 +13,21 @@ function App() {
 	useEffect(() => {
 		//import tawk script
 
-		var Tawk_API = Tawk_API || {},
-			Tawk_LoadStart = new Date();
-		const fragmentTawk = document.createDocumentFragment();
-		const scriptTawk = document.createElement('script');
-		scriptTawk.async = true;
-		scriptTawk.src = TAWKTO;
-		scriptTawk.charset = 'UTF-8';
-		scriptTawk.setAttribute('crossorigin', '*');
-		fragmentTawk.appendChild(scriptTawk);
-		const firstScript = document.querySelector('script');
+		/*jshint esnext: true */
+		((/** @type {Object} */ Tawk_API) => {
+			Tawk_API = Tawk_API || {};
+			const Tawk_LoadStart = new Date();
+			const fragmentTawk = document.createDocumentFragment();
+			const scriptTawk = document.createElement('script');
+			scriptTawk.async = true;
+			scriptTawk.src = TAWKTO;
+			scriptTawk.charset = 'UTF-8';
+			scriptTawk.setAttribute('crossorigin', '*');
+			fragmentTawk.appendChild(scriptTawk);
+			const firstScript = document.querySelector('script');
 
-		document.head.insertBefore(fragmentTawk, firstScript);
+			document.head.insertBefore(fragmentTawk, firstScript);
+		})();
 
 		//import cookiebot script
 		const fragment = document.createDocumentFragment();
