@@ -11,6 +11,7 @@ import {
 function App() {
 	useEffect(() => {
 		//import tawk script
+
 		var Tawk_API = Tawk_API || {},
 			Tawk_LoadStart = new Date();
 		const fragmentTawk = document.createDocumentFragment();
