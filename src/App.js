@@ -10,17 +10,6 @@ import {
 } from './constants/index';
 function App() {
 	useEffect(() => {
-		//import cookiebot script
-		const fragment = document.createDocumentFragment();
-		const script = document.createElement('script');
-		script.src = COOKIEBOT_CONSENT_HEAD;
-		script.async = true;
-		script.setAttribute('data-cbid', COOKIEBOT_CONSENT_HEAD_DATA_CBID);
-		fragment.appendChild(script);
-		document
-			.querySelector('head')
-			.insertBefore(fragment, document.head.firstChild);
-
 		//import tawk script
 		/*jshint esnext: true */
 		((/** @type {Object} */ Tawk_API) => {
@@ -33,11 +22,21 @@ function App() {
 			scriptTawk.charset = 'UTF-8';
 			scriptTawk.setAttribute('crossorigin', '*');
 			fragmentTawk.appendChild(scriptTawk);
-			// TODO(@nivedhasamy): It cannot be document.head.firstChild. Change to prepending before first script;
-			document
-				.querySelector('head')
-				.insertBefore(fragmentTawk, document.head.firstChild);
+			const firstScript = document.querySelector('script');
+
+			document.head.insertBefore(fragmentTawk, firstScript);
 		})();
+
+		//import cookiebot script
+		const fragment = document.createDocumentFragment();
+		const script = document.createElement('script');
+		script.src = COOKIEBOT_CONSENT_HEAD;
+		script.async = true;
+		script.setAttribute('data-cbid', COOKIEBOT_CONSENT_HEAD_DATA_CBID);
+		fragment.appendChild(script);
+		document
+			.querySelector('head')
+			.insertBefore(fragment, document.head.firstChild);
 	}, []);
 	return (
 		<>
