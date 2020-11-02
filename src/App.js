@@ -11,6 +11,7 @@ import {
 function App() {
 	useEffect(() => {
 		//import tawk script
+
 		/*jshint esnext: true */
 		((/** @type {Object} */ Tawk_API) => {
 			Tawk_API = Tawk_API || {};
