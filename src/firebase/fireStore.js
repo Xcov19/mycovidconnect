@@ -87,7 +87,7 @@ class FireStore {
             // Called for each hospital result.
             hospitalArrMapData.push({ ...result.results[0], ...item });
           }
-        });
+        }).catch(console.error);
         return '';
       });
       await Promise.all(mappedData);
