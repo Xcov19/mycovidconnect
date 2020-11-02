@@ -28,9 +28,9 @@ This is a part of project XCoV19 which aims to build a software that guides pati
 
 ---
 
--   We use React;
--   Know how to run tsc with babel: https://babeljs.io/blog/2018/08/27/7.0.0
--   Lets agree on JS Guideline<br>
+- We use React;
+- Know how to run tsc with babel: https://babeljs.io/blog/2018/08/27/7.0.0
+- Lets agree on JS Guideline<br>
 
 ---
 
@@ -126,11 +126,9 @@ Please read [CONTRIBUTING.md](#CONTRIBUTING.md) before you help us!
 [ GeekySankar ](https://github.com/GeekySankar)
 
 [ akshayparmar90 ](https://github.com/akshayparmar90)
-s
+
 [ MEME-MAN234 ](https://github.com/MEME-MAN234)
 
 [ jmakhack ](https://github.com/jmakhack)
 
 [ odysseaspapadimas ](https://github.com/odysseaspapadimas)
-
-[ jasonwei1106 ](https://github.com/Jasonwei1106)
