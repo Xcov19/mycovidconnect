@@ -68,7 +68,7 @@ class Search extends Component {
 					},
 					() => this.getLocationResults(),
 				);
-			});
+			}).catch(console.error);
 	};
 
 	/**
@@ -257,9 +257,7 @@ class Search extends Component {
 								<div
 									className="location"
 									key={index}
-									onClick={() =>
-										this.setNewLocation(location.lat, location.lng)
-									}
+									onClick={() => this.setNewLocation(location.lat, location.lng)}
 								>
 									<h2>
 										{facility_type}{' '}
@@ -281,11 +279,7 @@ class Search extends Component {
 									<button
 										type="button"
 										onClick={() =>
-											this.redirectToUber(
-												formatted_address,
-												location.lat,
-												location.lng,
-											)
+											this.redirectToUber(formatted_address, location.lat, location.lng)
 										}
 										className="uberBtn"
 									>
@@ -306,10 +300,7 @@ class Search extends Component {
 			<>
 				<MetaTags>
 					<title>Healthcare facilities near {city}</title>
-					<meta
-						name="description"
-						content="Healthcare facilities near {city}"
-					/>
+					<meta name="description" content="Healthcare facilities near {city}" />
 					<meta name="keywords" content="Healthcare facilities near {city}" />
 				</MetaTags>
 				<div id="search">
@@ -333,9 +324,7 @@ class Search extends Component {
 							<div className="maparea">
 								<Map
 									googleMapURL={googleMapURL}
-									loadingElement={
-										<div style={{ width: `100%`, height: `100%` }} />
-									}
+									loadingElement={<div style={{ width: `100%`, height: `100%` }} />}
 									myPlaces={[
 										{ id: '1', pos: { lat, lng } },
 										{

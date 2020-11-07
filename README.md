@@ -28,9 +28,9 @@ This is a part of project XCoV19 which aims to build a software that guides pati
 
 ---
 
--   We use React;
--   Know how to run tsc with babel: https://babeljs.io/blog/2018/08/27/7.0.0
--   Lets agree on JS Guideline<br>
+- We use React;
+- Know how to run tsc with babel: https://babeljs.io/blog/2018/08/27/7.0.0
+- Lets agree on JS Guideline<br>
 
 ---
 
