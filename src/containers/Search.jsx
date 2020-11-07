@@ -128,20 +128,26 @@ class Search extends Component {
 	};
 
 
+	/**
+	 * sort the input array by distance 
+   
+	 * @param {array} inputArr - 'results' array contains source location 
+	 * @param callback - generateDistance
+     * @return {array} sorted array by distance
+	*/
+
 	distancesort = (inputArr,callback) => {
 		// var outputArr = {}
 		inputArr.forEach(element => {
 		element.dist = callback(element.geometry.location,this.state.lat,this.state.lng,"K");
 		});
-		console.log(inputArr);
     return inputArr;
 };
 
 	/**
 	 * Find distance between current location and selected hospital
    
-	 * @param {number} lat1 - Latitude of the source location.
-	 * @param {number} lng1 - Longitude of the source location.  
+	 * @param {objext} location - location object which contains latitude and longitude of source location
 	 * @param {number} lat2 - Latitude of the destination location.
 	 * @param {number} lng2 - Longitude of the destination location.  
    	 * @param {string} unit - required unit of distance in kilometers('K') or nautical miles('N').
