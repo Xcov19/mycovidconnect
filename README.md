@@ -55,6 +55,12 @@ In general follow this [Javascript Styleguide](https://google.github.io/stylegui
 docker-compose -f "docker-compose.yml" up -d --build
 ```
 
+If this command doesn't work, run 
+
+```bash
+PORT=9119 docker-compose up
+```
+
 Typescript to compile project.
 Babel does the transpiling from target to es5 browser compatible code, tsc does the type-checking.
 [See this](https://babeljs.io/blog/2018/08/27/7.0.0) for more info on how to run babel projects using tsc.
