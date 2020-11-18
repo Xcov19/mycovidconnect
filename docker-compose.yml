@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  client:
+    image: codecakes/mycovidconnect_client_1:latest
+    stdin_open: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9119:9119"
+    volumes:
+      - "./:/app"
+      - "/app/node_modules"
+    environment:
+    - PORT=9119
