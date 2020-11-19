@@ -35,7 +35,7 @@ RUN npm -v
 
 # export keys to env file
 ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
-COPY .env ./
+RUN if [ -f ".env" ]; then echo "paste env var values to .env"; else touch .env; fi;
 
 ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
 RUN if [ -f "package-lock.json" ]; then rm package-lock.json; fi;
