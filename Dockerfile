@@ -34,6 +34,7 @@ RUN node -v
 RUN npm -v
 
 # export keys to env file
+ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
 COPY .env ./
 
 ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
