@@ -1,5 +1,9 @@
 # mycovidconnect
 
+TL;DR: Start Contributing right away:
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#snapshot/1c772d05-7fab-4e43-a8ad-7d8298b68998)
+
 [![DepShield Badge](https://depshield.sonatype.org/badges/Xcov19/mycovidconnect/depshield.svg)](https://depshield.github.io)
 
 [![Open Source Helpers](https://www.codetriage.com/xcov19/mycovidconnect/badges/users.svg)](https://www.codetriage.com/xcov19/mycovidconnect)
