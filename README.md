@@ -2,7 +2,7 @@
 
 TL;DR: Start Contributing right away:
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#snapshot/cdc18f8a-e920-420e-860e-2cd32a4680b4)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#snapshot/0e4d8fcb-7196-40e7-9a52-b3265551c5c4)
 
 [![DepShield Badge](https://depshield.sonatype.org/badges/Xcov19/mycovidconnect/depshield.svg)](https://depshield.github.io)
 
