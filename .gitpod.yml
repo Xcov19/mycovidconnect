@@ -2,6 +2,6 @@ image:
   file: Dockerfile
 tasks:
   - init: npm i
-    command: PORT=9119 npm start
+    command: PORT=9119 CHOKIDAR_USEPOLLING="true" npm start
 ports:
   - port: 9119
