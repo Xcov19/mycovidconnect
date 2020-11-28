@@ -8,8 +8,18 @@ import {
   COOKIEBOT_CONSENT_HEAD_DATA_CBID,
   TAWKTO,
 } from "./constants/index";
+import * as Socks from 'react-socks';
 
 function App() {
+
+  Socks.setDefaultBreakpoints([
+    { xs: 0 },
+    { s: 376 },
+    { m: 426 },
+    { l: 769 },
+    { xl: 1025 },
+  ]);
+
   useEffect(() => {
     //import tawk script
 
@@ -42,12 +52,14 @@ function App() {
   }, []);
   return (
     <>
-      <Router>
-        <Switch>
-			<Route exact path="/" component={Home} />
-			<Route path="/search/:lat/:lng" component={Search} />
-		</Switch>
-      </Router>
+      <Socks.BreakpointProvider>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/search/:lat/:lng" component={Search} />
+          </Switch>
+        </Router>
+      </Socks.BreakpointProvider>
     </>
   );
 }
