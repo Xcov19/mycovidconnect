@@ -12,3 +12,5 @@ services:
     volumes:
       - "./:/app"
       - "/app/node_modules"
+    environment:
+    - PORT=9119
