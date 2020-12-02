@@ -34,9 +34,7 @@ function App() {
       scriptTawk.charset = "UTF-8";
       scriptTawk.setAttribute("crossorigin", "*");
       fragmentTawk.appendChild(scriptTawk);
-      const firstScript = document.querySelector("script");
-
-      document.head.insertBefore(fragmentTawk, firstScript);
+      document.querySelector("script").before(fragmentTawk);
     })();
 
     //import cookiebot script
