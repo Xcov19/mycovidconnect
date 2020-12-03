@@ -1,0 +1,25 @@
+{
+  "items":
+  [
+    {
+      "img": "sick",
+      "caption": "XCOV19 helps ill patients find hospitals and assess symptoms",
+      "dropdown": "As of July 13, India’s total for coronavirus Cases topped 878,000, including 23,000 deaths."
+    },
+    {
+      "img": "form",
+      "caption": "XCOV19 requests patient data and completes pre-assessment in tandem with the HMS",
+      "dropdown": "4,300 Indians die every day due to lack of access to poor quality of healthcare."
+    },
+  {
+    "img": "taxi",
+    "caption": "Patient arrives at the hospital",
+    "dropdown": "Government spending on healthcare falls below ₹2,000 per person, highlighting a need for technology efficiency and lean process."
+  },
+    {
+      "img": "ward",
+      "caption": "Hospital admits patient in hassle-free process",
+      "dropdown": "In Mumbai, 99% of intensive care beds were full in July. Delhi needs 10 times the current available amount of expected cases."
+    }
+]
+}
