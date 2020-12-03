@@ -360,7 +360,7 @@ footer #cookieData .closebtn {
 	padding: 50px 0 0 0;
 }
 
-#search .noresults .text h2 {
+#search .noresults .text h2{
 	font-size: 30px;
 	font-weight: normal;
 	margin: 0;
@@ -368,6 +368,29 @@ footer #cookieData .closebtn {
 	color: #2f97f2;
 	letter-spacing: 3px;
 	text-transform: uppercase;
+}
+#search .noresults .text span
+{
+	font-size:18px;
+	font-weight:bold;
+	color:#207ecf ;
+}
+#search .noresults button
+{	
+	padding: 10px 20px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	color: #fff;
+	background-color: #0455bf;
+	cursor: pointer;
+	margin-top: 14px;
+	border: none;
+	border-radius: 3px;
+}
+
+#search .noresults button:hover{
+	background-color: darkblue;
+	border: none;
 }
 
 #search .search-in {

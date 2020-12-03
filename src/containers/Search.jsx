@@ -281,7 +281,14 @@ class Search extends Component {
 							<div className="icon"></div>
 							<div className="text">
 								<h2>No results found for {city}</h2>
+								<br/>
+								<span>Please register a request to enable service in your area </span>
 							</div>
+							
+							<div>
+								<a href="https://dev-mavl72j2.eu.auth0.com/login?client=nvVF8g8x0prPX1kCsC43nXvkdAUpqcjD"><button type="button">Request</button></a>
+							</div>
+
 						</div>
 					)}
 					{results && results.length !== 0 && !isLoading && (
