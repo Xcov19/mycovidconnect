@@ -8,7 +8,10 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "9119:9119"
     volumes:
       - "./:/app"
       - "/app/node_modules"
+    environment:
+    - PORT=9119
+    - CHOKIDAR_USEPOLLING="true"

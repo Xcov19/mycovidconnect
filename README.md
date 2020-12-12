@@ -1,5 +1,9 @@
 # mycovidconnect
 
+TL;DR: Start Contributing right away:
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#snapshot/0e4d8fcb-7196-40e7-9a52-b3265551c5c4)
+
 [![DepShield Badge](https://depshield.sonatype.org/badges/Xcov19/mycovidconnect/depshield.svg)](https://depshield.github.io)
 
 [![Open Source Helpers](https://www.codetriage.com/xcov19/mycovidconnect/badges/users.svg)](https://www.codetriage.com/xcov19/mycovidconnect)
@@ -28,9 +32,9 @@ This is a part of project XCoV19 which aims to build a software that guides pati
 
 ---
 
--   We use React;
--   Know how to run tsc with babel: https://babeljs.io/blog/2018/08/27/7.0.0
--   Lets agree on JS Guideline<br>
+- We use React;
+- Know how to run tsc with babel: https://babeljs.io/blog/2018/08/27/7.0.0
+- Lets agree on JS Guideline<br>
 
 ---
 
@@ -42,10 +46,23 @@ In general follow this [Javascript Styleguide](https://google.github.io/stylegui
 
 ## 3. Installation
 
-#### Run docker image to start instance-
+#### Install Docker Compose on Mac
+
+- Click https://docs.docker.com/compose/install/, to start to install Docker Compose
+- Click Get Docker Desktop for Mac under Install Compose on macOS
+- Click Download from Docker Hub
+- Click Get Docker to download docker and run Docker.dmg
+- Install docker compose using PIP in command line: pip install -U docker-compose
+- Run docker-image to start instance:
 
 ```bash
 docker-compose -f "docker-compose.yml" up -d --build
+```
+
+If this command doesn't work, run 
+
+```bash
+PORT=9119 docker-compose up
 ```
 
 Typescript to compile project.
@@ -114,10 +131,14 @@ Please read [CONTRIBUTING.md](#CONTRIBUTING.md) before you help us!
 
 (IN NO SPECIFIC ORDER)
 
-### [ codecakes ](https://github.com/codecakes)
+[ codecakes ](https://github.com/codecakes)
 
-### [ GeekySankar ](https://github.com/GeekySankar)
+[ GeekySankar ](https://github.com/GeekySankar)
 
-### [ akshayparmar90 ](https://github.com/akshayparmar90)
+[ akshayparmar90 ](https://github.com/akshayparmar90)
 
-### [ MEME-MAN234 ](https://github.com/MEME-MAN234)
+[ MEME-MAN234 ](https://github.com/MEME-MAN234)
+
+[ jmakhack ](https://github.com/jmakhack)
+
+[ odysseaspapadimas ](https://github.com/odysseaspapadimas)
