@@ -313,7 +313,7 @@ class Search extends Component {
               </div>
 
               <div>
-              <a href='ESP_DOMAIN:8090/auth0/login/auth0'><button type='button'>Request</button></a>
+              <a href="ESP_DOMAIN:8090/auth0/login/auth0"><button type='button'>Request</button></a>
               </div>
             </div>
           )}
