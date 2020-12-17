@@ -7,8 +7,8 @@ import {
   GOOGLE_MAPS_API_KEY,
   UBER_CLIENT_ID,
   alternativeCityNamesLookup,
+  ESP_DOMAIN,
 } from "../constants";
-import { useAuth0 } from "@auth0/auth0-react";
 
 const MAP_API = `${GOOGLE_MAPS_API_KEY}`.match(/[A-Za-z0-9_]+/i)[0];
 const googleMapURL = `https://maps.googleapis.com/maps/api/js?key=${MAP_API}`;
@@ -286,12 +286,6 @@ class Search extends Component {
           )
         : [];
 
-    const LoginButton = () => {
-      const { loginWithRedirect } = useAuth0();
-
-      return <button onClick={() => loginWithRedirect()}>Request</button>;
-    };
-
     return (
       <>
         <MetaTags>
@@ -316,7 +310,9 @@ class Search extends Component {
               </div>
 
               <div>
-                <LoginButton />
+                <a href="ESP_DOMAIN:8090/auth0/login/auth0>">
+                  <button type="button">Request</button>
+                </a>
               </div>
             </div>
           )}
