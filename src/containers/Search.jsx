@@ -1,15 +1,15 @@
-import React, { Component } from "react";
-import MetaTags from "react-meta-tags";
-import MaindHOC from "../components/MainHOC";
-import FireStore from "../firebase/fireStore";
-import Map from "../components/Map";
+import React, { Component } from 'react';
+import MetaTags from 'react-meta-tags';
+import MaindHOC from '../components/MainHOC';
+import FireStore from '../firebase/fireStore';
+import Map from '../components/Map';
 import {
   GOOGLE_MAPS_API_KEY,
   UBER_CLIENT_ID,
   alternativeCityNamesLookup,
   ESP_PROXY_DOMAIN,
   ESP_PROXY_PORT
-} from "../constants";
+} from '../constants';
 
 const MAP_API = `${GOOGLE_MAPS_API_KEY}`.match(/[A-Za-z0-9_]+/i)[0];
 const googleMapURL = `https://maps.googleapis.com/maps/api/js?key=${MAP_API}`;
@@ -190,18 +190,18 @@ class Search extends Component {
       }, 2000);
 
       window.location = `uber://?action=setPickup&pickup[latitude]=${lat}&pickup[longitude]=${lng}&pickup[formatted_address]=${encodeURI(
-        pickupAddress
+        pickupAddress,
       )}&client_id=${UBER_CLIENT_ID}&dropoff[formatted_address]=${encodeURI(
-        dropOffAddress
+        dropOffAddress,
       )}&dropoff[latitude]=${dropoffLat}&dropoff[longitude]=${dropOffLng}`;
     } else {
       window.open(
         `https://m.uber.com?action=setPickup&pickup[latitude]=${lat}&pickup[longitude]=${lng}&pickup[formatted_address]=${encodeURI(
-          pickupAddress
+          pickupAddress,
         )}&client_id=${UBER_CLIENT_ID}&dropoff[formatted_address]=${encodeURI(
           dropOffAddress
         )}&dropoff[latitude]=${dropoffLat}&dropoff[longitude]=${dropOffLng}`,
-        "_blank"
+        "_blank",
       );
     }
   };
