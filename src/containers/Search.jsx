@@ -7,7 +7,8 @@ import {
   GOOGLE_MAPS_API_KEY,
   UBER_CLIENT_ID,
   alternativeCityNamesLookup,
-  ESP_DOMAIN,
+  ESP_PROXY_DOMAIN,
+  ESP_PROXY_PORT
 } from "../constants";
 
 const MAP_API = `${GOOGLE_MAPS_API_KEY}`.match(/[A-Za-z0-9_]+/i)[0];
@@ -285,6 +286,7 @@ class Search extends Component {
             }
           )
         : [];
+        
 
     return (
       <>
@@ -308,9 +310,9 @@ class Search extends Component {
                   Please register a request to enable service in your area{" "}
                 </span>
               </div>
-
+            
               <div>
-                <a href="ESP_DOMAIN:8090/auth0/login/auth0>">
+                <a href={`https://${ESP_PROXY_DOMAIN}:${ESP_PROXY_PORT}/auth0/login/auth0`}>
                   <button type="button">Request</button>
                 </a>
               </div>

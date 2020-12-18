@@ -390,7 +390,7 @@ footer #cookieData .closebtn {
 
 #search .noresults button {
 	padding: 10px 20px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Montserrat', 'sans-serif';
 	font-size: 16px;
 	color: #fff;
 	background-color: #0455bf;
