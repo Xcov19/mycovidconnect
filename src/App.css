@@ -39,7 +39,6 @@ footer {
 	width: 100%;
 	margin: 0 auto;
 	padding: 24px 0;
-	height: 200px;
 }
 
 footer .footerin {
@@ -53,8 +52,6 @@ footer .footerin .w40 {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	position: absolute;
-	left: 100px;
 }
 
 footer .footerin h3 {
@@ -89,9 +86,6 @@ footer .footerin .w30 {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	position: absolute;
-	top: 730px;
-	right: 130px;
 }
 
 footer .footerin .w30 .links {
@@ -139,9 +133,37 @@ footer .footerin .w30 .media-links #square {
 	width: auto;
 }
 
-footer #cookieData .closebtn {
-	float: right;
+@media only screen and (max-width:600px) {
+	footer {
+		height: 300px;
+	}
+	footer .footerin .w40 {
+		align-items: center;
+		position: relative;
+		height: auto;
+		width: 800px;
+		top: -20px;
+		left: -5px;
+		white-space: nowrap;
+	}
+	footer .footerin .w30 {
+		margin-top: 318px;
+		position: absolute;
+		text-align: center;
+	}
+	footer .footerin .w30 .links {
+		line-height: 26px;
+	}
+	footer .footerin h3 {
+		font-size: larger;
+	}
+	footer .footerin button {
+		width: 175px;
+		height: 37px;
+		border-radius: 5px;
+	}
 }
+
 
 /* ***************** */
 
@@ -203,8 +225,10 @@ footer #cookieData .closebtn {
 
 #cookieData {
 	padding: 20px;
-	-ms-overflow-style: none;/* IE and Edge */
-	scrollbar-width: none;/* Firefox */
+	-ms-overflow-style: none;
+	/* IE and Edge */
+	scrollbar-width: none;
+	/* Firefox */
 }
 
 #cookieData::-webkit-scrollbar {
@@ -253,7 +277,7 @@ footer #cookieData .closebtn {
 	padding: 80px 0;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 100%;
+	background-size: 100% 100%;
 	background-image: url('https://d2vgampz89jm7o.cloudfront.net/Hero+Image-Half+Blur.png');
 	background-color: rgba(0, 0, 0, 0.53);
 	background-blend-mode: darken;
@@ -326,6 +350,32 @@ footer #cookieData .closebtn {
 	letter-spacing: 2px;
 	color: #fff;
 	line-height: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+	#banner {
+		height: 420px;
+	}
+	
+	#banner .banner-in h1 {
+		font-family: 'Lato', sans-serif;
+		font-size: 32px;
+		font-weight: normal;
+		color: #fff;
+		margin: 4px;
+		padding: 2px;
+	}
+	#banner .banner-in p {
+		font-size: 20px;
+		font-weight: normal;
+		color: #fff;
+		margin: 3px;
+		padding: 5px;
+		font-family: 'Montserrat', sans-serif;
+		text-align: center;
+		max-width: 560px;
+		line-height: 42px;
+	}
 }
 
 /* ************ */
@@ -561,4 +611,55 @@ footer #cookieData .closebtn {
 	background-repeat: no-repeat;
 	background-size: 100px 100px;
 	background-position: center;
+}
+
+@media only screen and (max-width:600px){
+	#search .noresults .text h2{
+		font-size: 14px;
+		white-space: nowrap;
+		font-weight: bold;
+		}
+}
+
+/* ************ */
+
+/* ** ResponnsiveContents ** */
+
+/* ************ */
+
+#Work {
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+	justify-content: center;
+	height: 25px;
+	margin: 22px 0 22px 0;
+	font-weight: bold;
+}
+
+#Taxi, #Ward {
+	width: 98%;
+	height: 180px;
+	padding: 10px;
+	text-align: center;
+	margin-bottom: 7px;
+	box-shadow: 1px 0 10px -5px #000;
+	
+}
+
+#icons, #Layer_1 {
+	height: 120px;
+	width: 120px;
+	position: relative;
+	padding: 5px;
+}
+
+@media only screen and (max-width:600px) {
+	#Ward, #Taxi {
+		width: 95%;
+		font-size: 19px;
+		height: 140px;
+	}
+	#icons, #Layer_1 {
+		height: 80px;
+	}
 }

@@ -305,16 +305,6 @@ class Search extends Component {
               <div className="icon"></div>
               <div className="text">
                 <h2>No results found for {city}</h2>
-                <br />
-                <span>
-                  Please register a request to enable service in your area{" "}
-                </span>
-              </div>
-            
-              <div>
-                <a href={`https://${ESP_PROXY_DOMAIN}:${ESP_PROXY_PORT}/auth0/login/auth0`}>
-                  <button type="button">Request</button>
-                </a>
               </div>
             </div>
           )}
