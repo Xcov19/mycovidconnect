@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import MetaTags from 'react-meta-tags';
 import { Redirect } from 'react-router-dom';
 import MaindHOC from '../components/MainHOC';
+import Taxi from '../components/responsiveness/svg-components/Taxi';
+import Ward from '../components/responsiveness/svg-components/Ward';
 
 class Home extends Component {
 	constructor(props) {
@@ -66,6 +68,19 @@ class Home extends Component {
 								Find Hospitals <br /> Near Me
 							</p>
 						</button>
+					</div>
+				</div>
+				<div id="Work">
+					<span>How It Works</span>
+				</div>
+				<div id="responsive-component">
+					<div id="Taxi">
+						<Taxi />
+						<p>Patient arrives at Hospital</p>
+					</div>
+					<div id="Ward">
+						<Ward />
+						<p>Hospital admits patient in hasle-free process</p>
 					</div>
 				</div>
 			</>
