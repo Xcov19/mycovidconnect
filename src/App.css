@@ -610,7 +610,9 @@ footer #cookieData .closebtn {
 	justify-content: center;
 	height: 25px;
 	margin: 22px 0 22px 0;
-	font-weight: bold;
+	font-weight: bolder;
+	color: #252759;
+	font-size: 28px;
 }
 
 #Taxi,#Ward{
@@ -618,16 +620,21 @@ footer #cookieData .closebtn {
 	padding: 10px;
 	text-align: center;
 	box-shadow: 1px 0 10px -5px #000;
+	font-weight: bold;
+	font-size: 18px;
+	color:  #252759;;
 }
 
 #t1,#t2{
-	height:55px;
-	font-size: 20px;
+	height:45px;
+	font-size: 18px;
 	text-align: center;
-	padding: 30px 20px 20px 20px;
+	padding: 15px 20px 15px 20px;
 	background-color:rgb(231, 231, 231);
-	transition: all 1s ease-in;
-	-webkit-transition: all 0.25s ease-in-out;
+	font-family: 'Montserrat', sans-serif;
+	color: #252759;
+	font-weight: bold;
+	line-height: 23px;
 }
 
 #icons, #Layer_1 {
@@ -638,13 +645,14 @@ footer #cookieData .closebtn {
 
 @media only screen and (max-width:600px) {
 	#t1,#t2{
-		height:55px;
-		font-size: 14px;
+		height:80px;
+		font-size: 13px;
+		font:#252759;
 		
 	}
 	#Ward,#Taxi{
-		font-size: 19px;
-		height: 190px;
+		font-size: 16px;
+		height: 175px;
 	}
 
 	#icons, #Layer_1 {
@@ -666,7 +674,5 @@ footer #cookieData .closebtn {
 	transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);
 	cursor: pointer;
-	transition: all 1s ease-in;
-	-webkit-transition: all 0.25s ease-in-out;
 }
 
