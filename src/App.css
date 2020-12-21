@@ -613,30 +613,60 @@ footer #cookieData .closebtn {
 	font-weight: bold;
 }
 
-#Taxi, #Ward {
-	width: 98%;
-	height: 180px;
+#Taxi,#Ward{
+	height: 220px;
 	padding: 10px;
 	text-align: center;
-	margin-bottom: 7px;
 	box-shadow: 1px 0 10px -5px #000;
+}
 
+#t1,#t2{
+	height:55px;
+	font-size: 20px;
+	text-align: center;
+	padding: 30px 20px 20px 20px;
+	background-color:rgb(231, 231, 231);
+	transition: all 1s ease-in;
+	-webkit-transition: all 0.25s ease-in-out;
 }
 
 #icons, #Layer_1 {
 	height: 120px;
 	width: 120px;
-	position: relative;
 	padding: 5px;
 }
 
 @media only screen and (max-width:600px) {
-	#Ward, #Taxi {
-		width: 95%;
-		font-size: 19px;
-		height: 140px;
+	#t1,#t2{
+		height:55px;
+		font-size: 14px;
+		
 	}
+	#Ward,#Taxi{
+		font-size: 19px;
+		height: 190px;
+	}
+
 	#icons, #Layer_1 {
 		height: 80px;
 	}
 }
+.arrow {
+	border: solid black;
+	border-width: 0 8px 8px 0;
+	height: 12px;
+	width: 12px;
+	display: inline-block;
+	padding: 3px;
+	margin:20px;
+	border-radius: 5px;
+}
+
+.down {
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	cursor: pointer;
+	transition: all 1s ease-in;
+	-webkit-transition: all 0.25s ease-in-out;
+}
+
