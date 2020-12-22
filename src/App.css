@@ -27,6 +27,14 @@ header .headerin .logo {
 	width: 180px;
 	height: auto;
 	padding-left: 120px;
+	
+}
+
+@media only screen and (max-width:600px){
+header .headerin .logo{
+	position: relative;
+	right:115px;
+	}
 }
 
 /* ************ */
@@ -154,7 +162,7 @@ footer #cookieData .closebtn {
 		position: relative;
 		text-align: center;
 		top:100px;
-		right:131px;
+		right:129px;
 		
 	}
 	footer .footerin .w30 .links {
@@ -617,7 +625,17 @@ footer #cookieData .closebtn {
 	font-size: 28px;
 }
 
-#Taxi,#Ward{
+#Taxi{
+	height: 220px;
+	padding: 10px;
+	text-align: center;
+	box-shadow: 1px 0 0px -5px #000;
+	font-weight: bold;
+	font-size: 18px;
+	color:  #252759;;
+}
+
+#Ward{
 	height: 220px;
 	padding: 10px;
 	text-align: center;
@@ -637,6 +655,7 @@ footer #cookieData .closebtn {
 	color: #252759;
 	font-weight: bold;
 	line-height: 23px;
+	display:none;
 }
 
 #icons, #Layer_1 {
