@@ -139,21 +139,23 @@ footer #cookieData .closebtn {
 
 @media only screen and (max-width:600px) {
 	footer {
-		height: 300px;
+		height: 320px;
 	}
 	footer .footerin .w40 {
 		align-items: center;
 		position: relative;
 		height: auto;
 		width: 800px;
-		top: -20px;
-		left: -5px;
+		bottom: 80px;
+		left: 80px;
 		white-space: nowrap;
 	}
 	footer .footerin .w30 {
-		margin-top: 318px;
-		position: absolute;
+		position: relative;
 		text-align: center;
+		top:100px;
+		right:131px;
+		
 	}
 	footer .footerin .w30 .links {
 		line-height: 26px;
