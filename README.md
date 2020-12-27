@@ -59,10 +59,16 @@ In general follow this [Javascript Styleguide](https://google.github.io/stylegui
 docker-compose -f "docker-compose.yml" up -d --build
 ```
 
-If this command doesn't work, run 
+On Mac, if this command doesn't work, run:
 
 ```bash
 PORT=9119 docker-compose up
+```
+
+If you are running on Linux like OS, then do:
+
+```bash
+docker-compose up -e PORT=9119
 ```
 
 Typescript to compile project.

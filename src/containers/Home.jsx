@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MetaTags from 'react-meta-tags';
 import { Redirect } from 'react-router-dom';
 import MaindHOC from '../components/MainHOC';
+import BannerMobile from '../components/mobileScreenComponents/BannerMobile';
 
 class Home extends Component {
 	constructor(props) {
@@ -41,35 +42,36 @@ class Home extends Component {
 			return <Redirect to={`/search/${lat}/${lng}`} />;
 		}
 		return (
-			<>
-				<MetaTags>
-					<title>MyCovidConnect: Find Nearest Healthcare facility</title>
-					<meta
-						name="description"
-						content="MyCovidConnect: Find Nearest Healthcare facility"
-					/>
-					<meta
-						name="keywords"
-						content="MyCovidConnect: Find Nearest Healthcare facility"
-					/>
-				</MetaTags>
-				<div id="banner">
-					<div className="banner-in">
-						<h1>Save Precious Time</h1>
-						<p>
-							With real-time updates, MyCOVIDConnect links you to the nearest
-							healthcare provider for testing and pre-admission
-						</p>
-						<button onClick={this.getLocation}>
-							<h2>SOS</h2>
-							<p>
-								Find Hospitals <br /> Near Me
-							</p>
-						</button>
-					</div>
-				</div>
-			</>
-		);
+      <>
+        <MetaTags>
+          <title>MyCovidConnect: Find Nearest Healthcare facility</title>
+          <meta
+            name="description"
+            content="MyCovidConnect: Find Nearest Healthcare facility"
+          />
+          <meta
+            name="keywords"
+            content="MyCovidConnect: Find Nearest Healthcare facility"
+          />
+        </MetaTags>
+        <div id="banner">
+          <div className="banner-in">
+            <h1>Save Precious Time</h1>
+            <p>
+              With real-time updates, MyCOVIDConnect links you to the nearest
+              healthcare provider for testing and pre-admission
+            </p>
+            <button onClick={this.getLocation}>
+              <h2>SOS</h2>
+              <p>
+                Find Hospitals <br /> Near Me
+              </p>
+            </button>
+          </div>
+          <BannerMobile />
+        </div>
+      </>
+    );
 	}
 }
 
