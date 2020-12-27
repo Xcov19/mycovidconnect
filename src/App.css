@@ -175,7 +175,6 @@ footer #cookieData .closebtn {
 	color: #252759;
 	opacity: 1;
 }
-
 #cookieData .cookie-title img {
 	width: 30px;
 	height: 30px;
@@ -194,29 +193,26 @@ footer #cookieData .closebtn {
 	display: block;
 	line-height: 0;
 }
-
 #cookieData {
 	padding: 20px;
-	-ms-overflow-style: none;/* IE and Edge */
-	scrollbar-width: none;/* Firefox */
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
 }
-
 #cookieData::-webkit-scrollbar {
 	display: none;
 }
 
-#cookieData p, #cookieData div {
+#cookieData p,
+#cookieData div {
 	text-align: left;
 	font-size: 14px;
 	letter-spacing: 0;
 	opacity: 1;
 	color: #707070;
 }
-
 #CookieDeclarationChangeConsent {
 	padding: 20px 0;
 }
-
 #CookieDeclarationChangeConsent a {
 	background-color: #0455bf;
 	color: #fff;
@@ -467,7 +463,8 @@ footer #cookieData .closebtn {
 	color: #151515;
 }
 
-#search .search-in .results .content .location address, #search .search-in .results .content .location p {
+#search .search-in .results .content .location address,
+#search .search-in .results .content .location p {
 	font-size: 16px;
 	font-weight: normal;
 	font-style: normal;
@@ -482,7 +479,8 @@ footer #cookieData .closebtn {
 	padding: 10px 20px 27px 20px;
 }
 
-#search .search-in .results .content .location address i, #search .search-in .results .content .location p i {
+#search .search-in .results .content .location address i,
+#search .search-in .results .content .location p i {
 	font-size: 20px;
 	color: #2f97f2;
 	margin-right: 10px;
