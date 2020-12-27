@@ -39,7 +39,6 @@ footer {
 	width: 100%;
 	margin: 0 auto;
 	padding: 24px 0;
-	height: 200px;
 }
 
 footer .footerin {
@@ -53,8 +52,6 @@ footer .footerin .w40 {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	position: absolute;
-	left: 100px;
 }
 
 footer .footerin h3 {
@@ -89,9 +86,6 @@ footer .footerin .w30 {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	position: absolute;
-	top: 730px;
-	right: 130px;
 }
 
 footer .footerin .w30 .links {
