@@ -42,9 +42,9 @@ function App() {
     <>
       <Router>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/search/:lat/:lng" component={Search} />
-        </Switch>
+			<Route exact path="/" component={Home} />
+			<Route path="/search/:lat/:lng" component={Search} />
+		</Switch>
       </Router>
     </>
   );
