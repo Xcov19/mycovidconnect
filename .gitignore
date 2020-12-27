@@ -42,7 +42,7 @@ build
 node_modules/
 jspm_packages/
 
-#vscode settings
+# ignore misc ides settings
 .vscode/
 .theia/
 
