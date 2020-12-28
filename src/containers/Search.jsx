@@ -6,9 +6,9 @@ import Map from '../components/Map';
 import {
 	GOOGLE_MAPS_API_KEY,
 	UBER_CLIENT_ID,
-    alternativeCityNamesLookup,
-    ESP_PROXY_DOMAIN,
-    ESP_PROXY_PORT
+	alternativeCityNamesLookup,
+	ESP_PROXY_DOMAIN,
+	ESP_PROXY_PORT
 } from '../constants';
 
 const MAP_API = `${GOOGLE_MAPS_API_KEY}`.match(/[A-Za-z0-9_]+/i)[0];
@@ -281,18 +281,18 @@ class Search extends Component {
 					{results && results.length === 0 && !isLoading && (
 						<div className="noresults">
 							<div className="icon"></div>
-                <div className="text">
-                  <h2>No results found for {city}</h2>
-                  <br />
-                  <span>
-                  Please register a request to enable service in your area{" "}
-                  </span>
-                </div>
-                <div>
-                  <a href={`https://${ESP_PROXY_DOMAIN}:${ESP_PROXY_PORT}/auth0/login/auth0`}>
-                  <button type="button">Request</button>
-                  </a>
-                </div>
+							<div className="text">
+								<h2>No results found for {city}</h2>
+								<br />
+								<span>
+								Please register a request to enable service in your area{" "}
+								</span>
+							</div>
+							<div>
+								<a href={`https://${ESP_PROXY_DOMAIN}:${ESP_PROXY_PORT}/auth0/login/auth0`}>
+								<button type="button">Request</button>
+							</a>
+							</div>
 						</div>
 					
 					)}
