@@ -679,6 +679,8 @@ footer #cookieData .closebtn {
 	font-weight: bold;
 	line-height: 23px;
 	display:none;
+	-webkit-animation: animatezoom 0.6s;
+	animation: animatedrop 0.8s
 }
 
 #icons, #Layer_1 {
@@ -689,7 +691,7 @@ footer #cookieData .closebtn {
 
 @media only screen and (max-width:600px) {
 	#t1,#t2{
-		height:80px;
+		height:65px;
 		font-size: 13px;
 		font:#252759;
 		
@@ -702,6 +704,7 @@ footer #cookieData .closebtn {
 	#icons, #Layer_1 {
 		height: 80px;
 	}
+
 }
 .arrow {
 	border: solid black;
@@ -720,3 +723,9 @@ footer #cookieData .closebtn {
 	cursor: pointer;
 }
 
+@keyframes animatedrop {
+	0% {height:0px;
+	} 
+	100% {height:45px;
+	}
+}
