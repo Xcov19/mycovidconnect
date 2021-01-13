@@ -1,9 +1,4 @@
-import React, { Component } from 'react';
-
-export default class Form extends Component {
-  render() {
-    return (
-<svg xmlns="http://www.w3.org/2000/svg" id="layer_1"  viewBox="0 0 238.797 321.857">
+<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 238.797 321.857">
 	<path class="a" fill="#dad8db" d="M248.924,0H238.542a15.591,15.591,0,0,0-15.574,15.574V25.956H233.35V15.574a5.2,5.2,0,0,1,5.191-5.191h10.382a5.2,5.2,0,0,1,5.191,5.191V25.956H264.5V15.574A15.591,15.591,0,0,0,248.924,0Z" transform="translate(-124.335 0)" />
 	<path class="b" fill="#0455bf" d="M286.425,49.548H89.158a20.672,20.672,0,0,0-10.387,2.78L72.333,70.313V315.092A20.765,20.765,0,0,0,93.1,335.857H286.425l17.986-5.981a20.672,20.672,0,0,0,2.779-10.384V70.313a20.765,20.765,0,0,0-20.765-20.765Z" transform="translate(-68.393 -18.401)" />
 	<path class="c" fill="#fff" d="M294.24,316.187H112.546A5.191,5.191,0,0,1,107.355,311V87.772a5.191,5.191,0,0,1,5.191-5.191H294.24a5.191,5.191,0,0,1,5.191,5.191V311A5.191,5.191,0,0,1,294.24,316.187Z" transform="translate(-81.399 -30.668)" />
@@ -38,11 +33,3 @@ export default class Form extends Component {
 		<circle class="e" fill="#ffe07d" cx="5.191" cy="5.191" r="5.191" transform="translate(83.06 4.542)" />
 	</g>
 </svg>
-
-    );
-  }
-}
-
-{
-  /* <style>.a{fill:#dad8db;}.b{fill:#0455bf;}.c{fill:#fff;}.d{fill:#eceaec;}.e{fill:#ffe07d;}.f{fill:#ff8086;}.g{fill:#6f6571;}.h{fill:#252759;}.i{fill:#faf5dc;}.j{fill:#ffd064;}.k{fill:#e5646e;}</style> */
-}

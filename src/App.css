@@ -27,13 +27,12 @@ header .headerin .logo {
 	width: 180px;
 	height: auto;
 	padding-left: 120px;
-	
 }
 
-@media only screen and (max-width:600px){
-header .headerin .logo{
-	position: relative;
-	right:115px;
+@media only screen and (max-width:600px) {
+	header .headerin .logo {
+		position: relative;
+		right: 115px;
 	}
 }
 
@@ -145,7 +144,7 @@ footer #cookieData .closebtn {
 	float: right;
 }
 
-@media only screen and (max-width:600px) {
+@media only screen and (max-width:500px) {
 	footer {
 		height: 320px;
 	}
@@ -155,15 +154,14 @@ footer #cookieData .closebtn {
 		height: auto;
 		width: 800px;
 		bottom: 80px;
-		left: 80px;
+		left: 73px;
 		white-space: nowrap;
 	}
 	footer .footerin .w30 {
 		position: relative;
 		text-align: center;
-		top:100px;
-		right:129px;
-		
+		top: 100px;
+		right: 143px;
 	}
 	footer .footerin .w30 .links {
 		line-height: 26px;
@@ -216,6 +214,7 @@ footer #cookieData .closebtn {
 	color: #252759;
 	opacity: 1;
 }
+
 #cookieData .cookie-title img {
 	width: 30px;
 	height: 30px;
@@ -234,26 +233,31 @@ footer #cookieData .closebtn {
 	display: block;
 	line-height: 0;
 }
+
 #cookieData {
 	padding: 20px;
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none;
+	/* IE and Edge */
+	scrollbar-width: none;
+	/* Firefox */
 }
+
 #cookieData::-webkit-scrollbar {
 	display: none;
 }
 
-#cookieData p,
-#cookieData div {
+#cookieData p, #cookieData div {
 	text-align: left;
 	font-size: 14px;
 	letter-spacing: 0;
 	opacity: 1;
 	color: #707070;
 }
+
 #CookieDeclarationChangeConsent {
 	padding: 20px 0;
 }
+
 #CookieDeclarationChangeConsent a {
 	background-color: #0455bf;
 	color: #fff;
@@ -361,9 +365,8 @@ footer #cookieData .closebtn {
 
 @media only screen and (max-width: 600px) {
 	#banner {
-		height: 420px;
+		height: 460px;
 	}
-
 	#banner .banner-in h1 {
 		font-family: 'Lato', sans-serif;
 		font-size: 32px;
@@ -384,7 +387,6 @@ footer #cookieData .closebtn {
 		line-height: 42px;
 	}
 }
-
 
 /* ************ */
 
@@ -531,8 +533,7 @@ footer #cookieData .closebtn {
 	color: #151515;
 }
 
-#search .search-in .results .content .location address,
-#search .search-in .results .content .location p {
+#search .search-in .results .content .location address, #search .search-in .results .content .location p {
 	font-size: 16px;
 	font-weight: normal;
 	font-style: normal;
@@ -547,8 +548,7 @@ footer #cookieData .closebtn {
 	padding: 10px 20px 27px 20px;
 }
 
-#search .search-in .results .content .location address i,
-#search .search-in .results .content .location p i {
+#search .search-in .results .content .location address i, #search .search-in .results .content .location p i {
 	font-size: 20px;
 	color: #2f97f2;
 	margin-right: 10px;
@@ -623,12 +623,12 @@ footer #cookieData .closebtn {
 	background-position: center;
 }
 
-@media only screen and (max-width:600px){
-	#search .noresults .text h2{
+@media only screen and (max-width:600px) {
+	#search .noresults .text h2 {
 		font-size: 14px;
 		white-space: nowrap;
 		font-weight: bold;
-		}
+	}
 }
 
 /* ************ */
@@ -641,71 +641,104 @@ footer #cookieData .closebtn {
 	font-family: 'Montserrat', sans-serif;
 	text-align: center;
 	justify-content: center;
-	height: 25px;
-	margin: 22px 0 22px 0;
+	height: 35px;
+	margin: 22px 0 20px 0;
 	font-weight: bolder;
 	color: #252759;
 	font-size: 28px;
 }
 
-#Taxi{
-	height: 220px;
+#Sick {
+	height: 240px;
 	padding: 10px;
 	text-align: center;
 	box-shadow: 1px 0 0px -5px #000;
 	font-weight: bold;
 	font-size: 18px;
-	color:  #252759;;
+	color: #252759;
 }
 
-#Ward{
-	height: 220px;
+#Form {
+	height: 240px;
 	padding: 10px;
 	text-align: center;
 	box-shadow: 1px 0 10px -5px #000;
 	font-weight: bold;
 	font-size: 18px;
-	color:  #252759;;
+	color: #252759;
 }
 
-#t1,#t2{
-	height:45px;
+#Taxi {
+	height: 240px;
+	padding: 10px;
+	text-align: center;
+	box-shadow: 1px 0 10px -5px #000;
+	font-weight: bold;
+	font-size: 18px;
+	color: #252759;
+}
+
+#Ward {
+	height: 240px;
+	padding: 10px;
+	text-align: center;
+	box-shadow: 1px 0 10px -5px #000;
+	font-weight: bold;
+	font-size: 18px;
+	color: #252759;
+}
+
+#t1, #t2, #t3, #t4 {
+	height: 45px;
 	font-size: 18px;
 	text-align: center;
 	padding: 15px 20px 15px 20px;
-	background-color:rgb(231, 231, 231);
+	background-color: rgb(231, 231, 231);
 	font-family: 'Montserrat', sans-serif;
 	color: #252759;
 	font-weight: bold;
 	line-height: 23px;
-	display:none;
-	-webkit-animation: animatezoom 0.6s;
-	animation: animatedrop 0.8s
+	display: none;
+	animation: animatedrop 0.9s;
 }
 
-#icons, #Layer_1 {
+#icons, #layer_1 {
 	height: 120px;
 	width: 120px;
-	padding: 5px;
+	margin: 18px;
 }
 
 @media only screen and (max-width:600px) {
-	#t1,#t2{
-		height:65px;
+	#t1, #t2, #t3, #t4 {
+		height: 70px;
 		font-size: 13px;
-		font:#252759;
-		
+		font: #252759;
 	}
-	#Ward,#Taxi{
+	#Sick {
+		height: 210px;
 		font-size: 16px;
-		height: 175px;
+		padding: 25px;
 	}
-
-	#icons, #Layer_1 {
+	#Form {
+		height: 210px;
+		font-size: 16px;
+		padding: 27px;
+	}
+	#Taxi {
+		height: 210px;
+		font-size: 16px;
+	}
+	#Ward {
+		height: 210px;
+		font-size: 16px;
+	}
+	#icons, #layer_1 {
 		height: 80px;
+		width: 80px;
+		margin: 18px;
 	}
-
 }
+
 .arrow {
 	border: solid black;
 	border-width: 0 8px 8px 0;
@@ -713,7 +746,7 @@ footer #cookieData .closebtn {
 	width: 12px;
 	display: inline-block;
 	padding: 3px;
-	margin:20px;
+	margin: 20px;
 	border-radius: 5px;
 }
 
@@ -724,8 +757,12 @@ footer #cookieData .closebtn {
 }
 
 @keyframes animatedrop {
-	0% {height:0px;
-	} 
-	100% {height:45px;
+	0% {
+		height: 0px;
+		opacity: 0;
+	}
+	100% {
+		height: 45px;
+		opacity: 1;
 	}
 }

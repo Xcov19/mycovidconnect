@@ -5,6 +5,10 @@ import MaindHOC from '../components/MainHOC';
 import ResponsiveComponents from '../components/responsiveness/ResponsiveComponents';
 import Taxi from '../components/responsiveness/svg-components/Taxi';
 import Ward from '../components/responsiveness/svg-components/Ward';
+import Sick from '../components/responsiveness/svg-components/Sick';
+import Form from '../components/responsiveness/svg-components/Form';
+
+
 
 class Home extends Component {
 	constructor(props) {
@@ -16,7 +20,7 @@ class Home extends Component {
 		};
 	}
 
-	responsive = () => {
+	responsive1 = () => {
 		var x = document.getElementById("t1");
 		if (x.style.display === "none") {
 		  x.style.display = "block";
@@ -27,6 +31,24 @@ class Home extends Component {
 
 	responsive2 = () => {
 		var x = document.getElementById("t2");
+		if (x.style.display === "none") {
+		x.style.display = "block";
+		} else {
+		x.style.display = "none";
+		}
+	}
+
+	responsive3 = () => {
+		var x = document.getElementById("t3");
+		if (x.style.display === "none") {
+		x.style.display = "block";
+		} else {
+		x.style.display = "none";
+		}
+	}
+
+	responsive4 = () => {
+		var x = document.getElementById("t4");
 		if (x.style.display === "none") {
 		x.style.display = "block";
 		} else {
@@ -93,14 +115,34 @@ class Home extends Component {
 					<span>How It Works</span>
 				</div>
 				<div id="responsive-component">
-					<div id="Taxi">
+					<div id="Sick">
+						<Sick/>
+						<p>XCOV19 helps ill patients find hospitals and assess symptom</p>
+						<span onClick={this.responsive1}><i class="arrow down"></i></span>
+					</div>
+					<div id='t1'>
+						<p>
+						As of July 13, India’s total for coronavirus Cases topped 878,000, including 23,000 deaths.
+						</p>
+					</div>
+					
+					<div id="Form">
+						<Form />
+						<p>XCOV19 requests patient data and completes pre-assessment in tandem with the HMS</p>
+						<span onClick={this.responsive2}><i class="arrow down"></i></span>
+					</div>
+					<div id='t2'>
+						<p>
+						4,300 Indians die every day due to lack of access to poor quality of healthcare.
+						</p>
+					</div>
+					<div id ="Taxi">
 						<Taxi />
 						<p>Patient arrives at Hospital</p>
-						<span onClick={this.responsive}><i class="arrow down"></i></span>
+						<span onClick={this.responsive3}><i class="arrow down"></i></span>
 					</div>
 					<div></div>
-
-					<div id='t1'>
+					<div id='t3'>
 						<p>
 							Government spending on healthcare falls below ₹2,000 per person, 
 							highlighting a need for technology efficiency and lean process
@@ -109,9 +151,9 @@ class Home extends Component {
 					<div id="Ward">
 						<Ward />
 						<p>Hospital admits patient in hasle-free process</p>
-						<span onClick={this.responsive2} class='arr'><i class="arrow down"></i></span>
+						<span onClick={this.responsive4} class='arr'><i class="arrow down"></i></span>
 					</div>
-					<div id='t2'>
+					<div id='t4'>
 						<p>
 						In Mumbai, 99% of intensive care beds were full in July. 
 						Delhi needs 10 times the current available amount of expected cases.
