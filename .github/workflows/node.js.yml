@@ -35,6 +35,8 @@ jobs:
       COOKIEBOT_CONSENT_HEAD: ${{ secrets.COOKIEBOT_CONSENT_HEAD }}
       TAWKTO: ${{ secrets.TAWKTO }}
       COOKIEBOT_CONSENT_HEAD_DATA_CBID: ${{ secrets.COOKIEBOT_CONSENT_HEAD_DATA_CBID }}
+      ESP_PROXY_DOMAIN: ${{ secrets.ESP_PROXY_DOMAIN }}
+      ESP_PROXY_PORT: ${{ secrets.ESP_PROXY_PORT }}
      with:
       node-version: ${{ matrix.node-version }}
    - run: ./startup.sh
