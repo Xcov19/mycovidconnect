@@ -1,6 +1,7 @@
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
@@ -22,11 +23,15 @@ header {
 	margin: 0 auto;
 	box-shadow: 1px 0 10px -5px #000;
 }
-
+header .headerin {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 120px;
+}
 header .headerin .logo {
 	width: 180px;
 	height: auto;
-	padding-left: 120px;
 }
 
 /* ************ */
@@ -554,3 +559,80 @@ footer #cookieData .closebtn {
 	background-size: 100px 100px;
 	background-position: center;
 }
+
+.btn {
+	border: 1px solid transparent;
+	color: white;
+	padding: 12px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 14px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+.btn-primary {
+	background-color: #0455BF; 
+	color: #fff; 
+}
+.btn-outline-primary{
+	background-color: white; 
+	color: #0455BF; 
+	border: 1px solid #0455BF;
+}
+.avatar {
+	vertical-align: middle;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+  }
+  .avatar-drop {
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
+	border-radius: 5px;
+	right: 0;
+    top: 50px;
+}
+.avatar-btn{
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+.avatar-btn p{
+	font-size: 14px;
+	margin-left: 5px;
+}
+.absolute {
+    position: absolute;
+}
+.ml-96{
+	margin-left: 96px;
+}
+.w-56 {
+    width: 14rem;
+}
+.h-auto {
+    height: auto;
+}
+.list-group {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+  }
+  
+.list-group .list-group-item {
+	border: 1px solid #ddd;
+	margin-top: -1px; /* Prevent double borders */
+	background-color: #fff;
+	padding: 12px;
+	font-size: 14px;
+	cursor: pointer;
+  }
+  .d-flex{
+	  display: flex;
+  }
+  .justify-content-center{
+	  justify-content: center;
+  }
+  .align-items-center{
+	  align-items: center;
+  }
