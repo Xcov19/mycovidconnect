@@ -559,7 +559,10 @@ footer #cookieData .closebtn {
 	background-size: 100px 100px;
 	background-position: center;
 }
-
+a{
+	text-decoration: none;
+    color: #000;
+}
 .btn {
 	border: 1px solid transparent;
 	color: white;
@@ -579,6 +582,12 @@ footer #cookieData .closebtn {
 	background-color: white; 
 	color: #0455BF; 
 	border: 1px solid #0455BF;
+}
+.dropdown{
+	position: relative;
+    margin: 16px;
+    width: auto;
+    display: inline-block;
 }
 .avatar {
 	vertical-align: middle;
