@@ -37,6 +37,8 @@ jobs:
       COOKIEBOT_CONSENT_HEAD_DATA_CBID: ${{ secrets.COOKIEBOT_CONSENT_HEAD_DATA_CBID }}
       ESP_PROXY_DOMAIN: ${{ secrets.ESP_PROXY_DOMAIN }}
       ESP_PROXY_PORT: ${{ secrets.ESP_PROXY_PORT }}
+      AUTH0_DOMAIN: ${{ secrets.REACT_APP_AUTH0_DOMAIN }}
+      AUTH0_CLIENT_ID: ${{ secrets.REACT_APP_AUTH0_CLIENT_ID }}
      with:
       node-version: ${{ matrix.node-version }}
    - run: ./startup.sh
