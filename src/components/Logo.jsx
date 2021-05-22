@@ -6,6 +6,7 @@ const Logo = () => {
     <Link to="/">
       <img
         className="logo"
+        alt="logo"
         src={'https://d2vgampz89jm7o.cloudfront.net/XCOV19+Logo.png'}
       />
     </Link>
