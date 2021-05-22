@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from 'react-router-dom';
+import LoginButton from './LoginButton';
 
 const Login = () => {
 
@@ -58,7 +59,7 @@ const Login = () => {
             {
                 !isAuthenticated && !isLoading && (
                     <div>
-                        <button className="btn btn-primary" onClick={() => loginWithRedirect()}>Log In/ Sign Up</button>
+                        <LoginButton name={'Log In/ Sign Up'}/>
                     </div>
                 )
             }
