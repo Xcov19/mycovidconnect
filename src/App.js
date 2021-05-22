@@ -3,11 +3,15 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Home from "./containers/Home";
 import Search from "./containers/Search";
+import Profile from "./containers/Profile";
+import ProtectedRoute from "./auth/protected-route";
+
 import {
   COOKIEBOT_CONSENT_HEAD,
   COOKIEBOT_CONSENT_HEAD_DATA_CBID,
   TAWKTO,
 } from "./constants/index";
+import Auth0ProviderWithHistory from "./auth/auth0-provider-with-history";
 
 function App() {
   useEffect(() => {
@@ -16,7 +20,7 @@ function App() {
     /*jshint esnext: true */
     ((/** @type {Object} */ Tawk_API) => {
       Tawk_API = Tawk_API || {};
-      const Tawk_LoadStart = new Date();
+      // const Tawk_LoadStart = new Date();
       const fragmentTawk = document.createDocumentFragment();
       const scriptTawk = document.createElement("script");
       scriptTawk.async = true;
@@ -40,11 +44,15 @@ function App() {
   }, []);
   return (
     <>
+    
       <Router>
+      <Auth0ProviderWithHistory>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/search/:lat/:lng" component={Search} />
+          <ProtectedRoute path="/profile" component={Profile} />
         </Switch>
+        </Auth0ProviderWithHistory>
       </Router>
     </>
   );
