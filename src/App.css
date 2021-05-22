@@ -600,6 +600,7 @@ a{
 	border-radius: 5px;
 	right: 0;
     top: 50px;
+    z-index: 3;	
 }
 .avatar-btn{
 	cursor: pointer;

@@ -3,6 +3,10 @@ import MetaTags from 'react-meta-tags';
 import MaindHOC from '../components/MainHOC';
 import FireStore from '../firebase/fireStore';
 import Map from '../components/Map';
+import { withAuth0 } from '@auth0/auth0-react';
+import { compose } from 'recompose'
+
+
 import {
 	GOOGLE_MAPS_API_KEY,
 	UBER_CLIENT_ID,
@@ -10,6 +14,7 @@ import {
 	ESP_PROXY_DOMAIN,
 	ESP_PROXY_PORT
 } from '../constants';
+import LoginButton from '../components/LoginButton';
 
 const MAP_API = `${GOOGLE_MAPS_API_KEY}`.match(/[A-Za-z0-9_]+/i)[0];
 const googleMapURL = `https://maps.googleapis.com/maps/api/js?key=${MAP_API}`;
@@ -217,6 +222,7 @@ class Search extends Component {
 	 * The render function.
 	 */
 	render() {
+		const { isAuthenticated } = this.props.auth0;
 		const {
 			lat,
 			lng,
@@ -284,15 +290,21 @@ class Search extends Component {
 							<div className="text">
 								<h2>No results found for {city}</h2>
 								<br />
-								<span>
+								{ !isAuthenticated && (
+									<span>
 								Please register a request to enable service in your area{" "}
 								</span>
+								)
+								}
 							</div>
+							{ !isAuthenticated && (
 							<div>
 								<a href={`https://${ESP_PROXY_DOMAIN}:${ESP_PROXY_PORT}/auth0/login/auth0`}>
-								<button type="button">Request</button>
+								<LoginButton name={'Request'}/>
 							</a>
 							</div>
+							)
+							}
 						</div>
 					
 					)}
@@ -324,5 +336,8 @@ class Search extends Component {
 		);
 	}
 }
+export default compose(
+	withAuth0,
+	MaindHOC
+)(Search)
 
-export default MaindHOC(Search);
