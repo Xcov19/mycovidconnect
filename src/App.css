@@ -705,6 +705,25 @@ a{
 	 border-radius: 100%;
 	 margin-bottom: 20px;
  }
+ .profile-banner {
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	padding: 80px 0;
+	background-repeat: no-repeat;
+	background-position: center;
+	padding-left: 30px;
+	padding-right: 30px;
+	background-size: cover;
+	background-image: url('https://d2vgampz89jm7o.cloudfront.net/Hero+Image-Half+Blur.png');
+	background-color: rgba(0, 0, 0, 0.53);
+	background-blend-mode: darken;
+	background-attachment: fixed;
+	box-shadow: 1px 0 10px -5px #000;
+}
+.profile-banner .btn{
+	padding: 30px 10px;
+}
   .form-group{
 	  display: flex;
 	  flex-direction: column;
@@ -793,6 +812,9 @@ a{
 .m-0{
 	margin: 0 !important;
 }
+.mb-45{
+	margin-bottom: 45px;
+}
 .triangle {
 	position: relative;
 	background-color: orange;
@@ -859,9 +881,7 @@ a{
 	.profile-sec-2{
 		padding: 38px;
 	}
-	.f-22{
-		font-size: 16px;
-	}
+
 }
 
 
@@ -878,5 +898,8 @@ a{
 	}
 	.profile-sec-2{
 		padding: 38px;
+	}
+	.fs-22{
+		font-size: 16px;
 	}
 }

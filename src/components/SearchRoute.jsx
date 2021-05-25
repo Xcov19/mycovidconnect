@@ -40,7 +40,7 @@ class SearchRoute extends Component {
 			return <Redirect to={`/search/${lat}/${lng}`} />;
 		}
         return (
-            <div onClick={this.getLocation}>
+            <div className="d-block" onClick={this.getLocation}>
 						{this.props.children}
 						</div>
         )
