@@ -9,6 +9,7 @@ class SearchRoute extends Component {
 			lat: 0,
 			lng: 0,
 			redirect: false,
+			navigateTo: props?.navigateTo ? props?.navigateTo  :'search'
 		};
 	}
 
@@ -35,9 +36,9 @@ class SearchRoute extends Component {
 	};
 
     render(){
-        const { redirect, lat, lng } = this.state;
+        const { redirect, lat, lng, navigateTo } = this.state;
 		if (redirect) {
-			return <Redirect to={`/search/${lat}/${lng}`} />;
+			return <Redirect to={`/${navigateTo}/${lat}/${lng}`} />;
 		}
         return (
             <div className="d-block" onClick={this.getLocation}>

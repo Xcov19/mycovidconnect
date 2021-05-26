@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import MaindHOC from '../components/MainHOC';
 import { useAuth0 } from "@auth0/auth0-react";
 import SearchRoute from '../components/SearchRoute';
+import useDeviceDetect from "../utils/useDeviceDetect";
 
 const Profile = () => {
 
@@ -11,12 +12,14 @@ const Profile = () => {
   const [isEdit, editForm] = useState(null);
 
   const [activeTab, setActiveTab] = useState('home');
+  
+  const { isMobile } = useDeviceDetect();
 
   return (
     <div className="row m-0 d-flex">
 
       {
-        window.screen.width > 768 && (
+        !isMobile  && (
           <>
             <div className="col-md-5 p-0">
               <div className="profile-sec-left">
@@ -34,8 +37,8 @@ const Profile = () => {
                 </div>
 
                 <div className="profile-sec-2">
-                  <div className="d-flex align-items-center justify-content-md-center justify-content-sm-end mb-30">
-                    <div className="fs-24 fw-med text-secondary">Personal Details</div>
+                  <div className="d-flex align-items-center justify-content-center mb-30">
+                    <div className="fs-24 fw-med text-c-secondary">Personal Details</div>
 
                   </div>
                   <div className="row m-0">
@@ -59,7 +62,7 @@ const Profile = () => {
             </div>
             <div className="col-md-7 justify-content-center align-items-center d-flex">
                 <button className="btn btn-secondary fs-22 mr-80 p-30">Find vaccine centers nearby</button>
-                <SearchRoute >
+                <SearchRoute  navigateTo={"search"}>
                   <button className="btn btn-primary fs-22 p-30">Find hospitals nearby</button>
                 </SearchRoute>
             </div>
@@ -67,7 +70,7 @@ const Profile = () => {
         )
       }
       {
-        window.screen.width <= 768 && (
+       isMobile && (
           <>
             {
               activeTab === 'profile' && (
@@ -87,8 +90,8 @@ const Profile = () => {
                     </div>
 
                     <div className="profile-sec-2">
-                      <div className="d-flex align-items-center justify-content-md-center justify-content-sm-end mb-30">
-                        <div className="fs-24 fw-med text-secondary">Personal Details</div>
+                      <div className="d-flex align-items-center justify-content-start mb-30">
+                        <div className="fs-24 fw-med text-c-secondary">Personal Details</div>
 
                       </div>
                       <div className="row m-0">
@@ -116,8 +119,8 @@ const Profile = () => {
               activeTab === 'home' && (
                 <div className="col-md-7 justify-content-center align-items-center p-0">
                   <div className="profile-banner d-flex flex-column">
-                    <button className="btn btn-secondary fs-22 mb-45 p-30">Find vaccine centers nearby</button>
-                    <SearchRoute >
+                    <button className="btn btn-secondary fs-22 mb-45 p-30 w-100">Find vaccine centers nearby</button>
+                    <SearchRoute navigateTo={"search"}>
                       <button className="btn btn-primary fs-22 p-30 w-100">Find hospitals nearby</button>
                     </SearchRoute>
                   </div>

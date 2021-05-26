@@ -30,7 +30,7 @@ class Home extends Component {
 							With real-time updates, MyCOVIDConnect links you to the nearest
 							healthcare provider for testing and pre-admission
 						</p>
-						<SearchRoute>
+						<SearchRoute navigateTo={"search"}>
 							<button>
 								<h2>SOS</h2>
 								<p>

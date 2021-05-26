@@ -37,7 +37,7 @@ const Login = () => {
                             ref={drop}>
                             <div className="avatar-btn"
                                 onClick={() => setOpen(open => !open)} >
-                                <p className="fs-22 text-primary fw-med mr-30">Welcome, {user?.given_name}</p>
+                                <p className="fs-22 text-c-primary fw-med mr-30">Welcome, {user?.given_name}</p>
                                 <img className="avatar" src={user.picture} alt={user.name} />
                             </div>
                             {open && (

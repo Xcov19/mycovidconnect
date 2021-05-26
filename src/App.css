@@ -676,7 +676,7 @@ a{
     background: #fff;
   }
  .profile-sec-2{
-	 padding: 30;
+	 padding: 30px;
  } 
  .profile-sec-1{
 	display: flex;
@@ -779,10 +779,10 @@ a{
 .text-white{
 	color: #fff;
 }
-.text-primary{
+.text-c-primary{
 	color: #0455BF;
 }
-.text-secondary{
+.text-c-secondary{
 	color: #252759;
 }
 .text-default{
@@ -879,9 +879,8 @@ a{
 
 @media only screen and (min-width: 768px) {
 	.profile-sec-2{
-		padding: 38px;
+		padding: 75px;
 	}
-
 }
 
 
