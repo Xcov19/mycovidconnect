@@ -5,7 +5,7 @@ import LoginButton from './LoginButton';
 
 const Login = () => {
 
-    const { loginWithRedirect, logout, user, isAuthenticated, isLoading } = useAuth0();
+    const { logout, user, isAuthenticated, isLoading } = useAuth0();
     const [open, setOpen] = React.useState(false);
     const drop = React.useRef(null);
     /**

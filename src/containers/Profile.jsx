@@ -9,7 +9,7 @@ const Profile = () => {
   const { user, isAuthenticated } = useAuth0();
   const { name, picture } = user;
 
-  const [isEdit, editForm] = useState(null);
+  const [isEdit] = useState(null);
 
   const [activeTab, setActiveTab] = useState('home');
   
