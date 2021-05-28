@@ -87,7 +87,7 @@ class Nearby extends Component {
 
     /**
 	 * Function to fech nearby vaccine centers based on pincode
-	 *  @param pincode - User's pincode
+	 *  @param { string } pincode - User's pincode
 	 */
 	getVaccineSessionsByPin = (pincode) => {
 
@@ -108,8 +108,8 @@ class Nearby extends Component {
 
 	/**
 	 * Filter vaccine centers based on distance
-	 *  @param results - Center results fron findByPin API
-	 *  @param distance - Distance from search param in url
+	 *  @param {Array<{string,Object}>} results - Center results fron findByPin API
+	 *  @param {String} distance - Distance from search param in url
 	 */
 	filterResultsByDistance = (results, distance) => {
 		let vaccineCenters = results.filter((res)=>{
