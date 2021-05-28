@@ -61,7 +61,9 @@ const Profile = () => {
               </div>
             </div>
             <div className="col-md-7 justify-content-center align-items-center d-flex">
+                <SearchRoute  navigateTo={"nearby"} searchParam={100}>
                 <button className="btn btn-secondary fs-22 mr-80 p-30">Find vaccine centers nearby</button>
+                </SearchRoute>
                 <SearchRoute  navigateTo={"search"}>
                   <button className="btn btn-primary fs-22 p-30">Find hospitals nearby</button>
                 </SearchRoute>
@@ -119,7 +121,9 @@ const Profile = () => {
               activeTab === 'home' && (
                 <div className="col-md-7 justify-content-center align-items-center p-0">
                   <div className="profile-banner d-flex flex-column">
+                  <SearchRoute  navigateTo={"nearby"} searchParam={100}>
                     <button className="btn btn-secondary fs-22 mb-45 p-30 w-100">Find vaccine centers nearby</button>
+                    </SearchRoute>
                     <SearchRoute navigateTo={"search"}>
                       <button className="btn btn-primary fs-22 p-30 w-100">Find hospitals nearby</button>
                     </SearchRoute>

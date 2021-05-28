@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import Home from "./containers/Home";
+import Wrapper from "./containers/Wrapper";
 import Search from "./containers/Search";
 import Profile from "./containers/Profile";
+import Nearby from "./containers/Nearby";
 import ProtectedRoute from "./auth/protected-route";
 
 import {
@@ -14,6 +15,7 @@ import {
 import Auth0ProviderWithHistory from "./auth/auth0-provider-with-history";
 
 function App() {
+
   useEffect(() => {
     //import tawk script
 
@@ -48,8 +50,10 @@ function App() {
       <Router>
       <Auth0ProviderWithHistory>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route path="/" exact component={Wrapper}
+           />
           <Route path="/search/:lat/:lng" component={Search} />
+          <Route path="/nearby/:lat/:lng" component={Nearby} />
           <ProtectedRoute path="/profile" component={Profile} />
         </Switch>
         </Auth0ProviderWithHistory>
