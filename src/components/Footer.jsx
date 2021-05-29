@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CookieDeclaration from '../components/CookieDeclaration';
 
-const Footer = (props) => {
+const Footer = () => {
 	const [show, setShow] = useState(false);
 
 	const showModal = (e) => {
@@ -11,6 +11,7 @@ const Footer = (props) => {
 	const hidemodal = () => {
 		setShow(false);
 	};
+	
 	return (
 		<>
 			<footer>
