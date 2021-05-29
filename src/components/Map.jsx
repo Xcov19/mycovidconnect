@@ -31,7 +31,7 @@ const Map = ({ myPlaces }) => {
 
 	/**
 	 * Set direction from source and destination
-	 * @param {Array} myPlaces - Source and Destination positions.
+	 * @param {Array<{string,Object}>} myPlaces - Source and Destination positions.
 	 */
 	const getDirection = (myPlaces) => {
 		const directionsService = new window.google.maps.DirectionsService();
@@ -47,8 +47,9 @@ const Map = ({ myPlaces }) => {
 				if (status === window.google.maps.DirectionsStatus.OK) {
 					setDirections(result);
 					setIsLoading(false);
-				} else {
-					alert(`error fetching directions ${result}`);
+				} else if (process.env.NODE_ENV === 'development') {
+					//show alert in dev mode
+						alert(`error fetching directions ${result}`);
 				}
 			},
 		);

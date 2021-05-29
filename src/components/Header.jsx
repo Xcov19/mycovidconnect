@@ -7,7 +7,9 @@ const Header = () => {
     <header>
       <div className="headerin">
         <Logo />
+        <div className="d-md-block d-none">
         <Login />
+        </div>
       </div>
     </header>
   );
