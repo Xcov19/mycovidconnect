@@ -690,13 +690,14 @@ a{
  .profile-sec-1::after{
 	 position: absolute;
 	 content: "";
-	 background-image: linear-gradient(143deg, #0E5CC1 0% , #072E61 100%);
-	 border: 1px solid #707070;
-	height: 100%;
-	width: 100%;
-	top: 0;
-	z-index: -1;
-	border-radius: 0 0 132%;
+	 background-image: url('./assets/profile_back.svg');
+	 height: 100%;
+	 width: 100%;
+	 top: 0;
+	 z-index: -1;
+	 background-size: cover;
+	 background-position: top center;
+	 background-repeat: no-repeat;
  }
  .profile-avatar{
 	 width: 138px;

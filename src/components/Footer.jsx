@@ -5,6 +5,7 @@ const Footer = () => {
 	const [show, setShow] = useState(false);
 
 	const showModal = (e) => {
+		e.preventDefault();
 		setShow(true);
 	};
 

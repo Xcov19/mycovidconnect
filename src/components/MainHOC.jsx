@@ -19,7 +19,7 @@ const MaindHOC = (WrappedComponent) => {
       return (
         <>
           <Header />
-          <WrappedComponent {...this.props} />
+          <main><WrappedComponent {...this.props} /></main>
           <Footer/>
           <Copyrights />
         </>
