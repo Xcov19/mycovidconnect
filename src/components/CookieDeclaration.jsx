@@ -6,7 +6,7 @@ const CookieDeclaration = ({ show, handleclose }) => {
 		const script = document.createElement('script');
 		script.src = COOKIEBOT_CONSENT_DECLARATION;
 		script.async = true;
-		document.getElementById('cookieData').appendChild(script);
+			document.getElementById('cookieData').appendChild(script);
 	}, []);
 
 	return (
@@ -23,6 +23,7 @@ const CookieDeclaration = ({ show, handleclose }) => {
 				position: 'absolute',
 				backgroundColor: 'white',
 				overflow: 'auto',
+				zIndex: '1'
 			}}
 			id="cookieData"
 		>

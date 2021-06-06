@@ -1,15 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const Logo = () => {
+
+  const history = useHistory();
+
   return (
-    <Link to="/">
       <img
+      onClick={()=>{ return history.push('/')}}
         className="logo"
         alt="logo"
         src={'https://d2vgampz89jm7o.cloudfront.net/XCOV19+Logo.png'}
       />
-    </Link>
   );
 };
 
