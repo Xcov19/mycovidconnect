@@ -28,8 +28,8 @@ class Nearby extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			lat: parseFloat(this.props.match.params.lat) || 0,
-			lng: parseFloat(this.props.match.params.lng) || 0,
+			lat: (this.props && this.props.match) ? parseFloat(this.props.match.params.lat) : 0,
+			lng: (this.props && this.props.match) ? parseFloat(this.props.match.params.lng) : 0,
 			selectedLat: 0,
 			selectedLng: 0,
 			city: '',
@@ -99,11 +99,8 @@ class Nearby extends Component {
         fetch(`https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=${pincode}&date=${datestring}`)
         .then(response => response.json())
         .then(data=>{
-			const distance = Number(new URLSearchParams(this.props.location.search).get('distance'));
-
-			const centerData = this.filterResultsByDistance(data['sessions'], distance || 100);
-            this.setResults(centerData);
-        })
+			this.findVaccineCentersByLatLong(data['sessions']);
+        }).catch(console.error)
     }
 
 	/**
@@ -119,7 +116,6 @@ class Nearby extends Component {
 				return res;
 			}
 		})
-		console.log("vaccine center less than 100km distance", vaccineCenters);
 		return vaccineCenters;
 	}
 	/**
@@ -244,6 +240,44 @@ class Nearby extends Component {
 		}
 	};
 
+	/**
+	 * Find vaccine centers by lat-long
+	 * @param  {any} sessionsData - sessions array from findByPin API
+	 */
+	findVaccineCentersByLatLong(sessionsData){
+		const {lat, lng} = this.state;
+		fetch(`https://cdn-api.co-vin.in/api/v2/appointment/centers/public/findByLatLong?lat=${lat}&long=${lng}`)
+		.then(response => response.json())
+        .then(data=>{
+
+			this.filterSessions(sessionsData, data['centers'])		
+		
+		}).catch(console.error)
+	}
+
+	/**
+	 * Filters centers based on same center_id to get exact lat-long for the center & distance
+	 * @param  {any} sessionsData - sessionsData array from findByPin API
+	 * @param  {any} centersByLatLng - centers array from findByLatLong API
+	 */
+	filterSessions(sessionsData, centersByLatLng){
+		
+		const filteredCenters = centersByLatLng.filter(cen => {
+			if (sessionsData.some(({ center_id }) => cen.center_id === center_id)) {
+				cen['lat'] = Number(cen['lat']);
+				cen['long'] = Number(cen['long']);
+				return cen;
+			}
+		}
+		);
+		const distance = (this.props.location && this.props.location.search) ? Number(new URLSearchParams(this.props.location.search).get('distance')) : 100;
+		
+		const centerDataWithDis = this.filterResultsByDistance(filteredCenters, distance || 100);
+
+		centerDataWithDis.sort(function (a, b) { return parseFloat(a.distance) - parseFloat(b.distance) });
+
+		this.setResults(centerDataWithDis);
+	}
 	/**
 	 * A react lifecycle method called when the component has mounted.
 	 * It calls the getStates method right after updating.
