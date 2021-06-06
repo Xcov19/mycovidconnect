@@ -123,7 +123,7 @@ Check package.json for scripts on how to build and run.
 
 ## 6. Contributing
 
-Please read [CONTRIBUTING.md](#CONTRIBUTING.md) before you help us!
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) before you help us!
 
 <a name="cre"></a>
 
