@@ -4,7 +4,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import SearchRoute from '../components/SearchRoute';
 import useDeviceDetect from "../utils/useDeviceDetect";
 
-const Profile = () => {
+export const Profile = () => {
 
   const { user, isAuthenticated } = useAuth0();
   const { name, picture } = user;
