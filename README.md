@@ -24,7 +24,7 @@ TL;DR: Start Contributing right away:
 
 ## 1. Description
 
-This is a part of project XCoV19 which aims to build a software that guides patients to the nearest hospital, while modeling the spread of the virus in order to better anticipate hospital needs. [Here](https://www.covidsos.net) is the official page.
+This is a part of project XCoV19 which aims to build a software that guides patients to the nearest hospital, while modeling the spread of the virus in order to better anticipate hospital needs. [Here](https://www.mycovidconnect.com/) is the official page.
 
 <a name="guide"></a>
 
