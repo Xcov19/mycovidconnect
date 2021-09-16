@@ -4,8 +4,8 @@
     "private": true,
     "dependencies": {
         "@auth0/auth0-react": "^1.5.0",
-        "@testing-library/jest-dom": "^4.2.4",
-        "@testing-library/react": "^9.5.0",
+        "@testing-library/jest-dom": "^5.1.0",
+        "@testing-library/react": "^10.0.0",
         "@testing-library/user-event": "^7.2.1",
         "@types/googlemaps": "^3.0.0",
         "@types/jest": "^26.0.7",
@@ -23,7 +23,7 @@
         "react-google-maps": "^9.4.5",
         "react-meta-tags": "^0.7.4",
         "react-router-dom": "^5.2.0",
-        "react-scripts": "^3.4.3",
+        "react-scripts": "^4.0.0",
         "serve": "^11.3.2",
         "ts-jest": "^27.0.2",
         "typescript": "^3.9.7"
