@@ -18,8 +18,11 @@ jobs:
         with:
           node-version: 12
       # Install your linters here
-      - uses: actions-hub/stylelint@master
-      - name: Run linters
+      - name: Install StyleLint dependencies
+        run: |
+          npm install --save-dev stylelint stylelint-config-standard && |
+          echo "{'extends': 'stylelint-config-standard'}" >> .stylelintrc.json
+      - name: Run lint-action
         uses: wearerequired/lint-action@v1
         with:
           stylelint: true
