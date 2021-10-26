@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: stylelinter
-        uses: actions-hub/stylelint@v1.1.2
-    env:
-        PATTERN: "**/*.css"
+        uses: actions-hub/stylelint@master
+        env:
+          INDENT_SPACES: 4
+          PATTERN: "*.css"
