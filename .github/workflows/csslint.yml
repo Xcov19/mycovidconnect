@@ -20,8 +20,7 @@ jobs:
       # Install your linters here
       - name: Install StyleLint dependencies
         run: |
-          npm install --save-dev stylelint stylelint-config-standard && |
-          echo "{'extends': 'stylelint-config-standard'}" >> .stylelintrc.json
+          npm install --save-dev stylelint stylelint-config-standard && echo "{'extends': 'stylelint-config-standard'}" >> .stylelintrc.json
       - name: Run lint-action
         uses: wearerequired/lint-action@v1
         with:
