@@ -42,6 +42,10 @@ build
 node_modules/
 jspm_packages/
 
+# ignore misc ides settings
+.vscode/
+.theia/
+
 # TypeScript v1 declaration files
 typings/
 

@@ -3,8 +3,9 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-        "@testing-library/jest-dom": "^4.2.4",
-        "@testing-library/react": "^9.5.0",
+        "@auth0/auth0-react": "^1.5.0",
+        "@testing-library/jest-dom": "^5.1.0",
+        "@testing-library/react": "^10.0.0",
         "@testing-library/user-event": "^7.2.1",
         "@types/googlemaps": "^3.0.0",
         "@types/jest": "^26.0.7",
@@ -16,20 +17,32 @@
         "eslint-plugin-jsx-a11y": "^6.3.1",
         "fibers": ">=3.1.0",
         "node-gyp": "^7.1.0",
-        "node-sass": "^4.14.1",
+        "node-sass": "^5.0.0",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-google-maps": "^9.4.5",
         "react-meta-tags": "^0.7.4",
         "react-router-dom": "^5.2.0",
-        "react-scripts": "^3.4.3",
+        "react-scripts": "^4.0.0",
         "serve": "^11.3.2",
+        "ts-jest": "^27.0.2",
         "typescript": "^3.9.7"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^4.6.0",
+        "@typescript-eslint/parser": "^4.6.0",
+        "enzyme": "^3.11.0",
+        "enzyme-adapter-react-16": "^1.15.6",
+        "eslint-config-prettier": "^6.15.0",
+        "prettier": "^2.1.2"
     },
     "jshintConfig": {
         "esversion": 6
     },
     "scripts": {
+        "eslint:github-action": "eslint --fix src/",
+        "fmt": "prettier --write src/**.{json,js,ts,yml,md}",
+        "fmt:check": "prettier --check src/**.{json,js,ts,yml,md}",
         "serve": "serve -s build",
         "build-dev-and-serve": "npm run build && npm run serve",
         "start": "react-scripts start",

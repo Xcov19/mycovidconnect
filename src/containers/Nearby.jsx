@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import MetaTags from 'react-meta-tags';
 import MaindHOC from '../components/MainHOC';
-import FireStore from '../firebase/fireStore';
 import Map from '../components/Map';
 import { withAuth0 } from '@auth0/auth0-react';
 import { compose } from 'recompose'
@@ -20,17 +19,17 @@ const MAP_API = `${GOOGLE_MAPS_API_KEY}`.match(/[A-Za-z0-9_]+/i)[0];
 const googleMapURL = `https://maps.googleapis.com/maps/api/js?key=${MAP_API}`;
 
 /**
- * The Search Component.
+ * The Nearby Component.
  *
- * @class Search
+ * @class Nearby
  * @extends React.Component
  */
-class Search extends Component {
+export class Nearby extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			lat: parseFloat(this.props.match.params.lat) || 0,
-			lng: parseFloat(this.props.match.params.lng) || 0,
+			lat: (this.props && this.props.match) ? parseFloat(this.props.match.params.lat) : 0,
+			lng: (this.props && this.props.match) ? parseFloat(this.props.match.params.lng) : 0,
 			selectedLat: 0,
 			selectedLng: 0,
 			city: '',
@@ -39,6 +38,7 @@ class Search extends Component {
 			isLoading: true,
 			isAndroid: /Android/i.test(navigator.userAgent),
 			isIos: /iPhone|iPod|iPad/.test(navigator.platform),
+            allStates: []
 		};
 	}
 
@@ -55,9 +55,16 @@ class Search extends Component {
 			.then((data) => {
 				const main_pint = data.results[0];
 				const locality = (main_pint?.address_components || [])?.filter((x) =>
-					x.types?.includes('locality'),
+					x.types?.includes("locality"),
 				);
 				const city = locality[0]?.long_name || '';
+                // get postal code
+                const postalLoc = (main_pint?.address_components || [])?.filter((x) =>
+					x.types?.includes("postal_code"),
+				);
+
+				const postal_code = postalLoc[0]?.long_name || '';
+
 				/**
 				 *  Callback function passed
 				 * @callback CallBack
@@ -66,18 +73,51 @@ class Search extends Component {
 				 * @event Search#getAddressFromLocation
 				 * @type {updater}
 				 * @property {city} state.city
-				 * @property {CallBack} getLocationResults
+				 * @property {CallBack} getVaccineSessionsByPin
 				 */
 				this.setState(
 					{
 						city: city.toLowerCase(),
 						pickupAddress: main_pint?.formatted_address || '',
 					},
-					() => this.getLocationResults(),
+					() => this.getVaccineSessionsByPin(postal_code)
 				);
 			}).catch(console.error);
 	};
 
+    /**
+	 * Function to fech nearby vaccine centers based on pincode
+	 *  @param { string } pincode - User's pincode
+	 */
+	getVaccineSessionsByPin = (pincode) => {
+
+		console.log("getting vaccine centers by pincode")
+		const datestring = new Date().toLocaleDateString('en-GB', {
+			day: 'numeric', month: 'numeric', year: 'numeric'
+		  }).replace(/\//g, '-');
+
+        fetch(`https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=${pincode}&date=${datestring}`)
+        .then(response => response.json())
+        .then(data=>{
+			this.findVaccineCentersByLatLong(data['sessions']);
+        }).catch(console.error)
+    }
+
+	/**
+	 * Filter vaccine centers based on distance
+	 *  @param {Array<{string,Object}>} results - Center results fron findByPin API
+	 *  @param {String} distance - Distance from search param in url
+	 */
+	filterResultsByDistance = (results, distance) => {
+		let vaccineCenters = results.filter((res)=>{
+			const calcDistance = Number(this.generateDistance(this.state.lat, this.state.lng, res['lat'], res['long'], 'K'));
+			if(calcDistance <= distance){
+				res["distance"] =  calcDistance
+				return res;
+			}
+		})
+		return vaccineCenters;
+	}
 	/**
 	 * Store search results in state
 	 *
@@ -96,20 +136,10 @@ class Search extends Component {
 
 		this.setState({
 			results,
-			selectedLat: (results[0]?.geometry?.location || {}).lat,
-			selectedLng: (results[0]?.geometry?.location || {}).lng,
+			selectedLat: (results[0] || {}).lat,
+			selectedLng: (results[0] || {}).long,
 			isLoading: false,
 		});
-	};
-
-	/**
-	 * Fetch list of hospitals available in current city
-	 */
-	getLocationResults = () => {
-		let { city } = this.state;
-		city = alternativeCityNamesLookup[city] || city;
-		FireStore.firebaseInit();
-		FireStore.fetchCityData(city, this.setResults);
 	};
 
 	/**
@@ -211,8 +241,46 @@ class Search extends Component {
 	};
 
 	/**
+	 * Find vaccine centers by lat-long
+	 * @param  {any} sessionsData - sessions array from findByPin API
+	 */
+	findVaccineCentersByLatLong(sessionsData){
+		const {lat, lng} = this.state;
+		fetch(`https://cdn-api.co-vin.in/api/v2/appointment/centers/public/findByLatLong?lat=${lat}&long=${lng}`)
+		.then(response => response.json())
+        .then(data=>{
+
+			this.filterSessions(sessionsData, data['centers'])		
+		
+		}).catch(console.error)
+	}
+
+	/**
+	 * Filters centers based on same center_id to get exact lat-long for the center & distance
+	 * @param  {any} sessionsData - sessionsData array from findByPin API
+	 * @param  {any} centersByLatLng - centers array from findByLatLong API
+	 */
+	filterSessions(sessionsData, centersByLatLng){
+		
+		const filteredCenters = centersByLatLng.filter(cen => {
+			if (sessionsData.some(({ center_id }) => cen.center_id === center_id)) {
+				cen['lat'] = Number(cen['lat']);
+				cen['long'] = Number(cen['long']);
+				return cen;
+			}
+		}
+		);
+		const distance = (this.props.location && this.props.location.search) ? Number(new URLSearchParams(this.props.location.search).get('distance')) : 100;
+		
+		const centerDataWithDis = this.filterResultsByDistance(filteredCenters, distance || 100);
+
+		centerDataWithDis.sort(function (a, b) { return parseFloat(a.distance) - parseFloat(b.distance) });
+
+		this.setResults(centerDataWithDis);
+	}
+	/**
 	 * A react lifecycle method called when the component has mounted.
-	 * It calls the getAddressFromLocation method right after updating.
+	 * It calls the getStates method right after updating.
 	 */
 	componentDidMount() {
 		this.getAddressFromLocation();
@@ -234,31 +302,33 @@ class Search extends Component {
 			isAndroid,
 			isIos,
 		} = this.state;
+
 		const result_list =
 			results && results.length !== 0
 				? results.map(
-						({ facility_type, formatted_address, geometry: { location } }, index) => {
+						( vaccineCenter, index) => {
 							return (
 								<div
 									className="location"
 									key={index}
-									onClick={() => this.setNewLocation(location.lat, location.lng)}
+									onClick={() => this.setNewLocation(vaccineCenter.lat, vaccineCenter.long)}
 								>
 									<h2>
-										{facility_type}{' '}
+										{vaccineCenter?.name}{' '}
 										<span>
-											{this.generateDistance(lat, lng, location.lat, location.lng, 'K')} Km
+										{this.generateDistance(lat, lng, vaccineCenter.lat, vaccineCenter.long, 'K')} Km
+
 										</span>
 									</h2>
 									<address>
 										<i className="fas fa-map-marker-alt"></i>
-										{formatted_address}
+										{vaccineCenter?.address}
 									</address>
 
 									<button
 										type="button"
 										onClick={() =>
-											this.redirectToUber(formatted_address, location.lat, location.lng)
+											this.redirectToUber(vaccineCenter.address, vaccineCenter.lat, vaccineCenter.long)
 										}
 										className="uberBtn"
 									>
@@ -339,5 +409,5 @@ class Search extends Component {
 export default compose(
 	withAuth0,
 	MaindHOC
-)(Search)
+)(Nearby)
 
