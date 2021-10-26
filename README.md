@@ -123,7 +123,7 @@ Check package.json for scripts on how to build and run.
 
 ## 6. Contributing
 
-Please read [CONTRIBUTING.md](https://github.com/Xcov19/mycovidconnect/blob/develop/CONTRIBUTING.md) before you help us!
+Please read [CONTRIBUTING.md](/CONTRIBUTING.md) before you help us!
 
 <a name="cre"></a>
 
@@ -141,4 +141,7 @@ Please read [CONTRIBUTING.md](https://github.com/Xcov19/mycovidconnect/blob/deve
 
 [ jmakhack ](https://github.com/jmakhack)
 
+[ Augilar ](https://github.com/Augilar)
+
 [ odysseaspapadimas ](https://github.com/odysseaspapadimas)
+
