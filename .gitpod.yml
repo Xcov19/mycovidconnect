@@ -1,0 +1,19 @@
+image:
+  file: Dockerfile
+tasks:
+  - init: npm i
+    command: PORT=9119 CHOKIDAR_USEPOLLING="true" npm start
+ports:
+  - port: 9119
+github:
+  prebuilds:
+    # enable for all branches in this repo (defaults to false)
+    branches: true
+    # enable for pull requests coming from forks (defaults to false)
+    pullRequestsFromForks: true
+    # add a "Review in Gitpod" button as a comment to pull requests (defaults to false)
+    addComment: true
+    # add a "Review in Gitpod" button to the pull request's description (defaults to false)
+    addBadge: true
+    # add a label once the prebuild is ready to pull requests (defaults to false)
+    addLabel: true
