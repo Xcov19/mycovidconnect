@@ -23,3 +23,5 @@ jobs:
         uses: wearerequired/lint-action@v1
         with:
           stylelint: true
+          stylelint_dir: src/
+          stylelint_extensions: css,scss
