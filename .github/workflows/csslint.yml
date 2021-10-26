@@ -18,6 +18,7 @@ jobs:
         with:
           node-version: 12
       # Install your linters here
+      - uses: actions-hub/stylelint@master
       - name: Run linters
         uses: wearerequired/lint-action@v1
         with:
