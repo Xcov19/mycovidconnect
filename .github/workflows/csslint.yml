@@ -11,7 +11,14 @@ jobs:
     name: stylelint
     runs-on: ubuntu-latest
     steps:
-      - name: stylelinter
-        uses: actions-hub/stylelint@master
-        env:
-          INDENT_SPACES: 4
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      # Install your linters here
+      - name: Run linters
+        uses: wearerequired/lint-action@v1
+        with:
+          stylelint: true
