@@ -34,7 +34,9 @@
         "enzyme": "^3.11.0",
         "enzyme-adapter-react-16": "^1.15.6",
         "eslint-config-prettier": "^6.15.0",
-        "prettier": "^2.1.2"
+        "prettier": "^2.1.2",
+        "stylelint": "^14.0.0",
+        "stylelint-config-standard": "^23.0.0"
     },
     "jshintConfig": {
         "esversion": 6
