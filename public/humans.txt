@@ -38,7 +38,7 @@
 
 # HOW TO CONTRIBUTE
 
-    Check out this - https://github.com/isayakmondal/mycovidconnect/blob/develop/README.md
+    Check out this - https://github.com/Xcov19/mycovidconnect/blob/develop/README.md
 
 #TECHNOLOGIES
 
