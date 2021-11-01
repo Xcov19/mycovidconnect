@@ -1,0 +1,57 @@
+# TEAM
+
+    @akshathagujjar
+    @akshayparmar90
+    @AmosKorir
+    @andyderek
+    @anitha-ravala
+    @atuljain
+    @Augilar
+    @batistaDev1113
+    @codecakes
+    @daxiaokongyi
+    @dhrubajyoti89
+    @GAUTAM-SOLANKI
+    @GeekySankar
+    @gorostiaga
+    @hajarNasr
+    @hannanel100
+    @harindra2002
+    @isayakmondal
+    @Jasonwei1106
+    @jmakhack
+    @kelushly
+    @ksr89
+    @nehasingh211
+    @nivedhasamy
+    @odysseaspapadimas
+    @premalrupnur
+    @PunitSoniME
+    @sayashchaudhary
+    @shivarajloni
+    @shubhawasthi123
+    @singhguri
+    @snowMan108
+    @sumeetp4
+    @Tapudp
+    @vasynizami
+
+# HOW TO CONTRIBUTE
+
+    Check out this - https://github.com/Xcov19/mycovidconnect/blob/develop/README.md
+
+#TECHNOLOGIES
+
+    Frameworks-
+        React
+
+    Services-
+        Firebase
+        Docker
+        
+    Languages-
+        JavaScript
+        CSS
+        Dockerfile
+        HTML
+        Shell
