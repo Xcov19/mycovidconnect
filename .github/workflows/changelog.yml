@@ -1,0 +1,26 @@
+name: Changelog
+
+on:
+  pull_request:
+    types: [closed]
+  push:
+    branches: [master]
+
+  issues:
+    types: [closed, edited]
+
+jobs:
+  generate_changelog:
+    runs-on: ubuntu-latest
+    name: Generate changelog
+    steps:
+      - uses: actions/checkout@v2
+      - name: Generate changelog
+        uses: charmixer/auto-changelog-action@v1.4
+        with:
+          output:
+            required: true
+            default: 'CHANGELOG.md'
+          base:
+            description: 'Optional base file to append generated changes to (default: HISTORY.md)'
+            required: true

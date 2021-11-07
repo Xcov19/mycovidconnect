@@ -24,7 +24,7 @@ const googleMapURL = `https://maps.googleapis.com/maps/api/js?key=${MAP_API}`;
  * @class Nearby
  * @extends React.Component
  */
-class Nearby extends Component {
+export class Nearby extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
