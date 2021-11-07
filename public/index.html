@@ -54,7 +54,6 @@
         text-transform: capitalize;
         font-family: "Lato", sans-serif;
       }
-   
     </style>
   </head>
   <body>
@@ -97,24 +96,14 @@
           console.log(`User response to the install prompt: ${outcome}`);
           deferredPrompt = null;
         });
-	window.addEventListener('appinstalled', () => {
-		div.style.display = "none";
-  // Clear the deferredPrompt so it can be garbage collected
-  deferredPrompt = null;
-  // Optionally, send analytics event to indicate successful install
-  console.log('PWA was installed');
-  alert("PWA was installed")
-});
-
-function getPWADisplayMode() {
-  const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
-  if (document.referrer.startsWith('android-app://')) {
-    return 'twa';
-  } else if (navigator.standalone || isStandalone) {
-    return 'standalone';
-  }
-  return 'browser';
-}
+        window.addEventListener("appinstalled", () => {
+          div.style.display = "none";
+          // Clear the deferredPrompt so it can be garbage collected
+          deferredPrompt = null;
+          // Optionally, send analytics event to indicate successful install
+          console.log("PWA was installed");
+          alert("PWA was installed");
+        });
       });
     </script>
   </body>
