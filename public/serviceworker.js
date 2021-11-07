@@ -1,9 +1,7 @@
 /* eslint-disable array-callback-return */
 const CACHE_NAME = "version-1";
 const urlsToCache = [ 'index.html', 'offline.html' ];
-
 const self = this;
-
 // Install SW
 self.addEventListener('install', (event) => {
     event.waitUntil(
@@ -33,7 +31,7 @@ self.addEventListener('activate', (event) => {
          cacheNames.map((cacheName) => {
                 if(!cacheWhitelist.includes(cacheName)) {
                     return caches.delete(cacheName);
-                }
+                };
             })
         ))
             
