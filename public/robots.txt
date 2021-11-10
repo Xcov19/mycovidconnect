@@ -1,32 +1,3 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
-
-
-
-
-{
-        "short_name": "XCOV19",
-        "name": "XCOV19",
-        "icons": [
-          {
-            "src": "cookie-icon.png",
-            "sizes": "192px and 512px",
-            "type": "image/png"
-          },
-          {
-            "src": "cookie-icon.png",
-            "type": "image/png",
-            "sizes": "192px and 512px"
-          },
-          {
-            "src": "cookie-icon.png",
-            "type": "image/png",
-            "sizes": "192px and 512px"
-          }
-        ],
-        "start_url": ".",
-        "display": "standalone",
-        "theme_color": "#000000",
-        "background_color": "#ffffff"
-      }

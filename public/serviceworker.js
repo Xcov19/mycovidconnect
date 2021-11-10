@@ -1,9 +1,7 @@
-/* eslint-disable array-callback-return */
 const CACHE_NAME = "version-1";
 const urlsToCache = [ 'index.html', 'offline.html' ];
-const self = this;
-/* eslint-disable array-callback-return */
-self.addEventListener('install', (event) => {
+const SELF = this;
+SELF.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then((cache) => {
@@ -12,8 +10,7 @@ self.addEventListener('install', (event) => {
             })
     );
 });
-/* eslint-disable array-callback-return */
-self.addEventListener('fetch', (event) => {
+SELF.addEventListener('fetch', (event) => {
     event.respondWith(
         caches.match(event.request)
             .then(() => {
@@ -22,18 +19,24 @@ self.addEventListener('fetch', (event) => {
             })
     );  
 });
-/* eslint-disable array-callback-return */
-self.addEventListener('activate', (event) => {
+SELF.addEventListener('activate', (event) => {
     const cacheWhitelist = [];
     cacheWhitelist.push(CACHE_NAME);
+    
     event.waitUntil(
+        
          caches.keys().then((cacheNames) => Promise.all(
-         cacheNames.map((cacheName) => {
+           
+            // eslint-disable-next-line array-callback-return
+            cacheNames.map((cacheName) => { 
                 if(!cacheWhitelist.includes(cacheName)) {
                     return caches.delete(cacheName);
                 }
             })
-        ))
-            
-    );
+        ))           
+        );
+        
 });
+
+
+
