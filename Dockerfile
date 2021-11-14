@@ -38,7 +38,6 @@ ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
 RUN if [ -f ".env" ]; then echo "paste env var values to .env"; else touch .env; fi;
 
 ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
-# RUN if [ -f "package-lock.json" ]; then rm package-lock.json; fi;
 RUN if [ -d "node_modules" ]; then rm -rf node_modules; fi;
 RUN if [ -d "~/.npm/_cacache" ]; then rm -rf ~/.npm/_cacache; fi;
 
