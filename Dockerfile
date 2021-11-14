@@ -43,6 +43,7 @@ RUN if [ -d "~/.npm/_cacache" ]; then rm -rf ~/.npm/_cacache; fi;
 
 # install packages
 COPY package.json /app
+RUN npm i --package-lock-only && npm audit fix
 COPY package-lock.json /app
 RUN npm i
 
