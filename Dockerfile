@@ -38,21 +38,22 @@ ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
 RUN if [ -f ".env" ]; then echo "paste env var values to .env"; else touch .env; fi;
 
 ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
-RUN if [ -f "package-lock.json" ]; then rm package-lock.json; fi;
+# RUN if [ -f "package-lock.json" ]; then rm package-lock.json; fi;
 RUN if [ -d "node_modules" ]; then rm -rf node_modules; fi;
 RUN if [ -d "~/.npm/_cacache" ]; then rm -rf ~/.npm/_cacache; fi;
 
 # install packages
-COPY package.json ./
+COPY package.json /app
+COPY package-lock.json /app
 RUN npm i
 
 # add app
-COPY public ./public
-COPY src ./src
-COPY .babelrc ./
-COPY .jshintrc ./
-COPY .whitesource ./
-COPY tsconfig.json ./
+COPY public /app/public
+COPY src /app/src
+COPY .babelrc /app
+COPY .jshintrc /app
+COPY .whitesource /app
+COPY tsconfig.json /app
 
 # build
 RUN npm run build

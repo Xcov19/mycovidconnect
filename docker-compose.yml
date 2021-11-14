@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3"
 
 services:
   client:
@@ -10,7 +10,6 @@ services:
     ports:
       - "9119:9119"
     volumes:
-      - "./:/app"
       - "/app/node_modules"
     environment:
     - PORT=9119
