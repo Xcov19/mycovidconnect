@@ -27,8 +27,6 @@ SELF.addEventListener('fetch', (event) => {
 SELF.addEventListener('activate', (event) => {
     const cacheWhitelist = [];
     cacheWhitelist.push(CACHE_NAME);
-    // if (isDebgging())
-    // {
         event.waitUntil(
             caches.keys().then((cacheNames) => Promise.all(
             cacheNames.map((cacheName) => {
@@ -39,7 +37,6 @@ SELF.addEventListener('activate', (event) => {
            ))
                
        );
-        
-    // }
+
 
 });
