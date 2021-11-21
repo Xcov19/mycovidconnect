@@ -37,7 +37,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <link rel="manifest" href="manifest.json" />
     <title>MyCovidConnect: Find Nearest Healthcare facility</title>
   </head>
@@ -49,25 +49,25 @@
         <button class="add-to-btn" id="add-to-btn">Install Our App</button>
       </div>
     </div>
- 
     <script>
+      
       if ("serviceWorker" in navigator) {
-        window.addEventListener("load", function () {
-          navigator.serviceWorker.register("/serviceworker.js").then(
-            function (registration) {
+        navigator.serviceWorker
+          .register("/serviceworker.js")
+          .then(function (registration) {
             console.info(
-                "Service worker registered with these scopes.", registration.scope
-              )
-            }
-          ).catch( (err)=>{
-                 console.log(err)
-              })
-        });
-        
-        
+              "Service worker registered with these scopes.",
+              registration.scope
+            );
+            
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
       }
-
+      
       let deferredPrompt;
+      
       var div = document.querySelector(".add-to");
       var button = document.querySelector(".add-to-btn");
       div.style.display = "none";
@@ -90,7 +90,16 @@
         });
       });
     </script>
-    <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-    <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+    <script
+      async
+      defer
+      src="https://scripts.simpleanalyticscdn.com/latest.js"
+    ></script>
+    <noscript
+      ><img
+        src="https://queue.simpleanalyticscdn.com/noscript.gif"
+        alt=""
+        referrerpolicy="no-referrer-when-downgrade"
+    /></noscript>
   </body>
 </html>

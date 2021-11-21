@@ -4,12 +4,30 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="style.css">
+
     <title>You are offline</title>
+    <style>
+      body {
+        font-family: helvetica, arial, sans-serif;
+        margin: 2em;
+      }
+
+      h1 {
+        font-style: italic;
+        color: #373fff;
+      }
+      p {
+        margin-block: 1rem;
+      }
+      
+      button {
+        display: block;
+      }
+    </style>    
   </head>
   <body>
-    <h1 class="offline-h1">You are offline</h1>
-    <button type="button" class="offline-btn">⤾ Reload</button>
+    <h1>You are offline</h1>
+    <button type="button">⤾ Reload</button>
     <script>
       document.querySelector('button').addEventListener('click', () => {
         window.location.reload();

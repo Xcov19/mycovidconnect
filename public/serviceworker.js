@@ -1,9 +1,9 @@
-
-// eslint-disable-next-line array-callback-return
+/* eslint-disable array-callback-return */
+/*jshint esversion: 6 */
 const CACHE_NAME = "version-1";
 const urlsToCache = [ 'index.html', 'offline.html' ];
 const SELF = this;
-// eslint-disable-next-line array-callback-return
+/* eslint-disable array-callback-return */
 SELF.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME)
@@ -13,8 +13,7 @@ SELF.addEventListener('install', (event) => {
             })
     );
 });
-
-// eslint-disable-next-line array-callback-return
+/* eslint-disable array-callback-return */
 SELF.addEventListener('fetch', (event) => {
     event.respondWith(
         caches.match(event.request)
@@ -24,26 +23,23 @@ SELF.addEventListener('fetch', (event) => {
             })
     );  
 });
-
-// eslint-disable-next-line array-callback-return
+/* eslint-disable array-callback-return */
 SELF.addEventListener('activate', (event) => {
     const cacheWhitelist = [];
     cacheWhitelist.push(CACHE_NAME);
-    
-    event.waitUntil(
+    // if (isDebgging())
+    // {
+        event.waitUntil(
+            caches.keys().then((cacheNames) => Promise.all(
+            cacheNames.map((cacheName) => {
+                   if(!cacheWhitelist.includes(cacheName)) {
+                       return caches.delete(cacheName);
+                   }
+               })
+           ))
+               
+       );
         
-         caches.keys().then((cacheNames) => Promise.all(
-           
-            // eslint-disable-next-line array-callback-return
-            cacheNames.map((cacheName) => { 
-                if(!cacheWhitelist.includes(cacheName)) {
-                    return caches.delete(cacheName);
-                }
-            })
-        ))           
-        );
-        
+    // }
+
 });
-
-
-

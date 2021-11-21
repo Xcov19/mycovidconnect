@@ -1,24 +1,22 @@
-/* ofline.css */
-.offline-h1 {
-  font-style: italic;
-  color: #373fff;
-}
-.offline-btn {
-  display: block;
-}
-/* index.css */
+      /* h1 {
+        font-style: italic;
+        color: #373fff;
+      } */
+      /* button {
+        display: block;
+      } */
 .add-button {
-  position: absolute;
-  top: 1px;
-  left: 1px;
-}
-.add-to-btn {
-  background-color: #f15c08;
-  padding: 10px;
-  border: 0px;
-  color: wheat;
-  border-radius: 20px;
-  font-weight: normal;
-  text-transform: capitalize;
-  font-family: "Lato", sans-serif;
-}
+        position: absolute;
+        top: 1px;
+        left: 1px;
+      }
+      .add-to-btn {
+        background-color: #f15c08;
+        padding: 10px;
+        border: 0px;
+        color: wheat;
+        border-radius: 20px;
+        font-weight: normal;
+        text-transform: capitalize;
+        font-family: "Lato", sans-serif;
+      }
