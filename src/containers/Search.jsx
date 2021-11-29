@@ -4,7 +4,8 @@ import MaindHOC from '../components/MainHOC';
 import FireStore from '../firebase/fireStore';
 import Map from '../components/Map';
 import { withAuth0 } from '@auth0/auth0-react';
-import { compose } from 'recompose'
+import { compose } from 'recompose';
+import Login from '../components/Login';
 
 
 import {
@@ -299,9 +300,7 @@ class Search extends Component {
 							</div>
 							{ !isAuthenticated && (
 							<div>
-								<a href={`https://${ESP_PROXY_DOMAIN}:${ESP_PROXY_PORT}/auth0/login/auth0`}>
-								<LoginButton name={'Request'}/>
-							</a>
+								<Login />
 							</div>
 							)
 							}
