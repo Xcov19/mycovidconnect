@@ -61,25 +61,7 @@ class FireStore {
         querySnapshotResults.push(promise);
       });
       // Get Location telemetry from Google Maps Api.
-      const hospitalRecordsResults = await Promise.all(querySnapshotResults);
-      const promiseData = hospitalRecordsResults.map(
-        async (hospitalRecords) => {
-          if (!!hospitalRecords) {
-            const mappedData = hospitalRecords.map(async (item) => {
-              const name = item.facility_type;
-              const response = await fetch(
-                `https://maps.googleapis.com/maps/api/geocode/json?address=${name},${cityName}&sensor=true&key=${GOOGLE_MAPS_API_KEY}`
-              );
-              results.push([item, response.json()]);
-            });
-            await Promise.all(mappedData);
-            return results;
-          }
-        }
-      );
-      // Merge each hospital records data with its geolocation meta and invoke callback.
-      await Promise.all(promiseData);
-      const mappedData = results.map((data) => {
+      const mappedData = querySnapshotResults.map((data) => {
         /** @type {Array<Object<String, String>, Promise>} */
         const [item, promise] = data;
         promise.then((result) => {
