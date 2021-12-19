@@ -7,6 +7,8 @@ import Profile from "./containers/Profile";
 import Nearby from "./containers/Nearby";
 import ProtectedRoute from "./auth/protected-route";
 
+import CovidForm from "./Pages/covidForm/CovidForm";
+
 import {
   COOKIEBOT_CONSENT_HEAD,
   COOKIEBOT_CONSENT_HEAD_DATA_CBID,
@@ -54,6 +56,7 @@ function App() {
            />
           <Route path="/search/:lat/:lng" component={Search} />
           <Route path="/nearby/:lat/:lng" component={Nearby} />
+          <Route path="/covid-form" component={CovidForm} />
           <ProtectedRoute path="/profile" component={Profile} />
         </Switch>
         </Auth0ProviderWithHistory>

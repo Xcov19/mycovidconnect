@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import CookieDeclaration from '../components/CookieDeclaration';
+import { useHistory } from 'react-router-dom';
 
 const Footer = () => {
+	const history = useHistory();
 	const [show, setShow] = useState(false);
 
 	const showModal = (e) => {
@@ -13,6 +15,9 @@ const Footer = () => {
 		setShow(false);
 	};
 	
+	const onRedirect = (route)=>{
+		history.push(route)
+	}
 	return (
 		<>
 			<footer>
@@ -27,6 +32,7 @@ const Footer = () => {
 						>
 							<button>Join Now</button>
 						</a>
+							<button style={{marginTop: "10px"}} onClick={()=>onRedirect("/covid-form")}>Covid Form</button>
 					</div>
 					<div className="w30">
 						<div className="links">
