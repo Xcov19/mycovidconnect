@@ -17,7 +17,6 @@ import {
 import Auth0ProviderWithHistory from "./auth/auth0-provider-with-history";
 
 function App() {
-
   useEffect(() => {
     //import tawk script
 
@@ -48,17 +47,15 @@ function App() {
   }, []);
   return (
     <>
-    
       <Router>
-      <Auth0ProviderWithHistory>
-        <Switch>
-          <Route path="/" exact component={Wrapper}
-           />
-          <Route path="/search/:lat/:lng" component={Search} />
-          <Route path="/nearby/:lat/:lng" component={Nearby} />
-          <Route path="/covid-form" component={CovidForm} />
-          <ProtectedRoute path="/profile" component={Profile} />
-        </Switch>
+        <Auth0ProviderWithHistory>
+          <Switch>
+            <Route path="/" exact component={Wrapper} />
+            <Route path="/search/:lat/:lng" component={Search} />
+            <Route path="/nearby/:lat/:lng" component={Nearby} />
+            <Route path="/covid-form" component={CovidForm} />
+            <ProtectedRoute path="/profile" component={Profile} />
+          </Switch>
         </Auth0ProviderWithHistory>
       </Router>
     </>
