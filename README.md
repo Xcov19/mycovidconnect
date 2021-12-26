@@ -71,9 +71,25 @@ Babel does the transpiling from target to es5 browser compatible code, tsc does 
 
 <a name="run"></a>
 
-## 4. Running
+## 4. Developing
 
-In order to run the app in development mode-
+In order to run the app in development mode:
+
+Create a local .env file.
+
+```bash
+cp .env.example .env
+```
+
+Add relevant keys to your local .env file. For example, if you will be working on functionality that requires logging in, create a free Auth0 account [here](https://auth0.com/signup?signUpData=%7B%22category%22%3A%22button%22%7D) and enter the relevant credentials from your account in your local .env file.
+
+Install dependencies.
+
+```bash
+npm i
+```
+
+If you run into errors with deprecated dependencies or dependency tree errors, try running `yarn install` instead. Once dependencies have successfully installed, start the development server.
 
 ```bash
 npm start
