@@ -59,7 +59,7 @@ In general follow this [Javascript Styleguide](https://google.github.io/stylegui
 docker-compose -f "docker-compose.yml" up -d --build
 ```
 
-If this command doesn't work, run 
+If this command doesn't work, run: 
 
 ```bash
 PORT=9119 docker-compose up
