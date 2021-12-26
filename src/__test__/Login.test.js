@@ -60,7 +60,7 @@ describe("Login Component Tests - Logged in", () => {
 
     // to see if log out button is displayed in the dropdown
     test('Log out button is displayed', () => {
-      const { getByTestId } = render(<Login />); 
+      render(<Login />); 
       fireEvent.click(screen.getByText(/Welcome/i))
       expect(screen.queryByText("Log Out")).toBeInTheDocument();
      });
@@ -76,7 +76,7 @@ describe("Login Component Tests - Logged in", () => {
             </BrowserRouter>
           );
 
-          const { getByTestId } = render(<Login />); 
+          render(<Login />); 
           fireEvent.click(screen.getByText(/Welcome/i))
           expect(screen.queryByText("Log Out")).toBeInTheDocument();
 
@@ -87,9 +87,7 @@ describe("Login Component Tests - Logged in", () => {
 
      //  to test My Profile functionality
      test("My Profile button working correctly", ()=>{
-      const { 
-        container
-      } = render(
+      render(
         <BrowserRouter>
           <Route path="/">homeq</Route>
           <Route path="/profile">Profile</Route>

@@ -27,7 +27,7 @@ describe('Testing Nearby component', () => {
     let wrapper = shallow(<OgNearby {...prop} />);
 
     // mocking fetch
-    fetch = jest.fn((arg) => Promise.resolve({
+    global.fetch = jest.fn((arg) => Promise.resolve({
       json: () => { return Promise.resolve({ results: [{}] }) }
     }));
 
