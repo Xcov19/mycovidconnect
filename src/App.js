@@ -5,6 +5,8 @@ import Wrapper from "./containers/Wrapper";
 import Search from "./containers/Search";
 import Profile from "./containers/Profile";
 import Nearby from "./containers/Nearby";
+import Contact from "./containers/Contact";
+
 import ProtectedRoute from "./auth/protected-route";
 
 import {
@@ -54,6 +56,8 @@ function App() {
            />
           <Route path="/search/:lat/:lng" component={Search} />
           <Route path="/nearby/:lat/:lng" component={Nearby} />
+          
+          <Route path="/contact" component={Contact} />
           <ProtectedRoute path="/profile" component={Profile} />
         </Switch>
         </Auth0ProviderWithHistory>

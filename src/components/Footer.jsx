@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import CookieDeclaration from '../components/CookieDeclaration';
-
+import { Link } from 'react-router-dom';
 const Footer = () => {
 	const [show, setShow] = useState(false);
 
@@ -37,13 +37,13 @@ const Footer = () => {
 							>
 								About XCOV19
 							</a>
-							<a
+							<Link to="/contact"
 								href="mailto:reachout@mycovidconnect.com"
 								target="_blank"
 								rel="noopener noreferrer"
 							>
 								Contact Us
-							</a>
+							</Link>
 							<a rel="noreferrer" href="# " onClick={showModal}>
 								Privacy Policy
 							</a>
