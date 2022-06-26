@@ -352,7 +352,7 @@ footer #cookieData .closebtn {
 #search .noresults .icon {
 	width: 250px;
 	height: 250px;
-	background-image: url('/noresults.png');
+	background-image: url('/src/assets/noresults.png');
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-position: center;
@@ -555,7 +555,7 @@ footer #cookieData .closebtn {
 #cover {
 	width: 100%;
 	height: 100%;
-	background-image: url('/loading.gif');
+	background-image: url('/src/assets/loading.gif');
 	background-repeat: no-repeat;
 	background-size: 100px 100px;
 	background-position: center;

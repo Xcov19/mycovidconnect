@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import CookieDeclaration from '../components/CookieDeclaration';
-
+import { Link } from 'react-router-dom';
 const Footer = () => {
 	const [show, setShow] = useState(false);
 
@@ -37,13 +37,13 @@ const Footer = () => {
 							>
 								About XCOV19
 							</a>
-							<a
+							<Link to="/contact"
 								href="mailto:reachout@mycovidconnect.com"
 								target="_blank"
 								rel="noopener noreferrer"
 							>
 								Contact Us
-							</a>
+							</Link>
 							<a rel="noreferrer" href="# " onClick={showModal}>
 								Privacy Policy
 							</a>
@@ -80,6 +80,17 @@ const Footer = () => {
 										src={'https://d2vgampz89jm7o.cloudfront.net/JOGL_logo.png'}
 										alt="jogl-logo"
 										id="square"
+									/>
+								</a>
+							</div>
+							<div className="third-row">
+								<a href="https://simpleanalytics.com/mycovidconnect.com?utm_source=mycovidconnect.com&utm_content=badge" referrerpolicy="origin" target="_blank">
+									<img 
+										src={'https://simpleanalyticsbadge.com/mycovidconnect.com'}
+										alt="analytics-logo"
+										loading="lazy" 
+										referrerpolicy="no-referrer" 
+										crossorigin="anonymous" 
 									/>
 								</a>
 							</div>

@@ -46,6 +46,19 @@ In general follow this [Javascript Styleguide](https://google.github.io/stylegui
 
 ## 3. Installation
 
+These instructions will create a Docker container with the required stack for running and developing the project. If you have Node v14 or higher installed already, and are working on the front end, you can run the front-end locally without preparing at Docker container by following the steps in section 4.  
+#### Prepare .env keys
+
+Copy the .env.example file to create your own local .env file.
+
+```bash
+cp .env.example .env
+```
+
+Update any relevant keys in your new .env file. For example, if you will be working on functionality that requires logging in, create a free Auth0 account [here](https://auth0.com/signup?signUpData=%7B%22category%22%3A%22button%22%7D) and enter the relevant credentials from your account in your local .env file.
+
+Please note: Any time you change the values in this .env file, you will need to stop and restart your Docker container in order for the new values to take effect.
+
 #### Install Docker Compose on Mac
 
 - Click https://docs.docker.com/compose/install/, to start to install Docker Compose
@@ -71,9 +84,27 @@ Babel does the transpiling from target to es5 browser compatible code, tsc does 
 
 <a name="run"></a>
 
-## 4. Running
+## 4. Developing Locally without Docker
 
-In order to run the app in development mode-
+In order to run the client locally in development mode you must already have Node v14+ installed.
+
+Create a local .env file if you have not already.
+
+```bash
+cp .env.example .env
+```
+
+Add relevant keys to your local .env file. For example, if you will be working on functionality that requires logging in, create a free Auth0 account [here](https://auth0.com/signup?signUpData=%7B%22category%22%3A%22button%22%7D) and enter the relevant credentials from your account in your local .env file.
+
+Please note: any time one of the values in this .env file changes, you will need to stop (`ctrl-c`) and restart the development server in order for the changes to take effect.
+
+Install dependencies.
+
+```bash
+npm i
+```
+
+If you run into errors with deprecated dependencies or dependency tree errors, try running `yarn install` instead. Once dependencies have successfully installed, start the development server.
 
 ```bash
 npm start
@@ -123,7 +154,7 @@ Check package.json for scripts on how to build and run.
 
 ## 6. Contributing
 
-Please read [CONTRIBUTING.md](https://github.com/Xcov19/mycovidconnect/blob/develop/CONTRIBUTING.md) before you help us!
+Please read [CONTRIBUTING.md](/CONTRIBUTING.md) before you help us!
 
 <a name="cre"></a>
 
@@ -141,4 +172,7 @@ Please read [CONTRIBUTING.md](https://github.com/Xcov19/mycovidconnect/blob/deve
 
 [ jmakhack ](https://github.com/jmakhack)
 
+[ Augilar ](https://github.com/Augilar)
+
 [ odysseaspapadimas ](https://github.com/odysseaspapadimas)
+

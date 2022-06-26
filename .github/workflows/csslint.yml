@@ -1,12 +1,29 @@
 name: Stylesheet Lint
-on: [push, pull_request]
+on:
+  push:
+    branches: '*'
+  pull_request:
+    branches: '*'
+
 
 jobs:
   linters:
     name: stylelint
     runs-on: ubuntu-latest
     steps:
-        - uses: actions/checkout@v2
-        - uses: actions-hub/stylelint@master
-    env:
-        PATTERN: "**/*.css"
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      # Install your linters here
+      - name: Install StyleLint dependencies
+        run: |
+          npm install --save-dev stylelint stylelint-config-standard && echo '{"extends": "stylelint-config-standard"}' >> .stylelintrc.json
+      - name: Run lint-action
+        uses: wearerequired/lint-action@v1
+        with:
+          stylelint: true
+          stylelint_dir: src/
+          stylelint_extensions: css,scss
