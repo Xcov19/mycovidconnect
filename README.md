@@ -2,11 +2,13 @@
 
 TL;DR: Start Contributing right away:
 
+[![Open Source Helpers](https://www.codetriage.com/xcov19/mycovidconnect/badges/users.svg)](https://www.codetriage.com/xcov19/mycovidconnect)
+
+If you are a first-timer just getting started in the world of Opensource, Git & Github, you will benefit from following the instructions and exercises given here: https://github.com/firstcontributions/first-contributions and then come back to this project.
+
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#snapshot/0e4d8fcb-7196-40e7-9a52-b3265551c5c4)
 
 [![DepShield Badge](https://depshield.sonatype.org/badges/Xcov19/mycovidconnect/depshield.svg)](https://depshield.github.io)
-
-[![Open Source Helpers](https://www.codetriage.com/xcov19/mycovidconnect/badges/users.svg)](https://www.codetriage.com/xcov19/mycovidconnect)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/38c2a5f4-bac5-4bec-8d11-a9f08b5b6f71/deploy-status)](https://app.netlify.com/sites/dreamy-keller-b8ad36/deploys)
 
