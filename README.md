@@ -46,7 +46,8 @@ In general follow this [Javascript Styleguide](https://google.github.io/stylegui
 
 ## 3. Installation
 
-These instructions will create a Docker container with the required stack for running and developing the project. If you have Node v14 or higher installed already, and are working on the front end, you can run the front-end locally without preparing at Docker container by following the steps in section 4.  
+These instructions will create a Docker container with the required stack for running and developing the project. If you have Node v14 or higher installed already, and are working on the front end, you can run the front-end locally without preparing at Docker container by following the steps in section 4. Even so, Docker and Docker Compose installation is suggested in order to keep up with best practices.
+
 #### Prepare .env keys
 
 Copy the .env.example file to create your own local .env file.
@@ -59,14 +60,23 @@ Update any relevant keys in your new .env file. For example, if you will be work
 
 Please note: Any time you change the values in this .env file, you will need to stop and restart your Docker container in order for the new values to take effect.
 
-#### Install Docker Compose on Mac
+#### Install Docker Desktop
 
-- Click https://docs.docker.com/compose/install/, to start to install Docker Compose
-- Click Get Docker Desktop for Mac under Install Compose on macOS
-- Click Download from Docker Hub
-- Click Get Docker to download docker and run Docker.dmg
-- Install docker compose using PIP in command line: pip install -U docker-compose
-- Run docker-image to start instance:
+- If using Windows, before installing Docker Desktop make sure you have installed WSL (Windows Subsystem for Linux). Else, install WSL first: https://docs.microsoft.com/en-us/windows/wsl/install
+- Click https://docs.docker.com/desktop/, to start to install Docker Desktop.
+- In the left sidebar, choose between Mac or Windows installation and follow the instructions.
+
+#### Install Docker Compose
+
+If you installed Docker Desktop for either Windows or Mac, you already have Docker Compose. You can check by running:
+
+```bash
+docker compose version
+```
+
+Else, visit https://docs.docker.com/compose/install/, to start to install Docker Compose and follow the instructions.
+
+#### Run docker image to start instance:
 
 ```bash
 docker-compose -f "docker-compose.yml" up -d --build
@@ -157,6 +167,15 @@ Check package.json for scripts on how to build and run.
 Please read [CONTRIBUTING.md](/CONTRIBUTING.md) before you help us!
 
 <a name="cre"></a>
+
+#### Other resources:
+
+[ A helpful guide on how to contribute to open source projects ](https://opensource.guide/how-to-contribute/)
+
+[ Babel 7 documentation ](https://babeljs.io/blog/2018/08/27/7.0.0)
+
+[ Docker For Beginners: From Docker Desktop to Deployment (Youtube tutorial) ](https://www.youtube.com/watch?v=i7ABlHngi1Q)
+
 
 ## 7. Credits
 
