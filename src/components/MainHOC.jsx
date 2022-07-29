@@ -1,26 +1,25 @@
-import React, { Component } from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import Copyrights from './Copyrights';
+import React, { Component } from "react";
+import Header from "./Header";
+import Footer from "./Footer";
+import Copyrights from "./Copyrights";
 
 const MaindHOC = (WrappedComponent) => {
-  
   return class extends Component {
-    constructor(props){
+    constructor(props) {
       super(props);
       this.state = {
-        show: false
-      }
+        show: false,
+      };
     }
-
-
 
     render() {
       return (
         <>
           <Header />
-          <main><WrappedComponent {...this.props} /></main>
-          <Footer/>
+          <main>
+            <WrappedComponent {...this.props} />
+          </main>
+          <Footer />
           <Copyrights />
         </>
       );

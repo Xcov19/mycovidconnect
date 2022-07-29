@@ -1,4 +1,4 @@
- /* jshint esversion: 6 */
+/* jshint esversion: 6 */
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
@@ -18,11 +18,10 @@ import {
 import Auth0ProviderWithHistory from "./auth/auth0-provider-with-history";
 
 function App() {
-
   useEffect(() => {
-    //import tawk script
+    // import tawk script
 
-    /*jshint esnext: true */
+    /* jshint esnext: true */
     ((/** @type {Object} */ Tawk_API) => {
       Tawk_API = Tawk_API || {};
       // const Tawk_LoadStart = new Date();
@@ -36,7 +35,7 @@ function App() {
       document.querySelector("script").before(fragmentTawk);
     })();
 
-    //import cookiebot script
+    // import cookiebot script
     const fragment = document.createDocumentFragment();
     const script = document.createElement("script");
     script.src = COOKIEBOT_CONSENT_HEAD;
@@ -49,18 +48,16 @@ function App() {
   }, []);
   return (
     <>
-    
       <Router>
-      <Auth0ProviderWithHistory>
-        <Switch>
-          <Route path="/" exact component={Wrapper}
-           />
-          <Route path="/search/:lat/:lng" component={Search} />
-          <Route path="/nearby/:lat/:lng" component={Nearby} />
-          
-          <Route path="/contact" component={Contact} />
-          <ProtectedRoute path="/profile" component={Profile} />
-        </Switch>
+        <Auth0ProviderWithHistory>
+          <Switch>
+            <Route path="/" exact component={Wrapper} />
+            <Route path="/search/:lat/:lng" component={Search} />
+            <Route path="/nearby/:lat/:lng" component={Nearby} />
+
+            <Route path="/contact" component={Contact} />
+            <ProtectedRoute path="/profile" component={Profile} />
+          </Switch>
         </Auth0ProviderWithHistory>
       </Router>
     </>
