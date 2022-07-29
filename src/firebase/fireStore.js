@@ -64,7 +64,7 @@ class FireStore {
       const hospitalRecordsResults = await Promise.all(querySnapshotResults);
       const promiseData = hospitalRecordsResults.map(
         async (hospitalRecords) => {
-          if (!!hospitalRecords) {
+          if (hospitalRecords) {
             const mappedData = hospitalRecords.map(async (item) => {
               const name = item.facility_type;
               const response = await fetch(
@@ -82,13 +82,15 @@ class FireStore {
       const mappedData = results.map((data) => {
         /** @type {Array<Object<String, String>, Promise>} */
         const [item, promise] = data;
-        promise.then((result) => {
-          if (!!result && result.results.length && !result.error_message) {
-            // Called for each hospital result.
-            hospitalArrMapData.push({ ...result.results[0], ...item });
-          }
-        }).catch(console.error);
-        return '';
+        promise
+          .then((result) => {
+            if (!!result && result.results.length && !result.error_message) {
+              // Called for each hospital result.
+              hospitalArrMapData.push({ ...result.results[0], ...item });
+            }
+          })
+          .catch(console.error);
+        return "";
       });
       await Promise.all(mappedData);
       mapCallback(hospitalArrMapData);
