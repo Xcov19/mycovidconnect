@@ -1,6 +1,6 @@
-import React from 'react';
-import Logo from './Logo';
-import Login from './Login';
+import React from "react";
+import Logo from "./Logo";
+import Login from "./Login";
 
 const Header = () => {
   return (
@@ -8,7 +8,7 @@ const Header = () => {
       <div className="headerin">
         <Logo />
         <div className="d-md-block d-none">
-        <Login />
+          <Login />
         </div>
       </div>
     </header>

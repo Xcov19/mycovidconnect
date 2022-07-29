@@ -48,7 +48,8 @@ In general follow this [Javascript Styleguide](https://google.github.io/stylegui
 
 ## 3. Installation
 
-These instructions will create a Docker container with the required stack for running and developing the project. If you have Node v14 or higher installed already, and are working on the front end, you can run the front-end locally without preparing at Docker container by following the steps in section 4.  
+These instructions will create a Docker container with the required stack for running and developing the project. If you have Node v14 or higher installed already, and are working on the front end, you can run the front-end locally without preparing at Docker container by following the steps in section 4.
+
 #### Prepare .env keys
 
 Copy the .env.example file to create your own local .env file.
@@ -74,7 +75,7 @@ Please note: Any time you change the values in this .env file, you will need to 
 docker-compose -f "docker-compose.yml" up -d --build
 ```
 
-If this command doesn't work, run 
+If this command doesn't work, run
 
 ```bash
 PORT=9119 docker-compose up
@@ -177,4 +178,3 @@ Please read [CONTRIBUTING.md](/CONTRIBUTING.md) before you help us!
 [ Augilar ](https://github.com/Augilar)
 
 [ odysseaspapadimas ](https://github.com/odysseaspapadimas)
-
