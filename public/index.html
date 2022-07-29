@@ -1,29 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-	<meta charset="utf-8" />
-	<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link type="text/plain" rel="author" href="humans.txt" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="theme-color" content="#000000" />
-	<meta name="description" content="Web site created using create-react-app" />
-	<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
-	<script defer src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
-	<script defer src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
-	<script src="https://kit.fontawesome.com/0d4aacb00e.js" crossorigin="anonymous"></script>
-	<title>MyCovidConnect: Find Nearest Healthcare facility</title>
-</head>
-
-<body>
-	<noscript>You need to enable JavaScript to run this app.</noscript>
-	<div id="root"></div>
-	<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-	<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
-</body>
-
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link type="text/plain" rel="author" href="humans.txt" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"
+    ></script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/0d4aacb00e.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <title>MyCovidConnect: Find Nearest Healthcare facility</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <div class="add-to" id="add-to">
+      <div style="position: fixed; bottom: 10px; right: 10px; color: green">
+        <button class="add-to-btn" id="add-to-btn">Install Our App</button>
+      </div>
+    </div>
+    <script>
+      
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/serviceworker.js")
+          .then(function (registration) {
+            console.info(
+              "Service worker registered with these scopes.",
+              registration.scope
+            );
+            
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      }
+      
+      let deferredPrompt;
+      
+      var div = document.querySelector(".add-to");
+      var button = document.querySelector(".add-to-btn");
+      div.style.display = "none";
+      window.addEventListener("beforeinstallprompt", (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        div.style.display = "block";
+        console.log(`'beforeinstallprompt' event was fired.`);
+        button.addEventListener("click", async () => {
+          div.style.display = "none";
+          deferredPrompt.prompt();
+          const { outcome } = await deferredPrompt.userChoice;
+          console.log(`User response to the install prompt: ${outcome}`);
+          deferredPrompt = null;
+        });
+        window.addEventListener("appinstalled", () => {
+          div.style.display = "none";
+          deferredPrompt = null;
+          console.log("PWA was installed");
+        });
+      });
+    </script>
+    <script
+      async
+      defer
+      src="https://scripts.simpleanalyticscdn.com/latest.js"
+    ></script>
+    <noscript
+      ><img
+        src="https://queue.simpleanalyticscdn.com/noscript.gif"
+        alt=""
+        referrerpolicy="no-referrer-when-downgrade"
+    /></noscript>
+  </body>
 </html>
