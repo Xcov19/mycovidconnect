@@ -92,7 +92,7 @@ const Footer = () => {
                     alt="analytics-logo"
                     loading="lazy"
                     referrerpolicy="no-referrer"
-                    crossorigin="anonymous"
+                    crossOrigin="anonymous"
                   />
                 </a>
               </div>
