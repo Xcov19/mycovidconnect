@@ -39,6 +39,8 @@ jobs:
       ESP_PROXY_PORT: ${{ secrets.ESP_PROXY_PORT }}
       AUTH0_DOMAIN: ${{ secrets.REACT_APP_AUTH0_DOMAIN }}
       AUTH0_CLIENT_ID: ${{ secrets.REACT_APP_AUTH0_CLIENT_ID }}
+      # add posthog product analytics key
+      POSTHOG_INIT: ${{ secrets.POSTHOG_INIT }}
      with:
       node-version: ${{ matrix.node-version }}
    - run: ./startup.sh
