@@ -23,7 +23,7 @@
 		"react-router-dom": "^5.2.0",
 		"react-scripts": "^5.0.0",
 		"sass": "^1.45.1",
-		"serve": "^11.3.2",
+		"serve": "^14.1.0",
 		"ts-jest": "^27.0.2",
 		"typescript": "^3.9.7"
 	},
