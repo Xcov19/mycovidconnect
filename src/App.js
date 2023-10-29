@@ -1,3 +1,4 @@
+// getting setup with hound-bot
 /* jshint esversion: 6 */
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
