@@ -52,13 +52,16 @@ Full tech stack [here](/techstack.md)
 <div align="center">
 
 # Tech Stack File
+
 ![](https://img.stackshare.io/repo.svg "repo") [Xcov19/mycovidconnect](https://github.com/Xcov19/mycovidconnect)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
 |40<br/>Tools used|06/23/24 <br/>Report generated|
 |------|------|
+
 </div>
 
 ## <img src='https://img.stackshare.io/languages.svg'/> Languages (3)
+
 <table><tr>
   <td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/6727/css.png' alt='CSS 3'>
@@ -88,6 +91,7 @@ Full tech stack [here](/techstack.md)
 </table>
 
 ## <img src='https://img.stackshare.io/frameworks.svg'/> Frameworks (4)
+
 <table><tr>
   <td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/1011/n1JRsFeB_400x400.png' alt='Node.js'>
@@ -125,6 +129,7 @@ Full tech stack [here](/techstack.md)
 </table>
 
 ## <img src='https://img.stackshare.io/devops.svg'/> DevOps (10)
+
 <table><tr>
   <td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/2739/-1wfGjNw.png' alt='Babel'>
@@ -212,6 +217,7 @@ Full tech stack [here](/techstack.md)
 </table>
 
 ## Other (2)
+
 <table><tr>
   <td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/4631/default_c2062d40130562bdc836c13dbca02d318205a962.png' alt='Shell'>
@@ -232,34 +238,33 @@ Full tech stack [here](/techstack.md)
 </tr>
 </table>
 
-
 ## <img src='https://img.stackshare.io/group.svg' /> Open source packages (21)</h2>
 
 ## <img width='24' height='24' src='https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png'/> npm (21)
 
-|NAME|VERSION|LAST UPDATED|LAST UPDATED BY|LICENSE|VULNERABILITIES|
-|:------|:------|:------|:------|:------|:------|
-|[@testing-library/jest-dom](https://www.npmjs.com/@testing-library/jest-dom)|v5.1.0|08/21/22|Olamilekan Ogunbanjo |MIT|N/A|
-|[@testing-library/react](https://www.npmjs.com/@testing-library/react)|v10.0.0|08/21/22|Olamilekan Ogunbanjo |MIT|N/A|
-|[@types/googlemaps](https://www.npmjs.com/@types/googlemaps)|v3.0.0|08/21/22|Olamilekan Ogunbanjo |MIT|N/A|
-|[@types/jest](https://www.npmjs.com/@types/jest)|v27.0.3|08/21/22|Olamilekan Ogunbanjo |MIT|N/A|
-|[@types/node](https://www.npmjs.com/@types/node)|v14.0.26|08/21/22|Olamilekan Ogunbanjo |MIT|N/A|
-|[@types/react](https://www.npmjs.com/@types/react)|v16.9.43|08/21/22|Olamilekan Ogunbanjo |MIT|N/A|
-|[@types/react-dom](https://www.npmjs.com/@types/react-dom)|v16.9.8|08/21/22|Olamilekan Ogunbanjo |MIT|N/A|
-|[@types/react-router-dom](https://www.npmjs.com/@types/react-router-dom)|v5.1.5|08/21/22|Olamilekan Ogunbanjo |MIT|N/A|
-|[@typescript-eslint/eslint-plugin](https://www.npmjs.com/@typescript-eslint/eslint-plugin)|v4.6.0|08/21/22|Olamilekan Ogunbanjo |MIT|N/A|
-|[@typescript-eslint/parser](https://www.npmjs.com/@typescript-eslint/parser)|v4.6.0|08/21/22|Olamilekan Ogunbanjo |BSD-2-Clause|N/A|
-|[enzyme-adapter-react-16](https://www.npmjs.com/enzyme-adapter-react-16)|v1.15.6|08/21/22|Olamilekan Ogunbanjo |MIT|N/A|
-|[eslint-config-prettier](https://www.npmjs.com/eslint-config-prettier)|v6.15.0|08/21/22|Olamilekan Ogunbanjo |MIT|N/A|
-|[eslint-plugin-jsx-a11y](https://www.npmjs.com/eslint-plugin-jsx-a11y)|v6.3.1|08/21/22|Olamilekan Ogunbanjo |MIT|N/A|
-|[node-gyp](https://www.npmjs.com/node-gyp)|v8.4.1|08/21/22|Olamilekan Ogunbanjo |MIT|N/A|
-|[node-sass](https://www.npmjs.com/node-sass)|v7.0.1|08/21/22|Olamilekan Ogunbanjo |MIT|N/A|
-|[react-dom](https://www.npmjs.com/react-dom)|v16.13.1|08/21/22|Olamilekan Ogunbanjo |MIT|N/A|
-|[react-router-dom](https://www.npmjs.com/react-router-dom)|v5.2.0|08/21/22|Olamilekan Ogunbanjo |MIT|N/A|
-|[react-scripts](https://www.npmjs.com/react-scripts)|v5.0.0|08/21/22|Olamilekan Ogunbanjo |MIT|N/A|
-|[serve](https://www.npmjs.com/serve)|v11.3.2|08/21/22|Olamilekan Ogunbanjo |MIT|N/A|
-|[stylelint-config-standard](https://www.npmjs.com/stylelint-config-standard)|v23.0.0|08/21/22|Olamilekan Ogunbanjo |MIT|N/A|
-|[ts-jest](https://www.npmjs.com/ts-jest)|v27.0.2|08/21/22|Olamilekan Ogunbanjo |MIT|N/A|
+| NAME                                                                                       | VERSION  | LAST UPDATED | LAST UPDATED BY      | LICENSE      | VULNERABILITIES |
+| :----------------------------------------------------------------------------------------- | :------- | :----------- | :------------------- | :----------- | :-------------- |
+| [@testing-library/jest-dom](https://www.npmjs.com/@testing-library/jest-dom)               | v5.1.0   | 08/21/22     | Olamilekan Ogunbanjo | MIT          | N/A             |
+| [@testing-library/react](https://www.npmjs.com/@testing-library/react)                     | v10.0.0  | 08/21/22     | Olamilekan Ogunbanjo | MIT          | N/A             |
+| [@types/googlemaps](https://www.npmjs.com/@types/googlemaps)                               | v3.0.0   | 08/21/22     | Olamilekan Ogunbanjo | MIT          | N/A             |
+| [@types/jest](https://www.npmjs.com/@types/jest)                                           | v27.0.3  | 08/21/22     | Olamilekan Ogunbanjo | MIT          | N/A             |
+| [@types/node](https://www.npmjs.com/@types/node)                                           | v14.0.26 | 08/21/22     | Olamilekan Ogunbanjo | MIT          | N/A             |
+| [@types/react](https://www.npmjs.com/@types/react)                                         | v16.9.43 | 08/21/22     | Olamilekan Ogunbanjo | MIT          | N/A             |
+| [@types/react-dom](https://www.npmjs.com/@types/react-dom)                                 | v16.9.8  | 08/21/22     | Olamilekan Ogunbanjo | MIT          | N/A             |
+| [@types/react-router-dom](https://www.npmjs.com/@types/react-router-dom)                   | v5.1.5   | 08/21/22     | Olamilekan Ogunbanjo | MIT          | N/A             |
+| [@typescript-eslint/eslint-plugin](https://www.npmjs.com/@typescript-eslint/eslint-plugin) | v4.6.0   | 08/21/22     | Olamilekan Ogunbanjo | MIT          | N/A             |
+| [@typescript-eslint/parser](https://www.npmjs.com/@typescript-eslint/parser)               | v4.6.0   | 08/21/22     | Olamilekan Ogunbanjo | BSD-2-Clause | N/A             |
+| [enzyme-adapter-react-16](https://www.npmjs.com/enzyme-adapter-react-16)                   | v1.15.6  | 08/21/22     | Olamilekan Ogunbanjo | MIT          | N/A             |
+| [eslint-config-prettier](https://www.npmjs.com/eslint-config-prettier)                     | v6.15.0  | 08/21/22     | Olamilekan Ogunbanjo | MIT          | N/A             |
+| [eslint-plugin-jsx-a11y](https://www.npmjs.com/eslint-plugin-jsx-a11y)                     | v6.3.1   | 08/21/22     | Olamilekan Ogunbanjo | MIT          | N/A             |
+| [node-gyp](https://www.npmjs.com/node-gyp)                                                 | v8.4.1   | 08/21/22     | Olamilekan Ogunbanjo | MIT          | N/A             |
+| [node-sass](https://www.npmjs.com/node-sass)                                               | v7.0.1   | 08/21/22     | Olamilekan Ogunbanjo | MIT          | N/A             |
+| [react-dom](https://www.npmjs.com/react-dom)                                               | v16.13.1 | 08/21/22     | Olamilekan Ogunbanjo | MIT          | N/A             |
+| [react-router-dom](https://www.npmjs.com/react-router-dom)                                 | v5.2.0   | 08/21/22     | Olamilekan Ogunbanjo | MIT          | N/A             |
+| [react-scripts](https://www.npmjs.com/react-scripts)                                       | v5.0.0   | 08/21/22     | Olamilekan Ogunbanjo | MIT          | N/A             |
+| [serve](https://www.npmjs.com/serve)                                                       | v11.3.2  | 08/21/22     | Olamilekan Ogunbanjo | MIT          | N/A             |
+| [stylelint-config-standard](https://www.npmjs.com/stylelint-config-standard)               | v23.0.0  | 08/21/22     | Olamilekan Ogunbanjo | MIT          | N/A             |
+| [ts-jest](https://www.npmjs.com/ts-jest)                                                   | v27.0.2  | 08/21/22     | Olamilekan Ogunbanjo | MIT          | N/A             |
 
 <br/>
 <div align='center'>
