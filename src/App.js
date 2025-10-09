@@ -9,6 +9,7 @@ import Nearby from "./containers/Nearby";
 import Contact from "./containers/Contact";
 
 import ProtectedRoute from "./auth/protected-route";
+import TestModeToggle from "./components/TestModeToggle";
 
 import {
   COOKIEBOT_CONSENT_HEAD,
@@ -48,13 +49,14 @@ function App() {
   }, []);
   return (
     <>
+      <TestModeToggle />
       <Router>
         <Auth0ProviderWithHistory>
           <Switch>
             <Route path="/" exact component={Wrapper} />
             <Route path="/search/:lat/:lng" component={Search} />
             <Route path="/nearby/:lat/:lng" component={Nearby} />
-
+            {/* <Route path="/hospital-registration" component={HospitalRegistration} /> */}
             <Route path="/contact" component={Contact} />
             <ProtectedRoute path="/profile" component={Profile} />
           </Switch>

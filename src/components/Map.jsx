@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  withGoogleMap,
-  withScriptjs,
-  GoogleMap,
-  DirectionsRenderer,
-} from "react-google-maps";
+import { withGoogleMap, withScriptjs, GoogleMap, Marker } from "react-google-maps";
 
 /**
  * The Map Component.
@@ -17,8 +12,7 @@ const Map = ({ myPlaces }) => {
   /** @type {[boolean,Function]} loading */
   const [isLoading, setIsLoading] = useState(true);
 
-  /** @type {[Object,Function]} direction */
-  const [directions, setDirections] = useState(null);
+  // Directions disabled to avoid paid API usage
 
   /**
    * A react hook method called when myPlaces props changes value.
@@ -26,38 +20,45 @@ const Map = ({ myPlaces }) => {
    */
   useEffect(() => {
     setIsLoading(true);
-    getDirection(myPlaces);
+    // Guard: require two points and Google Maps runtime
+    const hasTwoPoints =
+      Array.isArray(myPlaces) &&
+      myPlaces.length >= 2 &&
+      myPlaces[0] &&
+      myPlaces[0].pos &&
+      myPlaces[1] &&
+      myPlaces[1].pos;
+    if (!hasTwoPoints) {
+      setIsLoading(false);
+      return;
+    }
+    if (!window.google || !window.google.maps) {
+      setIsLoading(false);
+      return;
+    }
+    // Skip Directions API to avoid billing; just show base map
+    setIsLoading(false);
   }, [myPlaces]);
 
   /**
    * Set direction from source and destination
    * @param {Array<{string,Object}>} myPlaces - Source and Destination positions.
    */
-  const getDirection = (myPlaces) => {
-    const directionsService = new window.google.maps.DirectionsService();
-    const origin = myPlaces[0].pos;
-    const destination = myPlaces[1].pos;
-    directionsService.route(
-      {
-        origin,
-        destination,
-        travelMode: window.google.maps.TravelMode.DRIVING,
-      },
-      (result, status) => {
-        if (status === window.google.maps.DirectionsStatus.OK) {
-          setDirections(result);
-          setIsLoading(false);
-        } else if (process.env.NODE_ENV === "development") {
-          // show alert in dev mode
-          alert(`error fetching directions ${result}`);
-        }
-      }
-    );
+  // Directions removed
+
+  const fallbackCenter = (myPlaces && myPlaces[0] && myPlaces[0].pos) || {
+    lat: 12.9716,
+    lng: 77.5946,
   };
 
   const GoogleMapExample = withGoogleMap((props) => (
-    <GoogleMap defaultCenter={myPlaces[0].pos} defaultZoom={13}>
-      <DirectionsRenderer directions={directions} />
+    <GoogleMap defaultCenter={fallbackCenter} defaultZoom={13}>
+      {myPlaces && myPlaces[0] && myPlaces[0].pos ? (
+        <Marker position={myPlaces[0].pos} />
+      ) : null}
+      {myPlaces && myPlaces[1] && myPlaces[1].pos ? (
+        <Marker position={myPlaces[1].pos} />
+      ) : null}
     </GoogleMap>
   ));
 
