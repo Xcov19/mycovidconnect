@@ -83,7 +83,7 @@ const Footer = () => {
               <div className="third-row">
                 <a
                   href="https://simpleanalytics.com/mycovidconnect.com?utm_source=mycovidconnect.com&utm_content=badge"
-                  referrerpolicy="origin"
+                  referrerPolicy="origin"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -91,8 +91,8 @@ const Footer = () => {
                     src="https://simpleanalyticsbadge.com/mycovidconnect.com"
                     alt="analytics-logo"
                     loading="lazy"
-                    referrerpolicy="no-referrer"
-                    crossorigin="anonymous"
+                    referrerPolicy="no-referrer"
+                    crossOrigin="anonymous"
                   />
                 </a>
               </div>
