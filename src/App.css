@@ -332,70 +332,78 @@ footer #cookieData .closebtn {
 
 #search {
   width: 100%;
-  height: 600px;
-  margin: 0 auto;
+  height: calc(100vh - 160px);
+  margin: 16px auto;
   padding: 0;
   position: relative;
-  box-shadow: 1px 0 10px -5px #000;
+  box-shadow: 0 1px 10px -5px #000;
+  background: #f8fbff;
+  border-radius: 8px;
 }
 
 #search .noresults {
-  width: auto;
-  height: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
 }
 
 #search .noresults .icon {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   background-image: url("/src/assets/noresults.png");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: contain;
   background-position: center;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
 }
 
 #search .noresults .text {
-  width: auto;
-  height: auto;
+  width: 100%;
+  max-width: 300px;
   margin: 0 auto;
-  padding: 50px 0 0 0;
+  padding: 0;
 }
 
 #search .noresults .text h2 {
-  font-size: 30px;
-  font-weight: normal;
-  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
   padding: 0;
   color: #2f97f2;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 #search .noresults .text span {
-  font-size: 18px;
-  font-weight: bold;
-  color: #207ecf;
+  font-size: 16px;
+  font-weight: 500;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  display: block;
 }
 
 #search .noresults button {
-  padding: 10px 20px;
+  padding: 12px 24px;
   font-family: "Montserrat", "sans-serif";
   font-size: 16px;
   color: #fff;
   background-color: #0455bf;
   cursor: pointer;
-  margin-top: 14px;
+  margin-top: 8px;
   border: none;
-  border-radius: 3px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
 }
 
 #search .noresults button:hover {
-  background-color: darkblue;
+  background-color: #003d82;
   border: none;
 }
 
@@ -403,15 +411,20 @@ footer #cookieData .closebtn {
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  padding: 0;
+  padding: 12px;
   display: flex;
+  gap: 12px;
 }
 
 #search .search-in .results {
-  width: 40%;
+  width: 38%;
   height: 100%;
   margin: 0;
   padding: 0;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
 }
 
 #search .search-in .results .header {
@@ -421,7 +434,7 @@ footer #cookieData .closebtn {
   padding: 0;
   display: block;
   background-color: #f0f9fe;
-  box-shadow: inset 0 0 10px -5px #f0f9fe;
+  border-bottom: 1px solid #e5f2fa;
 }
 
 #search .search-in .results .header h2 {
@@ -434,8 +447,8 @@ footer #cookieData .closebtn {
 
 #search .search-in .results .content {
   width: 100%;
-  height: 537px;
-  overflow: scroll;
+  height: calc(100% - 62px);
+  overflow: auto;
 }
 
 #search .search-in .results .content .location {
@@ -500,11 +513,15 @@ footer #cookieData .closebtn {
 }
 
 #search .maparea {
-  width: 60%;
+  width: 62%;
   height: 100%;
   margin: 0;
   padding: 0;
   position: relative;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
 }
 
 #search .uberBtn {
@@ -904,5 +921,301 @@ input.form-control[disabled] {
   }
   .fs-22 {
     font-size: 16px;
+  }
+}
+
+/* Hospital Registration Styles */
+.hospital-registration {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 40px 0;
+}
+
+.hospital-registration .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.registration-header {
+  text-align: center;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.registration-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.registration-header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.registration-form-container {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.hospital-form {
+  padding: 40px;
+}
+
+.form-section {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.form-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.form-section h3 {
+  color: #2c3e50;
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  font-weight: 600;
+  position: relative;
+  padding-left: 15px;
+}
+
+.form-section h3::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f8f9fa;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #6c757d;
+  opacity: 0.7;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.submit-section {
+  text-align: center;
+  background: #f8f9fa;
+  margin: 0 -40px -40px -40px;
+  padding: 30px 40px 40px 40px;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 200px;
+  justify-content: center;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.form-note {
+  margin-top: 15px;
+  color: #6c757d;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.alert {
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.alert-success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.alert i {
+  font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hospital-registration {
+    padding: 20px 0;
+  }
+  
+  .hospital-registration .container {
+    padding: 0 15px;
+  }
+  
+  .registration-header h1 {
+    font-size: 2rem;
+  }
+  
+  .registration-header p {
+    font-size: 1rem;
+  }
+  
+  .hospital-form {
+    padding: 25px;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  .form-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+  }
+  
+  .form-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .submit-section {
+    margin: 0 -25px -25px -25px;
+    padding: 25px;
+  }
+  
+  .submit-btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .registration-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hospital-form {
+    padding: 20px;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+  
+  .submit-section {
+    margin: 0 -20px -20px -20px;
+    padding: 20px;
+  }
+}
+
+/* Header Navigation Styles */
+.header-nav {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.nav-link {
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 0.9rem;
+}
+
+.nav-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  text-decoration: none;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .header-nav {
+    display: none;
   }
 }

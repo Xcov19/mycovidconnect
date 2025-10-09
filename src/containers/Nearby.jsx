@@ -13,9 +13,23 @@ import {
   ESP_PROXY_PORT,
 } from "../constants";
 import LoginButton from "../components/LoginButton";
+import EmptyState from "../components/EmptyState";
+import SkeletonList from "../components/SkeletonList";
+import Toast from "../components/Toast";
+import SOSButton from "../components/SOSButton";
+import {
+  buildGoogleMapsLink,
+  saveLastContext,
+  loadLastContext,
+  coerceLatLngFromParams,
+  isValidLatitude,
+  isValidLongitude,
+  isTestMode,
+  getTestLocation,
+} from "../utils/validation";
 
-const MAP_API = `${GOOGLE_MAPS_API_KEY}`.match(/[A-Za-z0-9_]+/i)[0];
-const googleMapURL = `https://maps.googleapis.com/maps/api/js?key=${MAP_API}`;
+// Use the Maps API key as-is; do not strip characters
+const googleMapURL = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}`;
 
 /**
  * The Nearby Component.
@@ -44,6 +58,7 @@ export class Nearby extends Component {
       isAndroid: /Android/i.test(navigator.userAgent),
       isIos: /iPhone|iPod|iPad/.test(navigator.platform),
       allStates: [],
+      toast: null,
     };
   }
 
@@ -54,7 +69,7 @@ export class Nearby extends Component {
   getAddressFromLocation = () => {
     const { lat, lng } = this.state;
     fetch(
-      `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&sensor=true&key=${MAP_API}`
+      `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&sensor=true&key=${GOOGLE_MAPS_API_KEY}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -87,8 +102,12 @@ export class Nearby extends Component {
           },
           () => this.getVaccineSessionsByPin(postal_code)
         );
+        saveLastContext({ lat, lng, city });
       })
-      .catch(console.error);
+      .catch((err) => {
+        console.error(err);
+        this.setState({ isLoading: false, toast: { kind: "error", message: "Failed to resolve address.", retry: this.getAddressFromLocation } });
+      });
   };
 
   /**
@@ -112,7 +131,10 @@ export class Nearby extends Component {
       .then((data) => {
         this.findVaccineCentersByLatLong(data.sessions);
       })
-      .catch(console.error);
+      .catch((err) => {
+        console.error(err);
+        this.setState({ isLoading: false, toast: { kind: "error", message: "Could not fetch nearby centers.", retry: () => this.getVaccineSessionsByPin(pincode) } });
+      });
   };
 
   /**
@@ -273,7 +295,10 @@ export class Nearby extends Component {
       .then((data) => {
         this.filterSessions(sessionsData, data.centers);
       })
-      .catch(console.error);
+      .catch((err) => {
+        console.error(err);
+        this.setState({ isLoading: false, toast: { kind: "error", message: "Could not fetch center locations.", retry: () => this.findVaccineCentersByLatLong(sessionsData) } });
+      });
   }
 
   /**
@@ -313,7 +338,46 @@ export class Nearby extends Component {
    * It calls the getStates method right after updating.
    */
   componentDidMount() {
-    this.getAddressFromLocation();
+    // Check if test mode is enabled
+    if (isTestMode()) {
+      const testLocation = getTestLocation();
+      console.log('Test mode enabled, using hardcoded location:', testLocation);
+      this.setState({ 
+        lat: testLocation.lat, 
+        lng: testLocation.lng, 
+        city: testLocation.city || "" 
+      }, this.getAddressFromLocation);
+      return;
+    }
+
+    const params = coerceLatLngFromParams(this.props.match.params || {});
+    const last = loadLastContext();
+    if (params && isValidLatitude(params.lat) && isValidLongitude(params.lng)) {
+      this.setState({ lat: params.lat, lng: params.lng }, this.getAddressFromLocation);
+      return;
+    }
+    if (last) {
+      this.setState({ lat: last.lat, lng: last.lng, city: last.city || "" }, this.getAddressFromLocation);
+      return;
+    }
+    const { lat, lng } = this.state;
+    if ((!lat || !lng) && navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          this.setState(
+            { lat: pos.coords.latitude, lng: pos.coords.longitude },
+            this.getAddressFromLocation
+          );
+        },
+        (err) => {
+          console.error(err);
+          // Fallback to existing lat/lng (possibly 0,0) but stop loading
+          this.setState({ isLoading: false, toast: { kind: "info", message: "Location access denied. Using defaults." } });
+        }
+      );
+    } else {
+      this.getAddressFromLocation();
+    }
   }
 
   /**
@@ -331,6 +395,7 @@ export class Nearby extends Component {
       selectedLng,
       isAndroid,
       isIos,
+      toast,
     } = this.state;
 
     const result_list =
@@ -380,11 +445,20 @@ export class Nearby extends Component {
                   )}
                   Ride with Uber
                 </button>
+                <a
+                  className="btn btn-outline-primary"
+                  href={buildGoogleMapsLink({ origin: { lat, lng }, destination: { lat: vaccineCenter.lat, lng: vaccineCenter.long } })}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Open in Google Maps
+                </a>
                 {/* TODO(@codecakes): add phone number */}
               </div>
             );
           })
         : [];
+
     return (
       <>
         <MetaTags>
@@ -396,37 +470,27 @@ export class Nearby extends Component {
           <meta name="keywords" content="Healthcare facilities near {city}" />
         </MetaTags>
         <div id="search">
-          {isLoading && <div id="cover" />}
-          {results && results.length === 0 && !isLoading && (
-            <div className="noresults">
-              <div className="icon" />
-              <div className="text">
-                <h2>No results found for {city}</h2>
-                <br />
-                {!isAuthenticated && (
-                  <span>
-                    Please register a request to enable service in your area{" "}
-                  </span>
-                )}
-              </div>
-              {!isAuthenticated && (
-                <div>
-                  <a
-                    href={`https://${ESP_PROXY_DOMAIN}:${ESP_PROXY_PORT}/auth0/login/auth0`}
-                  >
-                    <LoginButton name="Request" />
-                  </a>
-                </div>
-              )}
-            </div>
-          )}
-          {results && results.length !== 0 && !isLoading && (
+          {!isLoading && (
             <div className="search-in">
               <div className="results">
                 <div className="header">
                   <h2>Search Results for {city}</h2>
                 </div>
-                <div className="content">{result_list}</div>
+                <div className="content">
+                  {isLoading ? (
+                    <SkeletonList />
+                  ) : results && results.length !== 0 ? (
+                    result_list
+                  ) : (
+                    <EmptyState
+                      title={`No results found for ${city}`}
+                      description={
+                        !isAuthenticated ? "Please register a request to enable service in your area" : ""
+                      }
+                      action={!isAuthenticated ? <LoginButton name="Request" /> : null}
+                    />
+                  )}
+                </div>
               </div>
               <div className="maparea">
                 <Map
@@ -438,13 +502,34 @@ export class Nearby extends Component {
                     { id: "1", pos: { lat, lng } },
                     {
                       id: "2",
-                      pos: { lat: selectedLat, lng: selectedLng },
+                      pos: { lat: selectedLat || lat, lng: selectedLng || lng },
                     },
                   ]}
+                  containerElement={<div style={{ width: "100%", height: "100%" }} />}
+                  mapElement={<div style={{ width: "100%", height: "100%" }} />}
                 />
+                <div style={{ position: "absolute", left: 12, bottom: 12, display: "flex", gap: 8 }}>
+                  <SOSButton lat={lat} lng={lng} />
+                  <a
+                    className="btn btn-primary"
+                    href={buildGoogleMapsLink({ origin: { lat, lng }, destination: { lat: lat + 0.01, lng: lng + 0.01 } })}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Test Open in Maps
+                  </a>
+                </div>
               </div>
             </div>
           )}
+          {toast ? (
+            <Toast
+              kind={toast.kind}
+              message={toast.message}
+              onRetry={toast.retry}
+              onClose={() => this.setState({ toast: null })}
+            />
+          ) : null}
         </div>
       </>
     );
