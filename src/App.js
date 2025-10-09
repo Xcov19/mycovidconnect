@@ -7,6 +7,7 @@ import Search from "./containers/Search";
 import Profile from "./containers/Profile";
 import Nearby from "./containers/Nearby";
 import Contact from "./containers/Contact";
+import HospitalRegistration from "./containers/HospitalRegistration";
 
 import ProtectedRoute from "./auth/protected-route";
 
@@ -54,6 +55,7 @@ function App() {
             <Route path="/" exact component={Wrapper} />
             <Route path="/search/:lat/:lng" component={Search} />
             <Route path="/nearby/:lat/:lng" component={Nearby} />
+            <Route path="/hospital-registration" component={HospitalRegistration} />
 
             <Route path="/contact" component={Contact} />
             <ProtectedRoute path="/profile" component={Profile} />
